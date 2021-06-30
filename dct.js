@@ -8,7 +8,7 @@
 const generisanjeMatrice = () => {
     
     tabela = new Array(Number(dimMatr.value**2));
-    
+
     for(let i = 0; i < tabela.length; i++){
         tabela[i] = Number((Math.random()).toFixed(2));
         //console.log(tabela[i]);
@@ -30,6 +30,9 @@ const generisanjeMatrice = () => {
     console.log(Number(dimMatr.value**2)); 
     console.log(tabela); 
 
+    inpBrKoef.value = tabela.length; 
+    inpMatr.value = `${Math.sqrt(tabela.length)} x ${Math.sqrt(tabela.length)}`; 
+
 }; 
 
 btnMatrica.onclick = generisanjeMatrice;  
@@ -38,7 +41,7 @@ btnMatrica.onclick = generisanjeMatrice;
 infoP1.innerHTML = ` Koeficijenti slike su nasumično generisani. ` ; 
 
 
-//inpBrKoef.value = brEl; 
+
 
 
 //inpMatr.value = `${Math.sqrt(brEl)} x ${Math.sqrt(brEl)}`;
