@@ -18,7 +18,7 @@ const brisanje = () => {
 btnBrisanje.onclick = brisanje;
 
 const demo = () => {
-    txtUlaz.value = 'Projekat je u fazi izrade';
+    //txtUlaz.value = 'Projekat je u fazi izrade';
     txtIzlaz.value = 'Projekat je u fazi izrade'; 
 };
 
@@ -43,3 +43,24 @@ btnBrisanje.addEventListener('mouseout', function(){
     btnBrisanje.style.opacity = 1;
 });
 
+
+let tabela = new Array(16);
+
+for(let i = 0; i < tabela.length; i++){
+    tabela[i] = Number((Math.random()).toFixed(2));
+    //console.log(tabela[i]);
+}
+
+//inicijalizacija niza
+tabelaS = '';
+
+for(let red = 0; red < tabela.length; red++){
+    for(let kol = 0; kol < tabela[red].length; kol++){
+        tabela[red][kol] = red*kol;
+        //tabelaS += tabela[red][kol] + '\n';
+
+    }
+}
+
+txtUlaz.value = tabela;
+console.log(tabela); 
