@@ -1,7 +1,6 @@
-//Globalne promenljive
+//Definisanje globalnih promenljivih
 
 dimMatr = document.getElementById('inpDimMatr'); 
-//brEl = dimMatr.value;
 
 btnMatrica = document.getElementById('btnMatrica'); 
 txtUlaz = document.getElementById('txtUlaz');
