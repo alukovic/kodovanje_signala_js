@@ -19,6 +19,7 @@
 }
 
 .a{
+
     margin: 0 auto;
     width: 80%;
     align-items: center; 
@@ -37,11 +38,13 @@
 }
 
 .opis{
+
     color: rgb(24, 138, 231);
     font-weight: bold; 
 }
 
 textarea{
+
     resize: none; 
     margin: 0.5em;
     border: 2px solid rgb(111, 185, 235);
@@ -49,21 +52,26 @@ textarea{
 }
 
 input{
+
     border: 2px solid rgb(29, 145, 223); 
     border-radius: 8px; 
     margin: 0.5em;
 }
 
 .infoA{
+
     margin: 0.5em; 
 }
 
 #infoP, #infoP1{
+
     font-size: 80%;
 }
 
 #btnMatrica{
+
     width: 12em; 
     background-color: rgb(108, 192, 24); 
+
 }
 
