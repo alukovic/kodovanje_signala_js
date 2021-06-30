@@ -47,7 +47,9 @@ textarea{
 }
 
 input{
-    border: none;
+    border: 2px solid rgb(29, 145, 223); 
+    border-radius: 7px; 
+    margin: 0.5em;
 }
 
 .infoA{
@@ -56,5 +58,10 @@ input{
 
 #infoP1{
     font-size: 80%;
+}
+
+#btnMatrica{
+    width: 12em; 
+    background-color: rgb(108, 192, 24); 
 }
 

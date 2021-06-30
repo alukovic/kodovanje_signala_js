@@ -44,7 +44,9 @@ btnBrisanje.addEventListener('mouseout', function(){
     btnBrisanje.style.opacity = 1;
 });
 
-brKoefMatr = 16; 
+brKoefMatr = document.getElementById('inpBrKoefMatr').value; 
+
+/*
 let tabela = new Array(brKoefMatr);
 
 for(let i = 0; i < tabela.length; i++){
@@ -65,14 +67,15 @@ for(let red = 0; red < tabela.length; red++){
 
 txtUlaz.value = tabela;
 console.log(tabela); 
+*/
 
 infoP1.innerHTML = ` Koeficijenti slike su nasumično generisani. ` ; 
 
 inpBrKoef = document.getElementById('inpBrKoef');
-inpBrKoef.value = tabela.length; 
+inpBrKoef.value = brKoefMatr; 
 
 inpMatr = document.getElementById('inpMatr'); 
-inpMatr.value = `${Math.sqrt(tabela.length)} x ${Math.sqrt(tabela.length)}`;
+inpMatr.value = `${Math.sqrt(brKoefMatr)} x ${Math.sqrt(brKoefMatr)}`;
 
 
 
