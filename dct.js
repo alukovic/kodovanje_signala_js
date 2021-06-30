@@ -8,10 +8,20 @@ btnBrisanje.style.backgroundColor = 'rgb(229, 43, 80)';
 //30.6.2021. Sre. 
 
 txtUlaz = document.getElementById('txtUlaz');
-txtUlaz.value = 'Projekat je u fazi izrade';
-
 txtIzlaz = document.getElementById('txtIzlaz'); 
-txtIzlaz.value = 'Projekat je u fazi izrade'; 
 
 
+const brisanje = () => {
+    window.location.reload(true); 
+}
+
+btnBrisanje.onclick = brisanje;
+
+const demo = () => {
+    txtUlaz.value = 'Projekat je u fazi izrade';
+    txtIzlaz.value = 'Projekat je u fazi izrade'; 
+};
+
+btnDCT = document.getElementById('btnDCT'); 
+btnDCT.onclick = demo; 
 
