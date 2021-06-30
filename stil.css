@@ -45,3 +45,11 @@ textarea{
     resize: none; 
     margin: 0.5em;
 }
+
+input{
+    border: none;
+}
+
+.infoA{
+    margin: 0.5em; 
+}

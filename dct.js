@@ -8,6 +8,7 @@ btnBrisanje.style.backgroundColor = 'rgb(229, 43, 80)';
 //30.6.2021. Sre. 
 
 txtUlaz = document.getElementById('txtUlaz');
+infoP1 = document.getElementById('infoP1');
 txtIzlaz = document.getElementById('txtIzlaz'); 
 
 
@@ -64,3 +65,14 @@ for(let red = 0; red < tabela.length; red++){
 
 txtUlaz.value = tabela;
 console.log(tabela); 
+
+infoP1.innerHTML = ` Koeficijenti slike su nasumično generisani. ` ; 
+
+inpBrKoef = document.getElementById('inpBrKoef');
+inpBrKoef.value = tabela.length; 
+
+inpMatr = document.getElementById('inpMatr'); 
+inpMatr.value = `${Math.sqrt(tabela.length)} x ${Math.sqrt(tabela.length)}`;
+
+
+
