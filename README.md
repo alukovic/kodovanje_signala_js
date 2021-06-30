@@ -13,6 +13,6 @@
  <p align="center">
  U prvom procesu realizacije projekta, za početak, 
  cilj je da korisnik unese vrednosi koeficijenata multimedijalnog signala, 
- a da kao izlaz dobije vrednosti proračunate diskretnom Furijeovom transformacijom (DFT). 
+ a da kao izlaz dobije vrednosti proračunate diskretnom kosinusnom transformacijom (DCT). 
  </p>
-<p align="center"> Link projekta: https://alukovic.github.io/kodovanje_signala_js/dft.html </p>
+<p align="center"> Link projekta: https://alukovic.github.io/kodovanje_signala_js/dct.html </p>
