@@ -44,38 +44,49 @@ btnBrisanje.addEventListener('mouseout', function(){
     btnBrisanje.style.opacity = 1;
 });
 
-brKoefMatr = document.getElementById('inpBrKoefMatr').value; 
+dimMatr = document.getElementById('inpDimMatr'); 
+brEl = Number(dimMatr.value);
+
+console.log(brEl);
 
 /*
-let tabela = new Array(brKoefMatr);
 
-for(let i = 0; i < tabela.length; i++){
-    tabela[i] = Number((Math.random()).toFixed(2));
-    //console.log(tabela[i]);
-}
-
-//inicijalizacija niza
-tabelaS = '';
-
-for(let red = 0; red < tabela.length; red++){
-    for(let kol = 0; kol < tabela[red].length; kol++){
-        tabela[red][kol] = red*kol;
-        //tabelaS += tabela[red][kol] + '\n';
-
-    }
-}
-
-txtUlaz.value = tabela;
-console.log(tabela); 
 */
 
 infoP1.innerHTML = ` Koeficijenti slike su nasumično generisani. ` ; 
 
 inpBrKoef = document.getElementById('inpBrKoef');
-inpBrKoef.value = brKoefMatr; 
+inpBrKoef.value = brEl; 
 
 inpMatr = document.getElementById('inpMatr'); 
-inpMatr.value = `${Math.sqrt(brKoefMatr)} x ${Math.sqrt(brKoefMatr)}`;
+inpMatr.value = `${Math.sqrt(brEl)} x ${Math.sqrt(brEl)}`;
 
 
+let btnMatrica = document.getElementById('btnMatrica');
 
+const generisanjeMatrice = () => {
+
+    let tabela = new Array(brEl);
+
+    for(let i = 0; i < tabela.length; i++){
+        tabela[i] = Number((Math.random()).toFixed(2));
+        //console.log(tabela[i]);
+    }
+    
+    //inicijalizacija niza
+    tabelaS = '';
+    
+    for(let red = 0; red < tabela.length; red++){
+        for(let kol = 0; kol < tabela[red].length; kol++){
+            tabela[red][kol] = red*kol;
+            //tabelaS += tabela[red][kol] + '\n';
+    
+        }
+    }
+    
+    txtUlaz.value = tabela;
+    console.log(tabela); 
+
+}; 
+
+btnMatrica.onclick = generisanjeMatrice; 
