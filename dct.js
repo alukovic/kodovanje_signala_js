@@ -26,6 +26,9 @@ const generisanjeMatrice = () => {
     }
     
     txtUlaz.value = tabela; 
+
+    infoP1.innerHTML = ` Koeficijenti slike su nasumično generisani. ` ; 
+
     console.log(Number(dimMatr.value)); 
     console.log(Number(dimMatr.value**2)); 
     console.log(tabela); 
@@ -38,14 +41,6 @@ const generisanjeMatrice = () => {
 btnMatrica.onclick = generisanjeMatrice;  
 
 
-infoP1.innerHTML = ` Koeficijenti slike su nasumično generisani. ` ; 
-
-
-
-
-
-//inpMatr.value = `${Math.sqrt(brEl)} x ${Math.sqrt(brEl)}`;
-
 
 const brisanje = () => {
     window.location.reload(true); 
@@ -54,8 +49,10 @@ const brisanje = () => {
 btnBrisanje.onclick = brisanje;
 
 const demo = () => {
+
     //txtUlaz.value = 'Projekat je u fazi izrade';
     txtIzlaz.value = 'Projekat je u fazi izrade'; 
+    
 };
 
 
