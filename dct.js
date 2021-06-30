@@ -4,7 +4,6 @@
 //Dan2
 //30.6.2021. Sre. 
 
-
 const generisanjeMatrice = () => {
     
     tabela = new Array(Number(dimMatr.value**2));
@@ -40,8 +39,6 @@ const generisanjeMatrice = () => {
 
 btnMatrica.onclick = generisanjeMatrice;  
 
-
-
 const brisanje = () => {
     window.location.reload(true); 
 }
@@ -50,11 +47,9 @@ btnBrisanje.onclick = brisanje;
 
 const demo = () => {
 
-    //txtUlaz.value = 'Projekat je u fazi izrade';
     txtIzlaz.value = 'Projekat je u fazi izrade'; 
-    
-};
 
+};
 
 btnDCT.onclick = demo; 
 
