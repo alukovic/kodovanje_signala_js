@@ -1,3 +1,5 @@
+btnBrisanje.style.backgroundColor = 'rgb(229, 43, 80)'; 
+
 //Hover efekat - JavaScript
 
 btnDCT.addEventListener('mouseover', function(){

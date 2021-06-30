@@ -1,47 +1,14 @@
 //Dan1
 //29.6.2021. Uto. 
 
-btnBrisanje = document.getElementById('btnBrisanje'); 
-btnBrisanje.style.backgroundColor = 'rgb(229, 43, 80)'; 
-
 //Dan2
 //30.6.2021. Sre. 
 
-txtUlaz = document.getElementById('txtUlaz');
-infoP1 = document.getElementById('infoP1');
-txtIzlaz = document.getElementById('txtIzlaz'); 
-
-
-const brisanje = () => {
-    window.location.reload(true); 
-}
-
-btnBrisanje.onclick = brisanje;
-
-const demo = () => {
-    //txtUlaz.value = 'Projekat je u fazi izrade';
-    txtIzlaz.value = 'Projekat je u fazi izrade'; 
-};
-
-btnDCT = document.getElementById('btnDCT'); 
-btnDCT.onclick = demo; 
-
-
-dimMatr = document.getElementById('inpDimMatr'); 
-brEl = Number(dimMatr.value);
-
-console.log(brEl);
-
-/*
-
-*/
-
-let btnMatrica = document.getElementById('btnMatrica');
 
 const generisanjeMatrice = () => {
-
-    let tabela = new Array(brEl);
-
+    
+    tabela = new Array(Number(dimMatr.value**2));
+    
     for(let i = 0; i < tabela.length; i++){
         tabela[i] = Number((Math.random()).toFixed(2));
         //console.log(tabela[i]);
@@ -58,7 +25,9 @@ const generisanjeMatrice = () => {
         }
     }
     
-    txtUlaz.value = tabela;
+    txtUlaz.value = tabela; 
+    console.log(Number(dimMatr.value)); 
+    console.log(Number(dimMatr.value**2)); 
     console.log(tabela); 
 
 }; 
@@ -68,10 +37,25 @@ btnMatrica.onclick = generisanjeMatrice;
 
 infoP1.innerHTML = ` Koeficijenti slike su nasumično generisani. ` ; 
 
-inpBrKoef = document.getElementById('inpBrKoef');
-inpBrKoef.value = brEl; 
 
-inpMatr = document.getElementById('inpMatr'); 
-inpMatr.value = `${Math.sqrt(brEl)} x ${Math.sqrt(brEl)}`;
+//inpBrKoef.value = brEl; 
+
+
+//inpMatr.value = `${Math.sqrt(brEl)} x ${Math.sqrt(brEl)}`;
+
+
+const brisanje = () => {
+    window.location.reload(true); 
+}
+
+btnBrisanje.onclick = brisanje;
+
+const demo = () => {
+    //txtUlaz.value = 'Projekat je u fazi izrade';
+    txtIzlaz.value = 'Projekat je u fazi izrade'; 
+};
+
+
+btnDCT.onclick = demo; 
 
 
