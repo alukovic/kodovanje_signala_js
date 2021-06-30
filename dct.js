@@ -44,8 +44,8 @@ btnBrisanje.addEventListener('mouseout', function(){
     btnBrisanje.style.opacity = 1;
 });
 
-
-let tabela = new Array(16);
+brKoefMatr = 16; 
+let tabela = new Array(brKoefMatr);
 
 for(let i = 0; i < tabela.length; i++){
     tabela[i] = Number((Math.random()).toFixed(2));
