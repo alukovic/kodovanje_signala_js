@@ -4,6 +4,9 @@
 //Dan2
 //30.6.2021. Sre. 
 
+//Dan3
+//30.6.2021. Sre. 
+
 const generisanjeMatrice = () => {
     
     tabela = new Array(Number(dimMatr.value**2));
