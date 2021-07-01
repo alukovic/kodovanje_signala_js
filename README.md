@@ -3,7 +3,7 @@
 #### Programski jezik: JavaScript
 ---
 ### <p align="center"> Okvirna tema master rada  </p>
- <p align="center"> Implementacija softverskog rešenja za obradu multimedijalnih signala pomoću JavaScript-a </p>
+ <p align="center"> Implementacija softverskog rešenja za obradu multimedijalnih signala pomoću JavaScripta </p>
  <p align="center"> JavaScript tehnologije: implementacija softverskog rešenja za obradu multimedijalnih signala </p>
  
  ---
