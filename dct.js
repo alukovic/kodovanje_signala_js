@@ -5,7 +5,7 @@
 //30.6.2021. Sre. 
 
 //Dan3
-//30.6.2021. Sre. 
+//1.7.2021. Čet. 
 
 const generisanjeMatrice = () => {
     
