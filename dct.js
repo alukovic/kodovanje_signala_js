@@ -15,7 +15,7 @@ const generisanjeMatrice = () => {
     ulaznaMatrica = new Array(Number(dimMatr.value**2));
 
     for(let i = 0; i < ulaznaMatrica.length; i++){
-        ulaznaMatrica[i] = Number((Math.random()*100).toFixed(2));
+        ulaznaMatrica[i] = Number((Math.random()*100).toFixed(0));
         //console.log(tabela[i]);
     }
     
@@ -124,7 +124,7 @@ const DCT = () => {
     } 
 
     for(u = 0; u < izlaznaMatrica.length; u++){
-        
+
         console.log('testA'); 
 
         for(v = 0; v < izlaznaMatrica[u].length; v++){
