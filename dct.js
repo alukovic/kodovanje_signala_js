@@ -72,9 +72,21 @@ const DCT = () => {
 
     Cu = 0;
     Cv = 0; 
+
+    for(u = 0; u < dimMatr.value; u++){
+
+        izlaznaMatrica[u] = ulaznaMatrica[u];
+
+        for(v = 0; v < dimMatr.value; v++){
+            izlaznaMatrica[u][v] = ulaznaMatrica[u][v];
+        }
+
+    }
     
+    /*
     for(j = 0; j < izlaznaMatrica.length; j++){
-        izlaznaMatrica[j] = Number((ulaznaMatrica[j]*100).toFixed(0));
+        izlaznaMatrica[j] = Number((ulaznaMatrica[j]).toFixed(0));
+
     } 
 
     for(u = 0; u < izlaznaMatrica.length; u++){
@@ -84,20 +96,20 @@ const DCT = () => {
     
         }
     }
-    
-
-
-    /*
-    for(u = 0; u < dimMatr.value; u++){
-
-        for(v = 0; v < dimMatr.value; v++){
-            //izlaznaMatrica[]
-        }
-
-    }
     */
 
+    //za matricu 2x2
+    //[0][0] [0][1] [1][0] [1][1]
+
     txtIzlaz.value = izlaznaMatrica; 
+
+    //console.log(izlaznaMatrica[0][0]);
+    //console.log(izlaznaMatrica[0][1]);
+    //console.log(izlaznaMatrica[1][0]);
+    //console.log(izlaznaMatrica[1][1]);
+
+    console.log(izlaznaMatrica);
+
 };
 
 btnDCT.onclick = DCT; 
