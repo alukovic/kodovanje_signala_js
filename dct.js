@@ -12,8 +12,18 @@
 
 const generisanjeMatrice = () => {
     
-    ulaznaMatrica = new Array(Number(dimMatr.value**2));
-
+    //ulaznaMatrica = new Array(Number(dimMatr.value**2));
+    ulaznaMatrica = [[1, 2, 3, 4, 5, 6, 7, 8],
+    [1, 2, 3, 4, 5, 6, 7, 8],
+    [1, 2, 3, 4, 5, 6, 7, 8],
+    [1, 2, 3, 4, 5, 6, 7, 8],
+    [1, 2, 3, 4, 5, 6, 7, 8],
+    [1, 2, 3, 4, 5, 6, 7, 8],
+    [1, 2, 3, 4, 5, 6, 7, 8],
+    [1, 2, 3, 4, 5, 6, 7, 8],
+];
+    /*
+    Kod #1
     for(let i = 0; i < ulaznaMatrica.length; i++){
         ulaznaMatrica[i] = Number((Math.random()*100).toFixed(0));
         //console.log(tabela[i]);
@@ -26,10 +36,21 @@ const generisanjeMatrice = () => {
         for(let kol = 0; kol < ulaznaMatrica[red].length; kol++){
             ulaznaMatrica[red][kol] = red*kol;
             //tabelaS += tabela[red][kol] + '\n';
+            console.log('test: ulaznaMatrica' + ulaznaMatrica[red][kol]); 
     
         }
     }
+    */
+
+    //Kod #2
     
+    for(let i = 0; i < ulaznaMatrica.length; i++){
+        for(let j = 0; j < ulaznaMatrica[i].length; j++){
+            ulaznaMatrica[i][j] = Number((Math.random()*100).toFixed(0)); 
+        }
+    }
+    
+   
     txtUlaz.value = ulaznaMatrica; 
 
     infoP1.innerHTML = ` Koeficijenti slike su nasumično generisani. ` ; 
@@ -39,7 +60,7 @@ const generisanjeMatrice = () => {
     console.log(ulaznaMatrica); 
 
     inpBrKoef.value = ulaznaMatrica.length; 
-    inpMatr.value = `${Math.sqrt(ulaznaMatrica.length)} x ${Math.sqrt(ulaznaMatrica.length)}`; 
+    inpMatr.value = `${Math.sqrt(Number(ulaznaMatrica.length)).toFixed(0)} x ${Math.sqrt(Number(ulaznaMatrica.length)).toFixed(0)}`; 
 
 }; 
 
@@ -70,8 +91,8 @@ const DCT = () => {
     //izlaznaMatrica = []; 
     F = Number(); 
    
-    Cu = 0;
-    Cv = 0; 
+    Cu = Number(); 
+    Cv = Number(); 
     n = dimMatr.value;
     m = dimMatr.value;
     suma = Number(); 
@@ -114,18 +135,22 @@ const DCT = () => {
 
     }
     */
+
+    console.log(ulaznaMatrica[0][0]); 
+    console.log(ulaznaMatrica[0][1]); 
+    console.log(ulaznaMatrica[1][0]); 
+    console.log(ulaznaMatrica[1][1]); 
  
-    
-    
     //Kod #2
     for(j = 0; j < izlaznaMatrica.length; j++){
         izlaznaMatrica[j] = Number((ulaznaMatrica[j]));
-        
+
     } 
 
     for(u = 0; u < izlaznaMatrica.length; u++){
 
         console.log('testA'); 
+
 
         for(v = 0; v < izlaznaMatrica[u].length; v++){
             //izlaznaMatrica[u][v] = u*v; 
