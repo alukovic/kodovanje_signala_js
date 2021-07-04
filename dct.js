@@ -12,6 +12,7 @@
 
 //Dan5
 //4.7.2021. Ned. 
+    //Realizovana diskretna kosinusna transformacija
 
 const generisanjeMatrice = () => {
 

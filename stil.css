@@ -58,6 +58,7 @@ input{
     border: 2px solid rgb(29, 145, 223); 
     border-radius: 8px; 
     margin: 0.5em;
+    text-align: center;
 }
 
 .infoA{
