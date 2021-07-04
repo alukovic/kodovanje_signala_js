@@ -10,12 +10,16 @@
 //Dan4
 //3.7.2021. Sub. 
 
+//Dan5
+//4.7.2021. Ned. 
+
 const generisanjeMatrice = () => {
     
     //ulaznaMatrica = new Array(Number(dimMatr.value**2));
     ulaznaMatrica = [[], [], [], [], [], [], [], []];
     ulaznaMatrica.length = Number(dimMatr.value**2);
-    /*ulaznaMatrica = [[1, 2, 3, 4, 5, 6, 7, 8],
+    /*
+    ulaznaMatrica = [[1, 2, 3, 4, 5, 6, 7, 8],
     [1, 2, 3, 4, 5, 6, 7, 8],
     [1, 2, 3, 4, 5, 6, 7, 8],
     [1, 2, 3, 4, 5, 6, 7, 8],
@@ -25,6 +29,7 @@ const generisanjeMatrice = () => {
     [1, 2, 3, 4, 5, 6, 7, 8],
 ];
 */
+
     /*
     Kod #1
     for(let i = 0; i < ulaznaMatrica.length; i++){
