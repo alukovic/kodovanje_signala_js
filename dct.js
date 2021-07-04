@@ -29,27 +29,6 @@ const generisanjeMatrice = () => {
     [1, 2, 3, 4, 5, 6, 7, 8],
 ];
 
-
-    /*
-    Kod #1
-    for(let i = 0; i < ulaznaMatrica.length; i++){
-        ulaznaMatrica[i] = Number((Math.random()*100).toFixed(0));
-        //console.log(tabela[i]);
-    }
-    
-    //inicijalizacija niza
-    ulaznaMatricaS = '';
-    
-    for(let red = 0; red < ulaznaMatrica.length; red++){
-        for(let kol = 0; kol < ulaznaMatrica[red].length; kol++){
-            ulaznaMatrica[red][kol] = red*kol;
-            //tabelaS += tabela[red][kol] + '\n';
-            console.log('test: ulaznaMatrica' + ulaznaMatrica[red][kol]); 
-    
-        }
-    }
-    */
-
     //Kod #2
     
     for(let i = 0; i < ulaznaMatrica.length; i++){
@@ -99,7 +78,7 @@ const DCT = () => {
 
     //test
     //txtIzlaz.value = ulaznaMatrica; 
-    j = Number(), x = Number(), y = Number(), u = Number(), v = Number();
+    //j = Number(), x = Number(), y = Number(), u = Number(), v = Number();
     izlaznaMatrica = new Array(Number(dimMatr.value**2));
     //izlaznaMatrica = []; 
     F = Number(); 
@@ -110,68 +89,21 @@ const DCT = () => {
     m = dimMatr.value;
     suma = Number(); 
 
-    /*
-    Kod #1
-    for(u = 0; u < n; u++){
+    //kod #3
+    izlaznaMatricaS = []; 
+    for(let u = 0; u < ulaznaMatrica.length; u++){
 
-        izlaznaMatrica[u] = ulaznaMatrica[u];
+        izlaznaMatrica[u] = [];
 
-        for(v = 0; v < m; v++){
+        for(let v = 0; v < ulaznaMatrica[u].length; v++){
 
             suma = 0;
-
+            
             for(x = 0; x < dimMatr.value; x++){
 
                 for(y = 0; y < dimMatr.value; y++){
                     suma += ulaznaMatrica[x][y]*Math.cos(((2*x + 1)*u*Math.PI)/16)*Math.cos(((2*y + 1)*v*Math.PI)/16); 
-                }
-
-            }
-
-            if(u === 0){
-                Cu = Number((1/Math.sqrt(2)).toFixed(2));
-            } else
-            {
-                Cu = 1; 
-            }
-
-            if(Cv === 0){
-                Cv = Number((1/Math.sqrt(2)).toFixed(2));
-            } else {
-                Cv = 1;
-            }
-
-            //izlaznaMatrica[u][v] = ulaznaMatrica[u][v];
-            izlaznaMatrica[u][v] = (1/4)*Cu*Cv*suma; 
-            console.log(izlaznaMatrica[u][v]); 
-        }
-
-    }
-    */
-
-    //Kod #2
-    for(j = 0; j < izlaznaMatrica.length; j++){
-        izlaznaMatrica[j] = Number((ulaznaMatrica[j]));
-
-    } 
-
-    for(u = 0; u < izlaznaMatrica.length; u++){
-
-        console.log('testA'); 
-
-
-        for(v = 0; v < izlaznaMatrica[u].length; v++){
-            //izlaznaMatrica[u][v] = u*v; 
-            //tabelaS += tabela[red][kol] + '\n'; 
-
-            suma = 0;
-            console.log('testB');
-
-            for(x = 0; x < dimMatr.value; x++){
-
-                for(y = 0; y < dimMatr.value; y++){
-                    suma += ulaznaMatrica[x][y]*Math.cos(((2*x + 1)*u*Math.PI)/16)*Math.cos(((2*y + 1)*v*Math.PI)/16); 
-                    console.log('test'); 
+                    console.log('test-cosx'); 
                     console.log('test: ' + ulaznaMatrica[x][y]); 
                 }
 
@@ -196,19 +128,18 @@ const DCT = () => {
         }
 
     }
-    
-    
-    //za matricu 2x2
-    //[0][0] [0][1] [1][0] [1][1]
 
     txtIzlaz.value = izlaznaMatrica; 
 
-    //console.log(izlaznaMatrica[0][0]);
-    //console.log(izlaznaMatrica[0][1]);
-    //console.log(izlaznaMatrica[1][0]);
-    //console.log(izlaznaMatrica[1][1]);
+    console.log(izlaznaMatrica[0][0]);
+    console.log(izlaznaMatrica[0][1]);
+    console.log(izlaznaMatrica[1][0]);
+    console.log(izlaznaMatrica[1][1]);
 
     console.log(izlaznaMatrica);
+
+
+    //kod #3
 
 };
 
