@@ -16,9 +16,9 @@
 const generisanjeMatrice = () => {
     
     //ulaznaMatrica = new Array(Number(dimMatr.value**2));
-    ulaznaMatrica = [[], [], [], [], [], [], [], []];
-    ulaznaMatrica.length = Number(dimMatr.value**2);
-    /*
+    //ulaznaMatrica = [[], [], [], [], [], [], [], []];
+    //ulaznaMatrica.length = Number(dimMatr.value**2);
+    
     ulaznaMatrica = [[1, 2, 3, 4, 5, 6, 7, 8],
     [1, 2, 3, 4, 5, 6, 7, 8],
     [1, 2, 3, 4, 5, 6, 7, 8],
@@ -28,7 +28,7 @@ const generisanjeMatrice = () => {
     [1, 2, 3, 4, 5, 6, 7, 8],
     [1, 2, 3, 4, 5, 6, 7, 8],
 ];
-*/
+
 
     /*
     Kod #1
@@ -53,7 +53,7 @@ const generisanjeMatrice = () => {
     //Kod #2
     
     for(let i = 0; i < ulaznaMatrica.length; i++){
-        ulaznaMatrica[i] = Number((Math.random()*100).toFixed(0));
+        //ulaznaMatrica[i] = Number((Math.random()*100).toFixed(0));
         for(let j = 0; j < ulaznaMatrica[i].length; j++){
             ulaznaMatrica[i][j] = Number((Math.random()*100).toFixed(0)); 
         }
@@ -73,8 +73,8 @@ const generisanjeMatrice = () => {
     console.log(ulaznaMatrica); 
 
     inpBrKoef.value = ulaznaMatrica.length; 
-    inpMatr.value = `${Math.sqrt(Number(ulaznaMatrica.length)).toFixed(0)} x ${Math.sqrt(Number(ulaznaMatrica.length)).toFixed(0)}`; 
-
+    //inpMatr.value = `${Math.sqrt(Number(ulaznaMatrica.length)).toFixed(0)} x ${Math.sqrt(Number(ulaznaMatrica.length)).toFixed(0)}`; 
+    inpMatr.value = `${ulaznaMatrica.length} x ${ulaznaMatrica.length}`;
 }; 
 
 btnMatrica.onclick = generisanjeMatrice;  
