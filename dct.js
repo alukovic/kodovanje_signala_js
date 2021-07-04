@@ -56,7 +56,7 @@ const generisanjeMatrice = () => {
     console.log(Number(dimMatr.value**2)); 
     console.log(ulaznaMatrica); 
 
-    inpBrKoef.value = ulaznaMatrica.length; 
+    inpBrKoef.value = ulaznaMatrica.length**2; 
     //inpMatr.value = `${Math.sqrt(Number(ulaznaMatrica.length)).toFixed(0)} x ${Math.sqrt(Number(ulaznaMatrica.length)).toFixed(0)}`; 
     inpMatr.value = `${ulaznaMatrica.length} x ${ulaznaMatrica.length}`;
 }; 
