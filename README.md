@@ -11,8 +11,8 @@
 
  
  <p align="center">
- U prvom procesu realizacije projekta, za početak, 
- cilj je da korisnik unese dimenzije matrice n x n, koja predstavlja koeficijenate multimedijalnog signala 
- (program će nasumično generisati date koeficijente), a da kao izlaz dobije vrednosti proračunate diskretnom kosinusnom transformacijom (DCT). 
+U prvom procesu realizacije projekta, za početak, korisnik odabira nasumično generisanje koeficijenata matrice reda 8x8.
+Program nasumično generiše date koeficijente matrice, koja bi predstavljala određeni multimedijalni signal.
+Klikom na dugme DCT, vrši se diskretna kosinusna transformacija nad ulaznim multimedijalnim signalom, tj. matricom reda 8x8.  
  </p>
 <p align="center"> Link projekta: https://alukovic.github.io/kodovanje_signala_js/dct.html </p>
