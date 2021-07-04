@@ -14,11 +14,11 @@
 //4.7.2021. Ned. 
 
 const generisanjeMatrice = () => {
-    
+
     //ulaznaMatrica = new Array(Number(dimMatr.value**2));
     //ulaznaMatrica = [[], [], [], [], [], [], [], []];
     //ulaznaMatrica.length = Number(dimMatr.value**2);
-    
+
     ulaznaMatrica = [[1, 2, 3, 4, 5, 6, 7, 8],
     [1, 2, 3, 4, 5, 6, 7, 8],
     [1, 2, 3, 4, 5, 6, 7, 8],
@@ -30,7 +30,6 @@ const generisanjeMatrice = () => {
 ];
 
     //Kod #2
-    
 
     for(let i = 0; i < ulaznaMatrica.length; i++){
         //ulaznaMatrica[i] = Number((Math.random()*100).toFixed(0));
@@ -52,13 +51,16 @@ const generisanjeMatrice = () => {
 
     infoP1.innerHTML = ` Koeficijenti slike su nasumično generisani. ` ; 
 
+    /*
     console.log(Number(dimMatr.value)); 
     console.log(Number(dimMatr.value**2)); 
     console.log(ulaznaMatrica); 
+    */
 
     inpBrKoef.value = ulaznaMatrica.length**2; 
     //inpMatr.value = `${Math.sqrt(Number(ulaznaMatrica.length)).toFixed(0)} x ${Math.sqrt(Number(ulaznaMatrica.length)).toFixed(0)}`; 
     inpMatr.value = `${ulaznaMatrica.length} x ${ulaznaMatrica.length}`;
+
 }; 
 
 btnMatrica.onclick = generisanjeMatrice;  
@@ -90,8 +92,8 @@ const DCT = () => {
    
     Cu = Number(); 
     Cv = Number(); 
-    n = dimMatr.value;
-    m = dimMatr.value;
+    //n = dimMatr.value;
+    //m = dimMatr.value;
     suma = Number(); 
 
     //kod #3
@@ -106,9 +108,9 @@ const DCT = () => {
             suma_ = 0;
             suma = 0;
 
-            for(x = 0; x < dimMatr.value; x++){
+            for(x = 0; x < ulaznaMatrica.length; x++){
 
-                for(y = 0; y < dimMatr.value; y++){
+                for(y = 0; y < ulaznaMatrica.length; y++){
                     suma_ += ulaznaMatrica[x][y]*Math.cos(((2*x + 1)*u*Math.PI)/16)*Math.cos(((2*y + 1)*v*Math.PI)/16); 
                     suma = Number(suma_).toFixed(2);
                     console.log('test-cosx'); 
