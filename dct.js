@@ -212,4 +212,4 @@ const DCT = () => {
 
 };
 
-btnDCT.onclick = demo; 
+btnDCT.onclick = DCT; 
