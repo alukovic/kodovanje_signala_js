@@ -138,6 +138,7 @@ const DCT = () => {
         }
 
         izlaznaMatricaTekst += izlaznaMatrica[u] + '\n'; 
+
     }
 
     txtIzlaz.value = izlaznaMatricaTekst; 
