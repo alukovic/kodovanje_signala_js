@@ -35,6 +35,7 @@ const generisanjeMatrice = () => {
         //ulaznaMatrica[i] = Number((Math.random()*100).toFixed(0));
         for(let j = 0; j < ulaznaMatrica[i].length; j++){
             ulaznaMatrica[i][j] = Number((Math.random()*100).toFixed(0)); 
+            //ulaznaMatrica[i][j] = ulaznaMatrica[i][j];
         }
     }
     
@@ -79,8 +80,8 @@ const DCT = () => {
     //test
     //txtIzlaz.value = ulaznaMatrica; 
     //j = Number(), x = Number(), y = Number(), u = Number(), v = Number();
-    izlaznaMatrica = new Array(Number(dimMatr.value**2));
-    //izlaznaMatrica = []; 
+    //izlaznaMatrica = new Array(Number(dimMatr.value**2));
+    izlaznaMatrica = new Array();  
     F = Number(); 
    
     Cu = Number(); 
@@ -97,12 +98,14 @@ const DCT = () => {
 
         for(let v = 0; v < ulaznaMatrica[u].length; v++){
 
+            suma_ = 0;
             suma = 0;
-            
+
             for(x = 0; x < dimMatr.value; x++){
 
                 for(y = 0; y < dimMatr.value; y++){
-                    suma += ulaznaMatrica[x][y]*Math.cos(((2*x + 1)*u*Math.PI)/16)*Math.cos(((2*y + 1)*v*Math.PI)/16); 
+                    suma_ += ulaznaMatrica[x][y]*Math.cos(((2*x + 1)*u*Math.PI)/16)*Math.cos(((2*y + 1)*v*Math.PI)/16); 
+                    suma = Number(suma_).toFixed(2);
                     console.log('test-cosx'); 
                     console.log('test: ' + ulaznaMatrica[x][y]); 
                 }
@@ -123,7 +126,7 @@ const DCT = () => {
             }
 
             //izlaznaMatrica[u][v] = ulaznaMatrica[u][v];
-            izlaznaMatrica[u][v] = (1/4)*Cu*Cv*suma; 
+            izlaznaMatrica[u][v] = Number((1/4)*Cu*Cv*suma).toFixed(0); 
             console.log(izlaznaMatrica[u][v]); 
         }
 

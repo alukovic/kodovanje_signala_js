@@ -49,6 +49,8 @@ textarea{
     margin: 0.5em;
     border: 2px solid rgb(111, 185, 235);
     border-radius: 8px; 
+    text-align: center; 
+    padding: 1em; 
 }
 
 input{
