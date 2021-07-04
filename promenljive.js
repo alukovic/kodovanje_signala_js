@@ -15,3 +15,6 @@ inpMatr = document.getElementById('inpMatr');
 btnDCT = document.getElementById('btnDCT'); 
 btnBrisanje = document.getElementById('btnBrisanje'); 
 
+ulaznaMatricaTekst = '';
+izlaznaMatricaTekst = ''; 
+

@@ -31,12 +31,16 @@ const generisanjeMatrice = () => {
 
     //Kod #2
     
+
     for(let i = 0; i < ulaznaMatrica.length; i++){
         //ulaznaMatrica[i] = Number((Math.random()*100).toFixed(0));
         for(let j = 0; j < ulaznaMatrica[i].length; j++){
             ulaznaMatrica[i][j] = Number((Math.random()*100).toFixed(0)); 
             //ulaznaMatrica[i][j] = ulaznaMatrica[i][j];
+            
         }
+
+        ulaznaMatricaTekst += ulaznaMatrica[i] + '\n';
     }
     
     console.log(ulaznaMatrica[0][0]); 
@@ -44,7 +48,7 @@ const generisanjeMatrice = () => {
     console.log(ulaznaMatrica[1][0]); 
     console.log(ulaznaMatrica[1][1]); 
    
-    txtUlaz.value = ulaznaMatrica; 
+    txtUlaz.value = ulaznaMatricaTekst; 
 
     infoP1.innerHTML = ` Koeficijenti slike su nasumično generisani. ` ; 
 
@@ -92,6 +96,7 @@ const DCT = () => {
 
     //kod #3
     izlaznaMatricaS = []; 
+
     for(let u = 0; u < ulaznaMatrica.length; u++){
 
         izlaznaMatrica[u] = [];
@@ -130,9 +135,10 @@ const DCT = () => {
             console.log(izlaznaMatrica[u][v]); 
         }
 
+        izlaznaMatricaTekst += izlaznaMatrica[u] + '\n'; 
     }
 
-    txtIzlaz.value = izlaznaMatrica; 
+    txtIzlaz.value = izlaznaMatricaTekst; 
 
     console.log(izlaznaMatrica[0][0]);
     console.log(izlaznaMatrica[0][1]);
@@ -140,9 +146,6 @@ const DCT = () => {
     console.log(izlaznaMatrica[1][1]);
 
     console.log(izlaznaMatrica);
-
-
-    //kod #3
 
 };
 
