@@ -7,13 +7,24 @@ window.addEventListener('load', function(){
 
         if(this.files && this.files[0]){
 
-            let slika = document.querySelector('img');
+            slika = document.querySelector('img');
             slika.src = URL.createObjectURL(this.files[0]);
             slika.onload = imageIsLoaded;
-            
+
         }
 
     });
+
+});
+
+
+ulaznaSlika = document.getElementById('ulaznaSlika');
+
+ulaznaSlika.addEventListener('load', function(){
+
+    document.getElementById('ulaznaSlika').style.border = '1px';
+    document.getElementById('ulaznaSlika').style.borderStyle = 'solid';  
+    document.getElementById('ulaznaSlika').style.borderColor = 'rgb(24, 138, 231)';  
 
 });
 
