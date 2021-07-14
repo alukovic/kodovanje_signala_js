@@ -1,6 +1,12 @@
 //Dan6
 //14.7.2021. Pon. 
 
+canvasSlike = document.querySelector('#canvasSlike');
+ctx = canvasSlike.getContext('2d');
+
+canvasSlike.width = window.innerWidth;
+canvasSlike.height = window.innerHeight;
+
 btnNovaSlika = document.getElementById('btnNovaSlika'); 
 btnNovaSlika.style.backgroundColor = 'yellowgreen'; 
 btnNovaSlika.style.margin = '1em'; 
@@ -18,6 +24,8 @@ btnPodaciSlika.addEventListener('click', function(){
     obradaSlike.style.visibility = 'visible'; 
 });
 
+infoS = document.querySelector('#infoS'); 
+
 window.addEventListener('load', function(){
 
     meniSlika.style.visibility = 'hidden'; 
@@ -30,10 +38,30 @@ window.addEventListener('load', function(){
 
         if(this.files && this.files[0]){
 
-            slika = document.querySelector('img');
-            slika.src = URL.createObjectURL(this.files[0]);
-            slika.onload = imageIsLoaded;
             
+            //slika = document.querySelector('img');
+            slika = new Image(); 
+            slika.src = URL.createObjectURL(this.files[0]);
+            //slika.onload = imageIsLoaded;
+
+            //canvasSlike.width = slika.width;
+            //canvasSlike.height = slika.height;
+
+            slika.addEventListener('load', function(){
+
+                sirina = slika.naturalWidth;
+                visina = slika.naturalHeight;
+
+                ctx.drawImage(slika, 0, 0); 
+                canvasSlike.style.border = '2px';
+                canvasSlike.style.borderStyle = 'solid'; 
+                canvasSlike.style.borderRadius = '16px'; 
+                canvasSlike.style.borderColor = 'rgb(24, 138, 231)'; 
+
+                infoS.style.fontSize = '80%';
+                infoS.innerHTML = 'Slika još uvek nije skalirana sa dimenzijama kanvasa';
+
+            });
         }
 
     });

@@ -14,6 +14,17 @@
     box-sizing: border-box;
 }
 
+#canvasSlike{
+
+    max-width: 100%; 
+    
+    /*
+    border: 2px solid rgb(24, 138, 231);
+    border-radius: 16px; 
+    */
+
+}
+
 #ulaznaSlika{
     max-width: 34em;
     /* border: 2px solid rgb(24, 138, 231); */
