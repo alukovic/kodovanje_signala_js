@@ -1,6 +1,6 @@
 /* 
 //Dan6
-//14.7.2021. Pon. 
+//Pro 2.3.8 14.7.2021. Pon. 
 
 Proširenja programa: 
     HTML5 Canvas
