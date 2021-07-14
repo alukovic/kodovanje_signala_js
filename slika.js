@@ -20,10 +20,6 @@ meniSlika = document.querySelector('.meniSlika');
 
 btnPodaciSlika = document.querySelector('#btnPodaciSlika');
 
-btnPodaciSlika.addEventListener('click', function(){
-    obradaSlike.style.visibility = 'visible'; 
-});
-
 infoS = document.querySelector('#infoS'); 
 
 window.addEventListener('load', function(){
@@ -85,3 +81,15 @@ ulaznaSlika.addEventListener('load', function(){
 */
 
 spanNovo = document.getElementById('spanNovo'); 
+
+
+dimenzijeSlike = document.querySelector('#inpDimenzijeSlike'); 
+brojPiksela = document.querySelector('#inpBrojPiksela');
+
+btnPodaciSlika.addEventListener('click', function(){
+
+    obradaSlike.style.visibility = 'visible'; 
+    dimenzijeSlike.value = `${canvasSlike.width} x ${canvasSlike.height}`; 
+    brojPiksela.value = Number(canvasSlike.width * canvasSlike.height);
+
+});
