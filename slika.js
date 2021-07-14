@@ -52,7 +52,7 @@ window.addEventListener('load', function(){
                 sirina = slika.naturalWidth;
                 visina = slika.naturalHeight;
 
-                ctx.drawImage(slika, 0, 0); 
+                ctx.drawImage(slika, 0, 0, canvasSlike.width, canvasSlike.height); 
                 canvasSlike.style.border = '2px';
                 canvasSlike.style.borderStyle = 'solid'; 
                 canvasSlike.style.borderRadius = '16px'; 
