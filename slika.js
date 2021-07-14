@@ -61,12 +61,16 @@ window.addEventListener('load', function(){
                 infoS.style.fontSize = '80%';
                 infoS.innerHTML = 'Slika još uvek nije skalirana sa dimenzijama kanvasa';
 
+                podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
+                console.log(podaciSaSlike);
             });
         }
 
     });
 
 });
+
+/*
 
 ulaznaSlika = document.getElementById('ulaznaSlika');
 
@@ -77,5 +81,7 @@ ulaznaSlika.addEventListener('load', function(){
     document.getElementById('ulaznaSlika').style.borderColor = 'rgb(24, 138, 231)';  
 
 });
+
+*/
 
 spanNovo = document.getElementById('spanNovo'); 
