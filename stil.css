@@ -78,3 +78,19 @@ input{
 
 }
 
+.container a {
+    color: rgb(24, 138, 231);
+    font-weight: 100;
+    text-decoration: none; 
+    border: 2px solid rgb(24, 138, 231); 
+    border-radius: 5px; 
+    padding: 0.15em;
+}
+
+#spanNovo{
+    color: rgb(24, 138, 231);
+    font-weight: 100;
+    margin-left: 1em;
+    width: 5em;
+    border: 1px solid black;
+}
