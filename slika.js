@@ -10,16 +10,23 @@ btnNovaSlika.addEventListener('click', function(){
 });
 
 obradaSlike = document.querySelector('.obradaSlike'); 
+meniSlika = document.querySelector('.meniSlika'); 
+
+btnPodaciSlika = document.querySelector('#btnPodaciSlika');
+
+btnPodaciSlika.addEventListener('click', function(){
+    obradaSlike.style.visibility = 'visible'; 
+});
 
 window.addEventListener('load', function(){
 
+    meniSlika.style.visibility = 'hidden'; 
     obradaSlike.style.visibility = 'hidden'; 
-    btnNovaSlika.style.visibility = 'hidden';
-    
-    document.querySelector('input[type="file"]').addEventListener('change', function(){
 
-        obradaSlike.style.visibility = 'visible'; 
-        btnNovaSlika.style.visibility = 'visible'; 
+    document.querySelector('input[type="file"]').addEventListener('change', function(){
+        
+        meniSlika.style.visibility = 'visible'; 
+        //obradaSlike.style.visibility = 'visible'; 
 
         if(this.files && this.files[0]){
 
@@ -28,7 +35,7 @@ window.addEventListener('load', function(){
             slika.onload = imageIsLoaded;
             
         }
-        
+
     });
 
 });
