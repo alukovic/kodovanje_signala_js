@@ -1,5 +1,17 @@
+/* 
 //Dan6
 //14.7.2021. Pon. 
+
+Proširenja programa: 
+    HTML5 Canvas
+    Korisnik sada može uneti ulaznu sliku
+    Slika je prikazana u kanvasu
+    Electron.js desktop aplikacija 
+    Napravljen je veliki pomak u izradi projekta
+
+Zadaci koje je potrebno uraditi: 
+    Prilagoditi dimenzije slike, izvršiti njeno skaliranje sa dimenzijama kanvasa...     
+*/
 
 canvasSlike = document.querySelector('#canvasSlike');
 ctx = canvasSlike.getContext('2d');
