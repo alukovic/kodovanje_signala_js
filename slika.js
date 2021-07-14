@@ -28,9 +28,7 @@ window.addEventListener('load', function(){
             slika.onload = imageIsLoaded;
             
         }
-
         
-
     });
 
 });
