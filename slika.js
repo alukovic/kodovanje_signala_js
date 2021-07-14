@@ -9,14 +9,18 @@ btnNovaSlika.addEventListener('click', function(){
     window.location.reload(true);
 });
 
+obradaSlike = document.querySelector('.obradaSlike'); 
+
 window.addEventListener('load', function(){
 
+    obradaSlike.style.visibility = 'hidden'; 
     btnNovaSlika.style.visibility = 'hidden';
-
+    
     document.querySelector('input[type="file"]').addEventListener('change', function(){
 
+        obradaSlike.style.visibility = 'visible'; 
         btnNovaSlika.style.visibility = 'visible'; 
-        
+
         if(this.files && this.files[0]){
 
             slika = document.querySelector('img');
