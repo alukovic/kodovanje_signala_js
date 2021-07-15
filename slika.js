@@ -83,11 +83,10 @@ window.addEventListener('load', function(){
 
                 //podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
                 
-                
                 podaciSaSlike = new Uint8ClampedArray();
                 //test #1
-                podaciSaSlike = ctx.getImageData(0, 0, 100, 100); 
-                
+                podaciSaSlike = ctx.getImageData(0, 0, 180, 180); 
+
                 //Cela slika - svi pikseli
                 //podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
 
