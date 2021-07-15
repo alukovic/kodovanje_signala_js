@@ -84,14 +84,25 @@ window.addEventListener('load', function(){
                 
                 //test #1
                 podaciSaSlike = new Uint8ClampedArray();
-                podaciSaSlike = ctx.getImageData(0, 0, 4, 4); 
-                nizPiksela = new Array(podaciSaSlike); 
+                //podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
+                podaciSaSlike = ctx.getImageData(0, 0, 8, 8); 
 
-                console.log(podaciSaSlike); 
-
-                pikseli = ctx.createImageData(canvasSlike.width, canvasSlike.height);
-                console.log(pikseli); 
+                nizPiksela = podaciSaSlike.data;
                 console.log(nizPiksela); 
+
+                nizPikselaA = Array.prototype.slice.call(nizPiksela);
+
+                nizPiksela4String = ''; 
+                nizPiksela4 = new Array(); 
+
+                for(i = 0; i < nizPikselaA.length; i++){
+                    //while(nizPiksela.length > 1) 
+                    //{
+                    nizPiksela4 = nizPikselaA.splice(0, 4);
+                    nizPiksela4String += i + ' - ti piksel sa RGBA komponentama je: ' + nizPiksela4 + '\n';
+
+                //}
+                }
 
             });
         }
@@ -127,8 +138,8 @@ btnPodaciSlika.addEventListener('click', function(){
     obradaSlike.style.visibility = 'visible'; 
     dimenzijeSlike.value = `${canvasSlike.width} x ${canvasSlike.height}`; 
     brojPiksela.value = Number(canvasSlike.width * canvasSlike.height); 
-    sviRGBA.value = nizPiksela; 
-    
+    sviRGBA.value = nizPiksela4String; 
+
 });
 
 
