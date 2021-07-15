@@ -16,7 +16,8 @@ Zadaci koje je potrebno uraditi:
 //Pro 2.3.8 15.7.2021. Čet.
 
     Nova proširenja programa...
-    Slika zadržava svoje dimenzije... Ispravljen zadatak od juče... :O
+    Slika zadržava svoje dimenzije... Ispravljen zadatak od juče... :O 
+    Veliki učinak: Postignut prikaz RGBA vrednosti pojedinačnog piksela slike
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
