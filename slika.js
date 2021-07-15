@@ -15,14 +15,19 @@ Zadaci koje je potrebno uraditi:
 //Dan6
 //Pro 2.3.8 15.7.2021. Čet.
 
-Nova proširenja programa...
+    Nova proširenja programa...
+    Slika zadržava svoje dimenzije... Ispravljen zadatak od juče... :O
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
 ctx = canvasSlike.getContext('2d');
 
-canvasSlike.width = window.innerWidth;
-canvasSlike.height = window.innerHeight;
+slika = new Image(); 
+
+//canvasSlike.width = window.innerWidth;
+//canvasSlike.height = window.innerHeight;
+
+
 
 btnNovaSlika = document.getElementById('btnNovaSlika'); 
 btnNovaSlika.style.backgroundColor = 'yellowgreen'; 
@@ -53,7 +58,7 @@ window.addEventListener('load', function(){
 
             
             //slika = document.querySelector('img');
-            slika = new Image(); 
+            //slika = new Image(); 
             slika.src = URL.createObjectURL(this.files[0]);
             //slika.onload = imageIsLoaded;
 
@@ -61,6 +66,9 @@ window.addEventListener('load', function(){
             //canvasSlike.height = slika.height;
 
             slika.addEventListener('load', function(){
+
+                canvasSlike.width = slika.width; 
+                canvasSlike.height = slika.height; 
 
                 sirina = slika.naturalWidth;
                 visina = slika.naturalHeight;
