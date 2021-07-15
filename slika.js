@@ -1,6 +1,6 @@
 /* 
 //Dan6
-//Pro 2.3.8 14.7.2021. Pon. 
+//Pro 2.3.8 14.7.2021. Sre. 
 
 Proširenja programa: 
     HTML5 Canvas
@@ -10,7 +10,12 @@ Proširenja programa:
     Napravljen je veliki pomak u izradi projekta
 
 Zadaci koje je potrebno uraditi: 
-    Prilagoditi dimenzije slike, izvršiti njeno skaliranje sa dimenzijama kanvasa...     
+    Prilagoditi dimenzije slike, izvršiti njeno skaliranje sa dimenzijama kanvasa... 
+    
+//Dan6
+//Pro 2.3.8 15.7.2021. Čet.
+
+Nova proširenja programa...
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -69,7 +74,13 @@ window.addEventListener('load', function(){
                 infoS.style.fontSize = '80%';
                 infoS.innerHTML = 'Slika još uvek nije skalirana sa dimenzijama kanvasa';
 
-                podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
+                //podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
+                
+                //test #1
+                
+                podaciSaSlike = ctx.getImageData(0, 0, 4, 4); 
+                //aca = Uint8ClampedArray.from(podaciSaSlike); 
+
                 console.log(podaciSaSlike);
             });
         }
@@ -98,10 +109,16 @@ spanNovo = document.getElementById('spanNovo');
 dimenzijeSlike = document.querySelector('#inpDimenzijeSlike'); 
 brojPiksela = document.querySelector('#inpBrojPiksela');
 
+sviRGBA = document.querySelector('#txtRGBA'); 
+
 btnPodaciSlika.addEventListener('click', function(){
 
     obradaSlike.style.visibility = 'visible'; 
     dimenzijeSlike.value = `${canvasSlike.width} x ${canvasSlike.height}`; 
-    brojPiksela.value = Number(canvasSlike.width * canvasSlike.height);
+    brojPiksela.value = Number(canvasSlike.width * canvasSlike.height); 
 
 });
+
+
+
+
