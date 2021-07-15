@@ -83,10 +83,13 @@ window.addEventListener('load', function(){
 
                 //podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
                 
-                //test #1
+                
                 podaciSaSlike = new Uint8ClampedArray();
+                //test #1
+                podaciSaSlike = ctx.getImageData(0, 0, 100, 100); 
+                
+                //Cela slika - svi pikseli
                 //podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
-                podaciSaSlike = ctx.getImageData(0, 0, 10, 10); 
 
                 nizPiksela = podaciSaSlike.data;
                 console.log(nizPiksela); 
