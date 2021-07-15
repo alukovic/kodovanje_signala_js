@@ -94,18 +94,20 @@ window.addEventListener('load', function(){
                 nizPikselaA = Array.prototype.slice.call(nizPiksela);
 
                 nizPiksela4String = ''; 
-                nizPiksela4 = new Array(); 
+                nizPiksela4elementa = new Array(); 
                 console.log('nizPikselaA.length: ' + nizPikselaA.length); 
                 console.log('nizPiksela.length: ' + nizPiksela.length); 
 
-                for(i = 0; i < nizPikselaA.length; i++){
-                    //while(nizPiksela.length > 1) 
-                    //{
-                    nizPiksela4 = nizPikselaA.splice(0, 4);
-                    nizPiksela4String += i + ' - ti piksel sa RGBA komponentama je: ' + nizPiksela4 + '\n';
+                //for(i = 0; i < nizPikselaA.length; i++){
+                    i = 0;
+                    while(nizPikselaA.length > 1) 
+                    {
+                    i++;
+                    nizPiksela4elementa = nizPikselaA.splice(0, 4);
+                    nizPiksela4String += i + ' - ti piksel sa RGBA komponentama je: ' + nizPiksela4elementa + '\n';
 
-                //}
                 }
+                //}
 
             });
         }
