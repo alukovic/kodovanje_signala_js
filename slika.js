@@ -22,12 +22,10 @@ Zadaci koje je potrebno uraditi:
 canvasSlike = document.querySelector('#canvasSlike');
 ctx = canvasSlike.getContext('2d');
 
-slika = new Image(); 
+//slika = new Image(); 
 
 //canvasSlike.width = window.innerWidth;
 //canvasSlike.height = window.innerHeight;
-
-
 
 btnNovaSlika = document.getElementById('btnNovaSlika'); 
 btnNovaSlika.style.backgroundColor = 'yellowgreen'; 
@@ -58,7 +56,7 @@ window.addEventListener('load', function(){
 
             
             //slika = document.querySelector('img');
-            //slika = new Image(); 
+            slika = new Image(); 
             slika.src = URL.createObjectURL(this.files[0]);
             //slika.onload = imageIsLoaded;
 
@@ -80,7 +78,7 @@ window.addEventListener('load', function(){
                 canvasSlike.style.borderColor = 'rgb(24, 138, 231)'; 
 
                 infoS.style.fontSize = '80%';
-                infoS.innerHTML = 'Slika još uvek nije skalirana sa dimenzijama kanvasa';
+                //infoS.innerHTML = 'Slika još uvek nije skalirana sa dimenzijama kanvasa';
 
                 //podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
                 
