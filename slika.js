@@ -86,7 +86,7 @@ window.addEventListener('load', function(){
                 //test #1
                 podaciSaSlike = new Uint8ClampedArray();
                 //podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
-                podaciSaSlike = ctx.getImageData(0, 0, 8, 8); 
+                podaciSaSlike = ctx.getImageData(0, 0, 10, 10); 
 
                 nizPiksela = podaciSaSlike.data;
                 console.log(nizPiksela); 
@@ -95,6 +95,8 @@ window.addEventListener('load', function(){
 
                 nizPiksela4String = ''; 
                 nizPiksela4 = new Array(); 
+                console.log('nizPikselaA.length: ' + nizPikselaA.length); 
+                console.log('nizPiksela.length: ' + nizPiksela.length); 
 
                 for(i = 0; i < nizPikselaA.length; i++){
                     //while(nizPiksela.length > 1) 
