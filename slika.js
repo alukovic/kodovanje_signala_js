@@ -83,11 +83,16 @@ window.addEventListener('load', function(){
                 //podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
                 
                 //test #1
-                
+                podaciSaSlike = new Uint8ClampedArray();
                 podaciSaSlike = ctx.getImageData(0, 0, 4, 4); 
-                //aca = Uint8ClampedArray.from(podaciSaSlike); 
+                nizPiksela = new Array(podaciSaSlike); 
 
-                console.log(podaciSaSlike);
+                console.log(podaciSaSlike); 
+
+                pikseli = ctx.createImageData(canvasSlike.width, canvasSlike.height);
+                console.log(pikseli); 
+                console.log(nizPiksela); 
+
             });
         }
 
@@ -122,7 +127,8 @@ btnPodaciSlika.addEventListener('click', function(){
     obradaSlike.style.visibility = 'visible'; 
     dimenzijeSlike.value = `${canvasSlike.width} x ${canvasSlike.height}`; 
     brojPiksela.value = Number(canvasSlike.width * canvasSlike.height); 
-
+    sviRGBA.value = nizPiksela; 
+    
 });
 
 
