@@ -47,6 +47,10 @@ infoS = document.querySelector('#infoS');
 ucitavanje = document.querySelector('.ucitavanje'); 
 txtUcitavanje = document.querySelector('#txtUcitavanje'); 
 
+nizPiksela4String = '';
+
+//slika = new Image(); 
+
 document.onreadystatechange = function(){
 
     if(document.readyState !== 'complete'){
@@ -67,7 +71,7 @@ window.addEventListener('load', function(){
     obradaSlike.style.visibility = 'hidden'; 
 
     document.querySelector('input[type="file"]').addEventListener('change', function(){
-        
+
         meniSlika.style.visibility = 'visible'; 
         //obradaSlike.style.visibility = 'visible'; 
 
@@ -94,7 +98,6 @@ window.addEventListener('load', function(){
                 //infoS.innerHTML = 'Slika još uvek nije skalirana sa dimenzijama kanvasa';
 
                 //podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
-                
                 
                 /*
                 //A
@@ -131,19 +134,19 @@ window.addEventListener('load', function(){
                 //B
                 */
 
-            });
+                
+
+            }); 
+
+            funkcijaProracun();
+
         }
 
     });
 
 });
 
-sviRGBA = document.querySelector('#txtRGBA'); 
-
-async function funkcijaProracun() {
-    //A
-
-    let obecanje = new Promise(function glavniProracun(){
+    function funkcijaProracun(){
 
         podaciSaSlike = new Uint8ClampedArray();
         //test #1
@@ -157,12 +160,10 @@ async function funkcijaProracun() {
     
         nizPikselaA = Array.prototype.slice.call(nizPiksela);
     
-        nizPiksela4String = ''; 
+        //nizPiksela4String = ''; 
         nizPiksela4elementa = new Array(); 
         console.log('nizPikselaA.length: ' + nizPikselaA.length); 
         console.log('nizPiksela.length: ' + nizPiksela.length); 
-    
-    
     
         //for(i = 0; i < nizPikselaA.length; i++){
         i = 0;
@@ -174,30 +175,27 @@ async function funkcijaProracun() {
             nizPiksela4String += i + '. piksel sa RGBA komponentama je: ' + nizPiksela4elementa + '\n';
         }
     
-        sviRGBA.value = nizPiksela4String;
-    });
+    };
 
-//}
-
-//B                    
-}
-
-spanNovo = document.getElementById('spanNovo'); 
-
-dimenzijeSlike = document.querySelector('#inpDimenzijeSlike'); 
-brojPiksela = document.querySelector('#inpBrojPiksela');
-
-txtUcitavanje.innerHTML = 'Funkcija se učitava...'; 
-
-btnPodaciSlika.addEventListener('click', function(){
-
-    obradaSlike.style.visibility = 'visible'; 
-    dimenzijeSlike.value = `${canvasSlike.width} x ${canvasSlike.height}`; 
-    brojPiksela.value = Number(canvasSlike.width * canvasSlike.height); 
-    //sviRGBA.value = nizPiksela4String; 
-    funkcijaProracun();
-
-});
+    //funkcijaProracun(); 
+    
+    sviRGBA = document.querySelector('#txtRGBA'); 
+    
+    spanNovo = document.getElementById('spanNovo'); 
+    
+    dimenzijeSlike = document.querySelector('#inpDimenzijeSlike'); 
+    brojPiksela = document.querySelector('#inpBrojPiksela');
+    
+    
+    btnPodaciSlika.addEventListener('click', function(){
+        
+        obradaSlike.style.visibility = 'visible'; 
+        dimenzijeSlike.value = `${canvasSlike.width} x ${canvasSlike.height}`; 
+        brojPiksela.value = Number(canvasSlike.width * canvasSlike.height); 
+        //funkcijaProracun();
+        sviRGBA.value = nizPiksela4String; 
+    
+    });                
 
 //btnPodaciSlika.addEventListener('loadstart', funkcijaProracun());
 
