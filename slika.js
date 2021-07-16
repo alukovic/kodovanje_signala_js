@@ -97,45 +97,6 @@ window.addEventListener('load', function(){
 
                 infoS.style.fontSize = '80%';
 
-                //infoS.innerHTML = 'Slika još uvek nije skalirana sa dimenzijama kanvasa';
-
-                //podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
-                
-                /*
-                //A
-                podaciSaSlike = new Uint8ClampedArray();
-                //test #1
-                podaciSaSlike = ctx.getImageData(0, 0, 180, 180); 
-
-                //Cela slika - svi pikseli
-                //podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
-
-                nizPiksela = podaciSaSlike.data;
-                console.log(nizPiksela); 
-
-                nizPikselaA = Array.prototype.slice.call(nizPiksela);
-
-                nizPiksela4String = ''; 
-                nizPiksela4elementa = new Array(); 
-                console.log('nizPikselaA.length: ' + nizPikselaA.length); 
-                console.log('nizPiksela.length: ' + nizPiksela.length); 
-
-
-
-                //for(i = 0; i < nizPikselaA.length; i++){
-                    i = 0;
-                    while(nizPikselaA.length > 1) 
-                    {
-                    i++;
-                    nizPiksela4elementa = nizPikselaA.splice(0, 4);
-                    nizPiksela4String += i + '. piksel sa RGBA komponentama je: ' + nizPiksela4elementa + '\n';
-
-                }
-                //}
-
-                //B
-                */
-
             }); 
 
         }
@@ -179,15 +140,6 @@ window.addEventListener('load', function(){
         txtUcitavanje.style.visibility = 'visible'; 
         txtUcitavanje.innerHTML = 'Učitavanje...'; 
     };
-
-    /*
-    btnPodaciSlika.addEventListener('click', function(){
-        txtUcitavanje.style.visibility = 'hidden';
-        funkcijaProracun(); 
-    });
-    */
-
-    //funkcijaProracun(); 
     
     sviRGBA = document.querySelector('#txtRGBA'); 
     
@@ -195,7 +147,6 @@ window.addEventListener('load', function(){
     
     dimenzijeSlike = document.querySelector('#inpDimenzijeSlike'); 
     brojPiksela = document.querySelector('#inpBrojPiksela');
-    
     
     btnPodaciSlika.addEventListener('click', async function(){
 
