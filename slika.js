@@ -135,19 +135,11 @@ window.addEventListener('load', function(){
                 //B
                 */
 
-                
-
             }); 
-
-            
 
         }
 
-        
-
     });
-
-    funkcijaProracun();
 
 });
 
@@ -181,6 +173,20 @@ window.addEventListener('load', function(){
         }
     
     };
+
+    funkcijaUcitavanje = () => {
+        txtUcitavanje.style.visibility = 'visible'; 
+        txtUcitavanje.innerHTML = 'Učitavanje...'; 
+    };
+
+    btnPodaciSlika.addEventListener('loadstart', function(){
+        funkcijaUcitavanje();
+    });
+
+    btnPodaciSlika.addEventListener('click', function(){
+        txtUcitavanje.style.visibility = 'hidden';
+        funkcijaProracun(); 
+    });
 
     //funkcijaProracun(); 
     
