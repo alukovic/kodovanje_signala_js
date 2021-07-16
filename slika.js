@@ -12,21 +12,22 @@ Proširenja programa:
 Zadaci koje je potrebno uraditi: 
     Prilagoditi dimenzije slike, izvršiti njeno skaliranje sa dimenzijama kanvasa... 
     
-//Dan6
+//Dan7
 //Pro 2.3.8 15.7.2021. Čet.
 
     Nova proširenja programa...
     Slika zadržava svoje dimenzije... Ispravljen zadatak od juče... :O 
-    Veliki učinak: Postignut prikaz RGBA vrednosti pojedinačnog piksela slike
+    Veliki učinak: Postignut prikaz RGBA vrednosti pojedinačnog piksela slike 
+
+//Dan8
+//Pro 2.3.8 16.7.2021. Pet.
+
+    Nova proširenja i ažuriranja programa...
+
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
 ctx = canvasSlike.getContext('2d');
-
-//slika = new Image(); 
-
-//canvasSlike.width = window.innerWidth;
-//canvasSlike.height = window.innerHeight;
 
 btnNovaSlika = document.getElementById('btnNovaSlika'); 
 btnNovaSlika.style.backgroundColor = 'yellowgreen'; 
@@ -61,16 +62,10 @@ window.addEventListener('load', function(){
             slika.src = URL.createObjectURL(this.files[0]);
             //slika.onload = imageIsLoaded;
 
-            //canvasSlike.width = slika.width;
-            //canvasSlike.height = slika.height;
-
             slika.addEventListener('load', function(){
 
                 canvasSlike.width = slika.width; 
                 canvasSlike.height = slika.height; 
-
-                sirina = slika.naturalWidth;
-                visina = slika.naturalHeight;
 
                 ctx.drawImage(slika, 0, 0, canvasSlike.width, canvasSlike.height); 
                 canvasSlike.style.border = '2px';
@@ -106,7 +101,7 @@ window.addEventListener('load', function(){
                     {
                     i++;
                     nizPiksela4elementa = nizPikselaA.splice(0, 4);
-                    nizPiksela4String += i + ' - ti piksel sa RGBA komponentama je: ' + nizPiksela4elementa + '\n';
+                    nizPiksela4String += i + '. piksel sa RGBA komponentama je: ' + nizPiksela4elementa + '\n';
 
                 }
                 //}
@@ -118,22 +113,7 @@ window.addEventListener('load', function(){
 
 });
 
-/*
-
-ulaznaSlika = document.getElementById('ulaznaSlika');
-
-ulaznaSlika.addEventListener('load', function(){
-
-    document.getElementById('ulaznaSlika').style.border = '1px';
-    document.getElementById('ulaznaSlika').style.borderStyle = 'solid';  
-    document.getElementById('ulaznaSlika').style.borderColor = 'rgb(24, 138, 231)';  
-
-});
-
-*/
-
 spanNovo = document.getElementById('spanNovo'); 
-
 
 dimenzijeSlike = document.querySelector('#inpDimenzijeSlike'); 
 brojPiksela = document.querySelector('#inpBrojPiksela');
