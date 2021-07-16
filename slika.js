@@ -23,7 +23,7 @@ Zadaci koje je potrebno uraditi:
 //Pro 2.3.8 16.7.2021. Pet.
 
     Nova proširenja i ažuriranja programa...
-    Učitavanje => async/await
+    Novi veliki učinak: učitavanje i izvršavanje naredbi po redosledu => async/await
 
 */
 
@@ -112,7 +112,9 @@ window.addEventListener('load', function(){
         //podaciSaSlike = ctx.getImageData(0, 0, 180, 180); 
         
         //Cela slika - svi pikseli
-        podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
+        //test #2
+
+        podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width / 4, canvasSlike.height / 4); 
     
         nizPiksela = podaciSaSlike.data;
         console.log(nizPiksela); 
