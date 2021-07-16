@@ -95,6 +95,7 @@ window.addEventListener('load', function(){
                 canvasSlike.style.borderColor = 'rgb(24, 138, 231)'; 
 
                 infoS.style.fontSize = '80%';
+
                 //infoS.innerHTML = 'Slika još uvek nije skalirana sa dimenzijama kanvasa';
 
                 //podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
@@ -138,11 +139,15 @@ window.addEventListener('load', function(){
 
             }); 
 
-            funkcijaProracun();
+            
 
         }
 
+        
+
     });
+
+    funkcijaProracun();
 
 });
 
