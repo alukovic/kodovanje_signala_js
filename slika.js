@@ -45,8 +45,23 @@ btnPodaciSlika = document.querySelector('#btnPodaciSlika');
 infoS = document.querySelector('#infoS'); 
 
 ucitavanje = document.querySelector('.ucitavanje'); 
+txtUcitavanje = document.querySelector('#txtUcitavanje'); 
+
+document.onreadystatechange = function(){
+
+    if(document.readyState !== 'complete'){
+
+        txtUcitavanje.style.visibility = 'hidden'; 
+        meniSlika.style.visibility = 'hidden'; 
+        obradaSlike.style.visibility = 'hidden'; 
+
+    }
+
+}
 
 window.addEventListener('load', function(){
+
+    txtUcitavanje.style.visibility = 'hidden'; 
 
     meniSlika.style.visibility = 'hidden'; 
     obradaSlike.style.visibility = 'hidden'; 
@@ -129,12 +144,13 @@ async function funkcijaProracun() {
     //A
 
     let obecanje = new Promise(function glavniProracun(){
+
         podaciSaSlike = new Uint8ClampedArray();
         //test #1
-        podaciSaSlike = ctx.getImageData(0, 0, 180, 180); 
+        //podaciSaSlike = ctx.getImageData(0, 0, 180, 180); 
         
         //Cela slika - svi pikseli
-        //podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
+        podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width / 3, canvasSlike.height / 3); 
     
         nizPiksela = podaciSaSlike.data;
         console.log(nizPiksela); 
@@ -161,8 +177,6 @@ async function funkcijaProracun() {
         sviRGBA.value = nizPiksela4String;
     });
 
-
- 
 //}
 
 //B                    
@@ -173,6 +187,8 @@ spanNovo = document.getElementById('spanNovo');
 dimenzijeSlike = document.querySelector('#inpDimenzijeSlike'); 
 brojPiksela = document.querySelector('#inpBrojPiksela');
 
+txtUcitavanje.innerHTML = 'Funkcija se učitava...'; 
+
 btnPodaciSlika.addEventListener('click', function(){
 
     obradaSlike.style.visibility = 'visible'; 
@@ -180,7 +196,10 @@ btnPodaciSlika.addEventListener('click', function(){
     brojPiksela.value = Number(canvasSlike.width * canvasSlike.height); 
     //sviRGBA.value = nizPiksela4String; 
     funkcijaProracun();
+
 });
+
+//btnPodaciSlika.addEventListener('loadstart', funkcijaProracun());
 
 
 
