@@ -23,6 +23,7 @@ Zadaci koje je potrebno uraditi:
 //Pro 2.3.8 16.7.2021. Pet.
 
     Nova proširenja i ažuriranja programa...
+    Učitavanje => async/await
 
 */
 
@@ -143,14 +144,14 @@ window.addEventListener('load', function(){
 
 });
 
-    function funkcijaProracun(){
+     funkcijaProracun = () => {
 
         podaciSaSlike = new Uint8ClampedArray();
         //test #1
         //podaciSaSlike = ctx.getImageData(0, 0, 180, 180); 
         
         //Cela slika - svi pikseli
-        podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width / 3, canvasSlike.height / 3); 
+        podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
     
         nizPiksela = podaciSaSlike.data;
         console.log(nizPiksela); 
@@ -179,14 +180,12 @@ window.addEventListener('load', function(){
         txtUcitavanje.innerHTML = 'Učitavanje...'; 
     };
 
-    btnPodaciSlika.addEventListener('loadstart', function(){
-        funkcijaUcitavanje();
-    });
-
+    /*
     btnPodaciSlika.addEventListener('click', function(){
         txtUcitavanje.style.visibility = 'hidden';
         funkcijaProracun(); 
     });
+    */
 
     //funkcijaProracun(); 
     
@@ -198,14 +197,32 @@ window.addEventListener('load', function(){
     brojPiksela = document.querySelector('#inpBrojPiksela');
     
     
-    btnPodaciSlika.addEventListener('click', function(){
-        
-        obradaSlike.style.visibility = 'visible'; 
-        dimenzijeSlike.value = `${canvasSlike.width} x ${canvasSlike.height}`; 
-        brojPiksela.value = Number(canvasSlike.width * canvasSlike.height); 
+    btnPodaciSlika.addEventListener('click', async function(){
+
+        korak1 = await setTimeout(() => {
+            funkcijaUcitavanje();
+        }, 0); ; 
+
+        korak2 = await setTimeout(() => {
+            obradaSlike.style.visibility = 'visible'; 
+            dimenzijeSlike.value = `${canvasSlike.width} x ${canvasSlike.height}`; 
+            brojPiksela.value = Number(canvasSlike.width * canvasSlike.height); 
+        }, 3000);
+
+        korak3 = await setTimeout(() => {
+            funkcijaProracun();
+        }, 3500);
+
+        korak4 = await setTimeout(() => {
+            sviRGBA.value = nizPiksela4String; 
+        }, 3600);
+
+        korak5 = await setTimeout(() => {
+            txtUcitavanje.style.display = 'none'; 
+        }, 3700);
+
         //funkcijaProracun();
-        sviRGBA.value = nizPiksela4String; 
-    
+
     });                
 
 //btnPodaciSlika.addEventListener('loadstart', funkcijaProracun());
