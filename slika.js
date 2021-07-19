@@ -151,9 +151,23 @@ window.addEventListener('load', function(){
     
     };
 
+
+    let iA = 0; 
+    let tekst = 'Učitavanje...';
+
     funkcijaUcitavanje = () => {
+
+        if(iA < tekst.length){
+
+            txtUcitavanje.innerHTML = 'Učitavanje'; 
+            txtUcitavanje.innerHTML += tekst.charAt(iA + 10) + tekst.charAt(iA + 10) + tekst.charAt(iA + 10);
+            
+            iA++;
+            setInterval(funkcijaUcitavanje, 1000);
+        }
+
         txtUcitavanje.style.visibility = 'visible'; 
-        txtUcitavanje.innerHTML = 'Učitavanje...'; 
+        //txtUcitavanje.innerHTML = 'Učitavanje...'; 
     };
     
     sviRGBA = document.querySelector('#txtRGBA'); 
@@ -167,7 +181,7 @@ window.addEventListener('load', function(){
 
         korak1 = await setTimeout(() => {
             funkcijaUcitavanje();
-        }, 0); ; 
+        }, 0); 
 
         korak2 = await setTimeout(() => {
             obradaSlike.style.visibility = 'visible'; 
