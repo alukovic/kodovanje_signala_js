@@ -25,6 +25,10 @@ Zadaci koje je potrebno uraditi:
     Nova proširenja i ažuriranja programa...
     Novi veliki učinak: učitavanje i izvršavanje naredbi po redosledu => async/await
 
+//Dan9
+//Pro 2.3.8 19.7.2021. Pon.
+
+    Nova ažuriranja programa...   
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -86,8 +90,17 @@ window.addEventListener('load', function(){
 
             slika.addEventListener('load', function(){
 
-                canvasSlike.width = slika.width; 
-                canvasSlike.height = slika.height; 
+                if(slika.width >= 1920){
+
+                canvasSlike.width = slika.width / 6; 
+                canvasSlike.height = slika.height / 6; 
+
+                } else {
+
+                    canvasSlike.width = slika.width / 3; 
+                    canvasSlike.height = slika.height / 3; 
+
+                }
 
                 ctx.drawImage(slika, 0, 0, canvasSlike.width, canvasSlike.height); 
                 canvasSlike.style.border = '2px';
@@ -114,7 +127,7 @@ window.addEventListener('load', function(){
         //Cela slika - svi pikseli
         //test #2
 
-        podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width / 4, canvasSlike.height / 4); 
+        podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
     
         nizPiksela = podaciSaSlike.data;
         console.log(nizPiksela); 
