@@ -154,14 +154,13 @@ window.addEventListener('load', function(){
 
     let iA = 0; 
     let tekst = 'Učitavanje...';
+    txtUcitavanje.innerHTML += 'Učitavanje'; 
 
     funkcijaUcitavanje = () => {
 
         if(iA < tekst.length){
 
-            txtUcitavanje.innerHTML = 'Učitavanje'; 
-            txtUcitavanje.innerHTML += tekst.charAt(iA + 10) + tekst.charAt(iA + 10) + tekst.charAt(iA + 10);
-            
+            txtUcitavanje.innerHTML += tekst.charAt(iA + 10);
             iA++;
             setInterval(funkcijaUcitavanje, 1000);
         }
@@ -180,7 +179,8 @@ window.addEventListener('load', function(){
     btnPodaciSlika.addEventListener('click', async function(){
 
         korak1 = await setTimeout(() => {
-            funkcijaUcitavanje();
+            //funkcijaUcitavanje();
+            setInterval(funkcijaUcitavanje, 1000);
         }, 0); 
 
         korak2 = await setTimeout(() => {
