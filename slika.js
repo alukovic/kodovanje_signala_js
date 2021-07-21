@@ -36,7 +36,8 @@ Zadaci koje je potrebno uraditi:
 //Dan10
 //Pro 2.3.8 21.7.2021. Sre.
  
-    Nova ažuriranja i proširenja programa...     
+    Nova ažuriranja i proširenja programa... 
+    Početak kreiranja funkcija za obradu i izmenu ulazne slike...    
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
