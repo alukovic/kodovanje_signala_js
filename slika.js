@@ -218,5 +218,18 @@ window.addEventListener('load', function(){
 btnNovaSlikaA = document.querySelector('#btnNovaSlikaA');
 btnNovaSlikaA.style.backgroundColor = '#5D8AA8';  
 
+canvasSlikeA = document.querySelector('#canvasSlikeA');
+ctxA = canvasSlikeA.getContext('2d'); 
+
+slikaA = new Blob();
+btnNovaSlikaA.addEventListener('click', function(){
+
+    podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
+    podaciSaSlikeA = new Uint8ClampedArray(podaciSaSlike);
+    slikaA = new ImageData(podaciSaSlikeA, canvasSlikeA.width, canvasSlikeA.height);
+    ctxA.drawImage(slikaA, 0, 0, canvasSlikeA.width, canvasSlikeA.height);
+
+});
+
 
 

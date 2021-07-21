@@ -14,7 +14,7 @@
     box-sizing: border-box;
 }
 
-#canvasSlike{
+#canvasSlike, #canvasSlikeA{
 
     max-width: 32em; 
 
@@ -60,3 +60,8 @@
     background-color: yellowgreen; 
 }
 */
+
+#canvasSlikeA{
+    border: 2px solid rgb(19, 37, 139); 
+    border-radius: 16px;
+}
