@@ -218,17 +218,43 @@ window.addEventListener('load', function(){
 btnNovaSlikaA = document.querySelector('#btnNovaSlikaA');
 btnNovaSlikaA.style.backgroundColor = '#5D8AA8';  
 
+btnBrisanjeA = document.querySelector('#btnBrisanjeA');
+btnBrisanjeA.style.backgroundColor = '#D3212D'; 
+
+txtPrikazInfo = document.querySelector('#txtPrikazInfo');
+
 canvasSlikeA = document.querySelector('#canvasSlikeA');
 ctxA = canvasSlikeA.getContext('2d'); 
+noviNiz = new Uint8ClampedArray(10000);
 
-slikaA = new Blob();
 btnNovaSlikaA.addEventListener('click', function(){
+    
+    txtPrikazInfo.innerHTML = 'Funkcija je još uvek u fazi izrade...'; 
 
-    podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
-    podaciSaSlikeA = new Uint8ClampedArray(podaciSaSlike);
-    slikaA = new ImageData(podaciSaSlikeA, canvasSlikeA.width, canvasSlikeA.height);
-    ctxA.drawImage(slikaA, 0, 0, canvasSlikeA.width, canvasSlikeA.height);
+    for(let i = 0; i < noviNiz.length; i+=4){
+        noviNiz[i] = 10;
+        noviNiz[i + 1] = 50;
+        noviNiz[i + 2] = 100;
+        noviNiz[i + 3] = 200; 
+    }
 
+    podaciSaSlikeA = new ImageData(noviNiz, 100);
+    ctxA.putImageData(podaciSaSlikeA, 10, 10); 
+
+
+    //podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
+    //podaciSaSlikeA = new Uint8ClampedArray(podaciSaSlike);
+    //console.log(podaciSaSlike);
+    //console.log(podaciSaSlikeA); 
+    //slikaA = new ImageData(podaciSaSlike, canvasSlikeA.width, canvasSlikeA.height);
+    //ctxA.drawImage(slikaA, 0, 0, canvasSlikeA.width, canvasSlikeA.height);
+    //ctxA.putImageData(slikaA, 50, 50);
+
+
+});
+
+btnBrisanjeA.addEventListener('click', function(){
+    window.location.reload(true);
 });
 
 
