@@ -31,7 +31,12 @@ Zadaci koje je potrebno uraditi:
     Nova ažuriranja programa...  
     Izmena određenih delova koda...
     Smanjenje dimenzija ulazne slike (prilagođavanje i skaliranje) i učitavanje svih njenih piksela...
-    Početak kreiranja efekta Učitavanje...
+    Početak kreiranja efekta Učitavanje... 
+
+//Dan10
+//Pro 2.3.8 21.7.2021. Sre.
+ 
+    Nova ažuriranja i proširenja programa...     
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -210,6 +215,8 @@ window.addEventListener('load', function(){
 
 //btnPodaciSlika.addEventListener('loadstart', funkcijaProracun());
 
+btnNovaSlikaA = document.querySelector('#btnNovaSlikaA');
+btnNovaSlikaA.style.backgroundColor = '#5D8AA8';  
 
 
 
