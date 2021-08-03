@@ -45,7 +45,7 @@ Pro 2.3.8 22.7.2021. Čet.
 
 //Dan12
 Pro 2.3.8 3.8.2021. Uto. 
-    Nova ažuriranja programa i izmena funkcija...     
+    Nova ažuriranja i izmena funkcija programa...     
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -170,7 +170,6 @@ window.addEventListener('load', function(){
     
     };
 
-
     let iA = 0; 
     let tekst = 'Učitavanje...';
     txtUcitavanje.innerHTML += 'Učitavanje'; 
@@ -198,14 +197,18 @@ window.addEventListener('load', function(){
     btnPodaciSlika.addEventListener('click', async function(){
 
         korak1 = await setTimeout(() => {
+
             //funkcijaUcitavanje();
             setInterval(funkcijaUcitavanje, 500);
+
         }, 0); 
 
         korak2 = await setTimeout(() => {
+
             obradaSlike.style.display = 'block'; 
             dimenzijeSlike.value = `${canvasSlike.width} x ${canvasSlike.height}`; 
             brojPiksela.value = Number(canvasSlike.width * canvasSlike.height); 
+
         }, 1000);
 
         /*
@@ -218,12 +221,12 @@ window.addEventListener('load', function(){
         }, 3600);
         */
 
-
-
         korak4 = await setTimeout(() => prikazRGBA() , 1500);
 
         korak3 = await setTimeout(() => {
+
             txtUcitavanje.style.display = 'none'; 
+
         }, 2000);
 
         //funkcijaProracun();
@@ -258,7 +261,6 @@ btnNovaSlikaA.addEventListener('click', function(){
     podaciSaSlikeA = new ImageData(noviNiz, 100);
     ctxA.putImageData(podaciSaSlikeA, 10, 10); 
 
-
     //podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
     //podaciSaSlikeA = new Uint8ClampedArray(podaciSaSlike);
     //console.log(podaciSaSlike);
@@ -267,30 +269,38 @@ btnNovaSlikaA.addEventListener('click', function(){
     //ctxA.drawImage(slikaA, 0, 0, canvasSlikeA.width, canvasSlikeA.height);
     //ctxA.putImageData(slikaA, 50, 50);
 
-
 });
 
 btnBrisanjeA.addEventListener('click', function(){
     window.location.reload(true);
 });
+
+opcioniTekst = document.querySelector('#opcioniTekst');
 opcioniPodaciInfo = document.querySelector('.opcioniPodaciInfo');
 opcioniPodaciSlika = document.querySelector('.opcioniPodaciSlika');
 opcioniPodaci = document.querySelector('.opcioniPodaci');
 btnPrikazRGBA = document.querySelector('#btnPrikazRGBA'); 
 
 const prikazRGBA = () => {
+
     opcioniPodaciInfo.style.display = 'block';
-    opcioniPodaci.style.display = 'block';
+    //opcioniPodaci.style.display = 'none';
+    opcioniTekst.innerHTML = 'Opcioni prikaz svih RGBA vrednosti date slike: '; 
+
 };
 
 const sakrivanjeRGBA = () => {
+
     opcioniPodaciInfo.style.display = 'none';
     opcioniPodaci.style.display = 'none';
+
 };
 
 opcioniPodaciSlika.addEventListener('click', () => {
-    prikazRGBA();
-});
 
+    opcioniPodaciInfo.style.display = 'none'; 
+    opcioniPodaci.style.display = 'block'; 
+
+});
 
 
