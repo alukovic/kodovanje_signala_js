@@ -122,6 +122,7 @@ window.addEventListener('load', function(){
                 }
 
                 ctx.drawImage(slika, 0, 0, canvasSlike.width, canvasSlike.height); 
+
                 canvasSlike.style.border = '2px';
                 canvasSlike.style.borderStyle = 'solid'; 
                 canvasSlike.style.borderRadius = '16px'; 
@@ -183,7 +184,7 @@ window.addEventListener('load', function(){
             setInterval(funkcijaUcitavanje, 1000);
         }
 
-        txtUcitavanje.style.display = 'flex'; 
+        txtUcitavanje.style.display = 'block'; 
         //txtUcitavanje.innerHTML = 'Učitavanje...'; 
     };
     
@@ -196,13 +197,15 @@ window.addEventListener('load', function(){
 
     btnPodaciSlika.addEventListener('click', async function(){
 
+    
         korak1 = await setTimeout(() => {
 
+            txtRGBA.value = nizPiksela4String;
             //funkcijaUcitavanje();
             setInterval(funkcijaUcitavanje, 500);
 
         }, 0); 
-
+        
         korak2 = await setTimeout(() => {
 
             obradaSlike.style.display = 'block'; 
@@ -221,7 +224,7 @@ window.addEventListener('load', function(){
         }, 3600);
         */
 
-        korak4 = await setTimeout(() => prikazRGBA() , 1500);
+        korak4 = await setTimeout(() => prikazRGBA(), 1500);
 
         korak3 = await setTimeout(() => {
 
@@ -300,6 +303,13 @@ opcioniPodaciSlika.addEventListener('click', () => {
 
     opcioniPodaciInfo.style.display = 'none'; 
     opcioniPodaci.style.display = 'block'; 
+
+});
+
+btnPrikazRGBA.addEventListener('click', () => {
+
+    funkcijaProracun(); 
+    txtRGBA.value = nizPiksela4String;
 
 });
 
