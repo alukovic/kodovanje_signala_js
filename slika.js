@@ -37,7 +37,15 @@ Zadaci koje je potrebno uraditi:
 //Pro 2.3.8 21.7.2021. Sre.
  
     Nova ažuriranja i proširenja programa... 
-    Početak kreiranja funkcija za obradu i izmenu ulazne slike...    
+    Početak kreiranja funkcija za obradu i izmenu ulazne slike...   
+
+//Dan11
+Pro 2.3.8 22.7.2021. Čet. 
+    Nova ažuriranja programa... 
+
+//Dan12
+Pro 2.3.8 3.8.2021. Uto. 
+    Nova ažuriranja programa...     
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
