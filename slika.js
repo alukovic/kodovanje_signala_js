@@ -45,7 +45,7 @@ Pro 2.3.8 22.7.2021. Čet.
 
 //Dan12
 Pro 2.3.8 3.8.2021. Uto. 
-    Nova ažuriranja programa...     
+    Nova ažuriranja programa i izmena funkcija...     
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -77,9 +77,9 @@ document.onreadystatechange = function(){
 
     if(document.readyState !== 'complete'){
 
-        txtUcitavanje.style.visibility = 'hidden'; 
-        meniSlika.style.visibility = 'hidden'; 
-        obradaSlike.style.visibility = 'hidden'; 
+        txtUcitavanje.style.display = 'none'; 
+        meniSlika.style.display = 'none'; 
+        obradaSlike.style.display = 'none'; 
 
     }
 
@@ -87,14 +87,16 @@ document.onreadystatechange = function(){
 
 window.addEventListener('load', function(){
 
-    txtUcitavanje.style.visibility = 'hidden'; 
+    txtUcitavanje.style.display = 'none'; 
 
-    meniSlika.style.visibility = 'hidden'; 
-    obradaSlike.style.visibility = 'hidden'; 
+    meniSlika.style.display = 'none'; 
+    obradaSlike.style.display = 'none'; 
+    //opcioniPodaci.style.display = 'none';
+    sakrivanjeRGBA();
 
     document.querySelector('input[type="file"]').addEventListener('change', function(){
 
-        meniSlika.style.visibility = 'visible'; 
+        meniSlika.style.display = 'block'; 
         //obradaSlike.style.visibility = 'visible'; 
 
         if(this.files && this.files[0]){
@@ -182,7 +184,7 @@ window.addEventListener('load', function(){
             setInterval(funkcijaUcitavanje, 1000);
         }
 
-        txtUcitavanje.style.visibility = 'visible'; 
+        txtUcitavanje.style.display = 'flex'; 
         //txtUcitavanje.innerHTML = 'Učitavanje...'; 
     };
     
@@ -192,20 +194,21 @@ window.addEventListener('load', function(){
     
     dimenzijeSlike = document.querySelector('#inpDimenzijeSlike'); 
     brojPiksela = document.querySelector('#inpBrojPiksela');
-    
+
     btnPodaciSlika.addEventListener('click', async function(){
 
         korak1 = await setTimeout(() => {
             //funkcijaUcitavanje();
-            setInterval(funkcijaUcitavanje, 1000);
+            setInterval(funkcijaUcitavanje, 500);
         }, 0); 
 
         korak2 = await setTimeout(() => {
-            obradaSlike.style.visibility = 'visible'; 
+            obradaSlike.style.display = 'block'; 
             dimenzijeSlike.value = `${canvasSlike.width} x ${canvasSlike.height}`; 
             brojPiksela.value = Number(canvasSlike.width * canvasSlike.height); 
-        }, 3000);
+        }, 1000);
 
+        /*
         korak3 = await setTimeout(() => {
             funkcijaProracun();
         }, 3500);
@@ -213,10 +216,15 @@ window.addEventListener('load', function(){
         korak4 = await setTimeout(() => {
             sviRGBA.value = nizPiksela4String; 
         }, 3600);
+        */
 
-        korak5 = await setTimeout(() => {
+
+
+        korak4 = await setTimeout(() => prikazRGBA() , 1500);
+
+        korak3 = await setTimeout(() => {
             txtUcitavanje.style.display = 'none'; 
-        }, 3700);
+        }, 2000);
 
         //funkcijaProracun();
 
@@ -264,6 +272,24 @@ btnNovaSlikaA.addEventListener('click', function(){
 
 btnBrisanjeA.addEventListener('click', function(){
     window.location.reload(true);
+});
+opcioniPodaciInfo = document.querySelector('.opcioniPodaciInfo');
+opcioniPodaciSlika = document.querySelector('.opcioniPodaciSlika');
+opcioniPodaci = document.querySelector('.opcioniPodaci');
+btnPrikazRGBA = document.querySelector('#btnPrikazRGBA'); 
+
+const prikazRGBA = () => {
+    opcioniPodaciInfo.style.display = 'block';
+    opcioniPodaci.style.display = 'block';
+};
+
+const sakrivanjeRGBA = () => {
+    opcioniPodaciInfo.style.display = 'none';
+    opcioniPodaci.style.display = 'none';
+};
+
+opcioniPodaciSlika.addEventListener('click', () => {
+    prikazRGBA();
 });
 
 

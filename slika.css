@@ -31,7 +31,7 @@
     border-radius: 16px; 
 }
 
-.containerA button{
+.containerA button, #btnPodaciSlika{
 
     color: white; 
     border: none;
@@ -64,4 +64,15 @@
 #canvasSlikeA{
     border: 2px solid rgb(19, 37, 139); 
     border-radius: 16px;
+}
+
+#btnPrikazRGBA{
+    width: 12em;
+    background-color: #FFD500;
+}
+
+.opcioniPodaciSlika{
+    width: 3em;
+    margin: 0 auto;
+    /* border: 1px solid black; */
 }
