@@ -46,12 +46,12 @@ Pro 2.3.8 22.7.2021. Čet.
 //Dan12
 Pro 2.3.8 3.8.2021. Uto. 
     Nova ažuriranja i izmena funkcija programa... 
-    Početak uvođenja opcionog prikaza svih RGBA vrednosti piksela.
+    Početak uvođenja opcionog prikaza svih RGBA vrednosti piksela. (v1 | 3.8.2021.)
 
 //Dan13
 Pro 2.3.8 4.8.2021. Sre. 
     Nastavak sa izmenama programa... 
-    Završetak uvođenja opcionog prikaza svih RGBA vrednosti piksela.
+    Završetak uvođenja opcionog prikaza svih RGBA vrednosti piksela. (v4 | 4.8.2021.)
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
