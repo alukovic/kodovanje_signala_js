@@ -46,10 +46,12 @@ Pro 2.3.8 22.7.2021. Čet.
 //Dan12
 Pro 2.3.8 3.8.2021. Uto. 
     Nova ažuriranja i izmena funkcija programa... 
+    Početak uvođenja opcionog prikaza svih RGBA vrednosti piksela.
 
 //Dan13
 Pro 2.3.8 4.8.2021. Sre. 
-    Nastavak sa izmenama programa...       
+    Nastavak sa izmenama programa... 
+    Završetak uvođenja opcionog prikaza svih RGBA vrednosti piksela.
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -284,6 +286,7 @@ btnBrisanjeA.addEventListener('click', function(){
 });
 
 opcioniTekst = document.querySelector('#opcioniTekst');
+opcioniTekstInfo = document.querySelector('#opcioniTekstInfo'); 
 opcioniPodaciInfo = document.querySelector('.opcioniPodaciInfo');
 opcioniPodaciSlika = document.querySelector('.opcioniPodaciSlika');
 opcioniPodaci = document.querySelector('.opcioniPodaci');
@@ -294,7 +297,6 @@ const prikazRGBA = () => {
     opcioniPodaciInfo.style.display = 'block';
     //opcioniPodaci.style.display = 'none';
     opcioniTekst.innerHTML = 'Opcioni prikaz svih RGBA vrednosti date slike: '; 
-
 };
 
 const sakrivanjeRGBA = () => {
@@ -327,14 +329,20 @@ opcioniPodaciSlikaSakrivanje = document.querySelector('.opcioniPodaciSlikaSakriv
 const OpcioniMeniSakrivanje = () => {
 
     opcioniPodaciSakrivanje.style.display = 'block';
+    opcioniTekstInfo.innerHTML = 'Proces može da potraje malo duže...'; 
     opcioniTekstSakrivanje.innerHTML = 'Sakrijte opcioni prikaz piksela: ';
 
 };
 
 opcioniPodaciSlikaSakrivanje.addEventListener('click', () => {
 
-    //opcioniPodaciInfo.style.display = 'none';
-    //opcioniPodaciSakrivanje.display = 'none';
-    window.location.reload(true);
+    opcioniPodaciInfo.style.display = 'none';
+    opcioniPodaciSakrivanje.style.display = 'none';
+    opcioniPodaci.style.display = 'none';
+    //window.location.reload(true);
 
 });
+
+opcioniPodaciUcitavanje = document.querySelector('.opcioniPodaciUcitavanje');
+
+opcioniPodaciUcitavanjeInfo = document.querySelector('#opcioniPodaciUcitavanje');
