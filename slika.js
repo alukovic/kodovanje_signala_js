@@ -51,7 +51,8 @@ Pro 2.3.8 3.8.2021. Uto.
 //Dan13
 Pro 2.3.8 4.8.2021. Sre. 
     Nastavak sa izmenama programa... 
-    Završetak uvođenja opcionog prikaza svih RGBA vrednosti piksela. (v4 | 4.8.2021.)
+    Završetak uvođenja opcionog prikaza svih RGBA vrednosti piksela. (v4 | 4.8.2021.) 
+    Kreiranje efekta crno-bele slike od date ulazne slike u boji... (v6 | 4.8.2021. )
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -259,25 +260,36 @@ noviNiz = new Uint8ClampedArray(10000);
 
 btnNovaSlikaA.addEventListener('click', function(){
     
+    /*
     txtPrikazInfo.innerHTML = 'Funkcija je još uvek u fazi izrade...'; 
 
     for(let i = 0; i < noviNiz.length; i+=4){
-        noviNiz[i] = 10;
-        noviNiz[i + 1] = 50;
-        noviNiz[i + 2] = 100;
-        noviNiz[i + 3] = 200; 
+        noviNiz[i] = 20;
+        noviNiz[i + 1] = 0;
+        noviNiz[i + 2] = 0;
+        noviNiz[i + 3] = 255; 
     }
 
-    podaciSaSlikeA = new ImageData(noviNiz, 100);
-    ctxA.putImageData(podaciSaSlikeA, 10, 10); 
+    //podaciSaSlikeA = new ImageData(noviNiz, 100);
+    //ctxA.putImageData(podaciSaSlikeA, 10, 10); 
+    */
 
-    //podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
-    //podaciSaSlikeA = new Uint8ClampedArray(podaciSaSlike);
-    //console.log(podaciSaSlike);
-    //console.log(podaciSaSlikeA); 
-    //slikaA = new ImageData(podaciSaSlike, canvasSlikeA.width, canvasSlikeA.height);
-    //ctxA.drawImage(slikaA, 0, 0, canvasSlikeA.width, canvasSlikeA.height);
-    //ctxA.putImageData(slikaA, 50, 50);
+    //Prikaz ulazne slike
+    ctxA.drawImage(slika, 0, 0, canvasSlikeA.width, canvasSlikeA.height);
+
+    pikseliSlikaA = ctxA.getImageData(0, 0, canvasSlikeA.width, canvasSlikeA.height);
+
+    for(let i = 0; i < pikseliSlikaA.data.length; i+=4){
+
+        let vrednost = 0.5 * pikseliSlikaA.data[i] + 0.5 * pikseliSlikaA.data[i + 1] + 0.5 * pikseliSlikaA.data[i + 2]; 
+
+        pikseliSlikaA.data[i] = vrednost;
+        pikseliSlikaA.data[i + 1] = vrednost;
+        pikseliSlikaA.data[i + 2] = vrednost;
+
+    }
+
+    ctxA.putImageData(pikseliSlikaA, 0, 0); 
 
 });
 
@@ -345,4 +357,5 @@ opcioniPodaciSlikaSakrivanje.addEventListener('click', () => {
 
 opcioniPodaciUcitavanje = document.querySelector('.opcioniPodaciUcitavanje');
 
-opcioniPodaciUcitavanjeInfo = document.querySelector('#opcioniPodaciUcitavanje');
+opcioniPodaciUcitavanjeInfo = document.querySelector('#opcioniPodaciUcitavanje'); 
+
