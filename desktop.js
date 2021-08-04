@@ -19,11 +19,11 @@ let mainWindow;
 app.on('ready', function(){
 //Kreiranje novog prozora
 
-mainWindow = new BrowserWindow({icon: __dirname + '/ico/ico1.png'});
+mainWindow = new BrowserWindow({icon: __dirname + '/ico/ico1.png', width: 760, height: 720}); 
 //Učitavanje html fajla u prozoru
 mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'dct.html'),
     protocol: 'file:', 
     slashes: true
-})); // file://dirname/dct.html
+})); //datoteka://ime_direktorijuma/slika.html
 });
