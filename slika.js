@@ -278,17 +278,6 @@ function opcijePrikazaNoveSlike() {
 
         }
 
-        /*
-        ctx.drawImage(slika, 0, 0, canvasSlike.width, canvasSlike.height); 
-
-        canvasSlike.style.border = '2px';
-        canvasSlike.style.borderStyle = 'solid'; 
-        canvasSlike.style.borderRadius = '16px'; 
-        canvasSlike.style.borderColor = 'rgb(24, 138, 231)'; 
-
-        infoS.style.fontSize = '80%';
-        */
-
         ctxA.drawImage(slika, 0, 0, canvasSlike.width, canvasSlike.height);
 
         pikseliSlikaA = ctxA.getImageData(0, 0, canvasSlike.width, canvasSlike.height);
