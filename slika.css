@@ -71,7 +71,7 @@
     background-color: #FFD500;
 }
 
-.opcioniPodaciSlika{
+.opcioniPodaciSlika, .opcioniPodaciSlikaSakrivanje{
     width: 3em;
     margin: 0 auto;
     /* border: 1px solid black; */

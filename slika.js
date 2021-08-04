@@ -95,7 +95,7 @@ window.addEventListener('load', function(){
 
     meniSlika.style.display = 'none'; 
     obradaSlike.style.display = 'none'; 
-    //opcioniPodaci.style.display = 'none';
+    opcioniPodaciSakrivanje.style.display = 'none';
     sakrivanjeRGBA();
 
     document.querySelector('input[type="file"]').addEventListener('change', function(){
@@ -307,6 +307,7 @@ opcioniPodaciSlika.addEventListener('click', () => {
 
     opcioniPodaciInfo.style.display = 'none'; 
     opcioniPodaci.style.display = 'block'; 
+    OpcioniMeniSakrivanje();
 
 });
 
@@ -318,3 +319,21 @@ btnPrikazRGBA.addEventListener('click', () => {
 });
 
 
+opcioniPodaciSakrivanje = document.querySelector('.opcioniPodaciSakrivanje');
+opcioniTekstSakrivanje = document.querySelector('#opcioniTekstSakrivanje');
+opcioniPodaciSlikaSakrivanje = document.querySelector('.opcioniPodaciSlikaSakrivanje'); 
+
+const OpcioniMeniSakrivanje = () => {
+
+    opcioniPodaciSakrivanje.style.display = 'block';
+    opcioniTekstSakrivanje.innerHTML = 'Sakrijte meni';
+
+};
+
+opcioniPodaciSlikaSakrivanje.addEventListener('click', () => {
+
+    //opcioniPodaciInfo.style.display = 'none';
+    //opcioniPodaciSakrivanje.display = 'none';
+    window.location.reload(true);
+    
+});
