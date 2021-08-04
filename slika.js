@@ -45,7 +45,11 @@ Pro 2.3.8 22.7.2021. Čet.
 
 //Dan12
 Pro 2.3.8 3.8.2021. Uto. 
-    Nova ažuriranja i izmena funkcija programa...     
+    Nova ažuriranja i izmena funkcija programa... 
+
+//Dan13
+Pro 2.3.8 4.8.2021. Sre. 
+    Nastavak sa izmenama programa...       
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
