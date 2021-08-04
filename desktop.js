@@ -22,7 +22,7 @@ app.on('ready', function(){
 mainWindow = new BrowserWindow({icon: __dirname + '/ico/ico1.png', width: 760, height: 720}); 
 //Učitavanje html fajla u prozoru
 mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'dct.html'),
+    pathname: path.join(__dirname, 'slika.html'),
     protocol: 'file:', 
     slashes: true
 })); //datoteka://ime_direktorijuma/slika.html
