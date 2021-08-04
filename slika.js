@@ -114,28 +114,33 @@ window.addEventListener('load', function(){
             slika.src = URL.createObjectURL(this.files[0]);
             //slika.onload = imageIsLoaded;
 
-            slika.addEventListener('load', function(){
+            function opcijePrikazaSlike() {
 
                 if(slika.width >= 1920){
 
-                canvasSlike.width = slika.width / 6; 
-                canvasSlike.height = slika.height / 6; 
+                    canvasSlike.width = slika.width / 6; 
+                    canvasSlike.height = slika.height / 6; 
+    
+                    } else {
+    
+                        canvasSlike.width = slika.width / 3; 
+                        canvasSlike.height = slika.height / 3; 
+    
+                    }
+    
+                    ctx.drawImage(slika, 0, 0, canvasSlike.width, canvasSlike.height); 
+    
+                    canvasSlike.style.border = '2px';
+                    canvasSlike.style.borderStyle = 'solid'; 
+                    canvasSlike.style.borderRadius = '16px'; 
+                    canvasSlike.style.borderColor = 'rgb(24, 138, 231)'; 
+    
+                    infoS.style.fontSize = '80%';
+            };
 
-                } else {
+            slika.addEventListener('load', () => {
 
-                    canvasSlike.width = slika.width / 3; 
-                    canvasSlike.height = slika.height / 3; 
-
-                }
-
-                ctx.drawImage(slika, 0, 0, canvasSlike.width, canvasSlike.height); 
-
-                canvasSlike.style.border = '2px';
-                canvasSlike.style.borderStyle = 'solid'; 
-                canvasSlike.style.borderRadius = '16px'; 
-                canvasSlike.style.borderColor = 'rgb(24, 138, 231)'; 
-
-                infoS.style.fontSize = '80%';
+                opcijePrikazaSlike();
 
             }); 
 
@@ -258,6 +263,50 @@ canvasSlikeA = document.querySelector('#canvasSlikeA');
 ctxA = canvasSlikeA.getContext('2d'); 
 noviNiz = new Uint8ClampedArray(10000);
 
+
+function opcijePrikazaNoveSlike() {
+
+    if(slika.width >= 1920){
+
+        canvasSlikeA.width = slika.width / 6; 
+        canvasSlikeA.height = slika.height / 6; 
+
+        } else {
+
+            canvasSlikeA.width = slika.width / 3; 
+            canvasSlikeA.height = slika.height / 3; 
+
+        }
+
+        /*
+        ctx.drawImage(slika, 0, 0, canvasSlike.width, canvasSlike.height); 
+
+        canvasSlike.style.border = '2px';
+        canvasSlike.style.borderStyle = 'solid'; 
+        canvasSlike.style.borderRadius = '16px'; 
+        canvasSlike.style.borderColor = 'rgb(24, 138, 231)'; 
+
+        infoS.style.fontSize = '80%';
+        */
+
+        ctxA.drawImage(slika, 0, 0, canvasSlike.width, canvasSlike.height);
+
+        pikseliSlikaA = ctxA.getImageData(0, 0, canvasSlike.width, canvasSlike.height);
+    
+        for(let i = 0; i < pikseliSlikaA.data.length; i+=4){
+    
+            let vrednost = 0.5 * pikseliSlikaA.data[i] + 0.5 * pikseliSlikaA.data[i + 1] + 0.5 * pikseliSlikaA.data[i + 2]; 
+    
+            pikseliSlikaA.data[i] = vrednost;
+            pikseliSlikaA.data[i + 1] = vrednost;
+            pikseliSlikaA.data[i + 2] = vrednost;
+    
+        }
+    
+        ctxA.putImageData(pikseliSlikaA, 0, 0); 
+
+}
+
 btnNovaSlikaA.addEventListener('click', function(){
     
     /*
@@ -275,22 +324,8 @@ btnNovaSlikaA.addEventListener('click', function(){
     */
 
     //Prikaz ulazne slike
-    ctxA.drawImage(slika, 0, 0, canvasSlikeA.width, canvasSlikeA.height);
 
-    pikseliSlikaA = ctxA.getImageData(0, 0, canvasSlikeA.width, canvasSlikeA.height);
-
-    for(let i = 0; i < pikseliSlikaA.data.length; i+=4){
-
-        let vrednost = 0.5 * pikseliSlikaA.data[i] + 0.5 * pikseliSlikaA.data[i + 1] + 0.5 * pikseliSlikaA.data[i + 2]; 
-
-        pikseliSlikaA.data[i] = vrednost;
-        pikseliSlikaA.data[i + 1] = vrednost;
-        pikseliSlikaA.data[i + 2] = vrednost;
-
-    }
-
-    ctxA.putImageData(pikseliSlikaA, 0, 0); 
-
+    opcijePrikazaNoveSlike();
 });
 
 btnBrisanjeA.addEventListener('click', function(){
@@ -348,7 +383,7 @@ const OpcioniMeniSakrivanje = () => {
 
 opcioniPodaciSlikaSakrivanje.addEventListener('click', () => {
 
-    opcioniPodaciInfo.style.display = 'none';
+    opcioniPodaciInfo.style.display = 'block';
     opcioniPodaciSakrivanje.style.display = 'none';
     opcioniPodaci.style.display = 'none';
     //window.location.reload(true);
