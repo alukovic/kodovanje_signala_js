@@ -76,3 +76,10 @@
     margin: 0 auto;
     /* border: 1px solid black; */
 }
+
+#slikaMeni:hover, #slikaSakrivanje:hover{
+    padding: 0.5em;
+    border: 2px solid rgb(65, 83, 182);
+    border-radius: 5px;
+}
+

@@ -228,10 +228,11 @@ window.addEventListener('load', function(){
         }, 3600);
         */
 
-        korak4 = await setTimeout(() => prikazRGBA(), 1500);
+        korak3 = await setTimeout(() => prikazRGBA(), 1500);
 
-        korak3 = await setTimeout(() => {
+        korak4 = await setTimeout(() => {
 
+            ucitavanje.style.display = 'none';
             txtUcitavanje.style.display = 'none'; 
 
         }, 2000);
@@ -326,7 +327,7 @@ opcioniPodaciSlikaSakrivanje = document.querySelector('.opcioniPodaciSlikaSakriv
 const OpcioniMeniSakrivanje = () => {
 
     opcioniPodaciSakrivanje.style.display = 'block';
-    opcioniTekstSakrivanje.innerHTML = 'Sakrijte meni';
+    opcioniTekstSakrivanje.innerHTML = 'Sakrijte opcioni prikaz piksela: ';
 
 };
 
@@ -335,5 +336,5 @@ opcioniPodaciSlikaSakrivanje.addEventListener('click', () => {
     //opcioniPodaciInfo.style.display = 'none';
     //opcioniPodaciSakrivanje.display = 'none';
     window.location.reload(true);
-    
+
 });
