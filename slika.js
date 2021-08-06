@@ -104,6 +104,7 @@ window.addEventListener('load', function(){
     obradaSlike.style.display = 'none'; 
     opcioniPodaciSakrivanje.style.display = 'none';
     noviMeni.style.display = 'none'; 
+    txtDemoDCTinfo.style.display = 'none';
     sakrivanjeRGBA();
 
     document.querySelector('input[type="file"]').addEventListener('change', function(){
@@ -440,5 +441,23 @@ btnGenerisanjeDemo.addEventListener('click', () => {
 });
 
 btnNoviUnosDemo.addEventListener('click', () => {
+    window.location.reload(true);
+});
+
+txtDemoDCTinfo = document.querySelector('#txtDemoDCTinfo');
+btnNoviUnosDemoDCT = document.querySelector('#btnNoviUnosDemoDCT');
+
+const funkcijaDCT = () => {
+
+    txtDemoDCTinfo.style.display = 'block';
+    txtDemoDCTinfo.value = 'Funkcija je još uvek u fazi izrade...'; 
+
+};
+
+btnDemoDCT.addEventListener('click', () => {
+    funkcijaDCT();
+});
+
+btnNoviUnosDemoDCT.addEventListener('click', () => {
     window.location.reload(true);
 });

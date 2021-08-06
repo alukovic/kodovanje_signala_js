@@ -89,7 +89,7 @@
 
 #btnGenerisanjeDemo{
     width: 7em; 
-    background-color: #FFCC66; 
+    background-color: #34eb0f; 
 }
 
 #btnDemoDCT{
@@ -97,5 +97,15 @@
 }
 
 #btnNoviUnosDemo{
-    background-color: rgb(54, 190, 84);
+    background-color: rgb(54, 117, 190);
+}
+
+#txtDemoDCTinfo{
+    margin: 0 auto; 
+    margin-top: 0.5em; 
+    width: 15em;
+}
+
+#btnNoviUnosDemoDCT{
+    background-color: rgb(65, 65, 179);
 }
