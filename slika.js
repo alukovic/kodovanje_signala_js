@@ -387,3 +387,11 @@ opcioniPodaciUcitavanje = document.querySelector('.opcioniPodaciUcitavanje');
 
 opcioniPodaciUcitavanjeInfo = document.querySelector('#opcioniPodaciUcitavanje'); 
 
+// Novo | Test | Demo | DCT 
+
+btnGenerisanjeDemo = document.querySelector('#btnGenerisanjeDemo');
+canvasDemoA = document.querySelector('#canvasDemoA');
+
+btnDemoDCT = document.querySelector('#btnDemoDCT'); 
+canvasDemoDCT = document.querySelector('#canvasDemoDCT'); 
+

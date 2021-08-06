@@ -87,3 +87,11 @@
     font-size: smaller; 
 }
 
+#btnGenerisanjeDemo{
+    width: 7em; 
+    background-color: #FFCC66; 
+}
+
+#btnDemoDCT{
+    background-color: #00994D;
+}
