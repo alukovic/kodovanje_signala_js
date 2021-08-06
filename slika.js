@@ -103,11 +103,13 @@ window.addEventListener('load', function(){
     meniSlika.style.display = 'none'; 
     obradaSlike.style.display = 'none'; 
     opcioniPodaciSakrivanje.style.display = 'none';
+    noviMeni.style.display = 'none'; 
     sakrivanjeRGBA();
 
     document.querySelector('input[type="file"]').addEventListener('change', function(){
 
         meniSlika.style.display = 'block'; 
+        noviMeni.style.display = 'block'; 
         //obradaSlike.style.visibility = 'visible'; 
 
         if(this.files && this.files[0]){
@@ -254,6 +256,7 @@ window.addEventListener('load', function(){
     });                
 
 //btnPodaciSlika.addEventListener('loadstart', funkcijaProracun());
+noviMeni = document.querySelector('.noviMeni');
 
 btnNovaSlikaA = document.querySelector('#btnNovaSlikaA');
 btnNovaSlikaA.style.backgroundColor = '#5D8AA8';  
