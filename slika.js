@@ -395,3 +395,29 @@ canvasDemoA = document.querySelector('#canvasDemoA');
 btnDemoDCT = document.querySelector('#btnDemoDCT'); 
 canvasDemoDCT = document.querySelector('#canvasDemoDCT'); 
 
+ctxDemoA = canvasDemoA.getContext('2d'); 
+ctxDemoDCT = canvasDemoDCT.getContext('2d'); 
+
+
+
+const generisanjeDemoCanvasa = () => {
+
+    nizPikselaDemo = new Uint8ClampedArray(256);
+
+    for(let i = 0; i < nizPikselaDemo.length; i+=4){
+
+        nizPikselaDemo[i + 0] = 5;
+        nizPikselaDemo[i + 1] = 25;
+        nizPikselaDemo[i + 2] = 150;
+        nizPikselaDemo[i + 3] = 255; 
+
+    }
+
+    podaciDemoSlike = new ImageData(nizPikselaDemo, 16);
+    ctxDemoA.putImageData(podaciDemoSlike, 8, 8); 
+
+};
+
+btnGenerisanjeDemo.addEventListener('click', () => {
+    generisanjeDemoCanvasa();
+});
