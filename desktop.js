@@ -1,6 +1,8 @@
 /*
 30.6.2021. Sre.
-Kod za realizaciju Electron.js cross-platform desktop aplikacije...
+Kod za realizaciju Electron.js cross-platform desktop aplikacije... 
+Aužuriranje:
+6.8.2021. Pet. 
 */
 
 const electron = require('electron');

@@ -52,7 +52,11 @@ Pro 2.3.8 3.8.2021. Uto.
 Pro 2.3.8 4.8.2021. Sre. 
     Nastavak sa izmenama programa... 
     Završetak uvođenja opcionog prikaza svih RGBA vrednosti piksela. (v4 | 4.8.2021.) 
-    Kreiranje efekta crno-bele slike od date ulazne slike u boji... (v6 | 4.8.2021. )
+    Kreiranje efekta crno-bele slike od date ulazne slike u boji... (v6 | 4.8.2021. ) 
+
+//Dan14
+Pro 2.3.8. 6.8.2021. Pet. 
+    Nastavak sa dodavanjem novih funkcionalnosti programa...    
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
