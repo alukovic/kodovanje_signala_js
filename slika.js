@@ -89,10 +89,16 @@ document.onreadystatechange = function(){
 
     if(document.readyState !== 'complete'){
 
+        //optimizacija prikaza
         txtUcitavanje.style.display = 'none'; 
         meniSlika.style.display = 'none'; 
         obradaSlike.style.display = 'none'; 
-
+        //dodatna optimizacija prikaza
+        noviMeni.style.display = 'none';
+        opcioniPodaci.style.display = 'none';
+        opcioniPodaciInfo.style.display = 'none';
+        opcioniPodaciSakrivanje.style.display = 'none';
+        
     }
 
 }
