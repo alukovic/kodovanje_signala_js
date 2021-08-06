@@ -390,6 +390,8 @@ opcioniPodaciUcitavanjeInfo = document.querySelector('#opcioniPodaciUcitavanje')
 // Novo | Test | Demo | DCT 
 
 btnGenerisanjeDemo = document.querySelector('#btnGenerisanjeDemo');
+btnNoviUnosDemo = document.querySelector('#btnNoviUnosDemo'); 
+
 canvasDemoA = document.querySelector('#canvasDemoA');
 
 btnDemoDCT = document.querySelector('#btnDemoDCT'); 
@@ -398,7 +400,11 @@ canvasDemoDCT = document.querySelector('#canvasDemoDCT');
 ctxDemoA = canvasDemoA.getContext('2d'); 
 ctxDemoDCT = canvasDemoDCT.getContext('2d'); 
 
+noviNizPikselaDemo = new Array();
 
+const nasumicnaVrednostPiksela = (min, max) => {
+ return  Math.round(Math.random() * (max - min) + min);
+};
 
 const generisanjeDemoCanvasa = () => {
 
@@ -406,18 +412,30 @@ const generisanjeDemoCanvasa = () => {
 
     for(let i = 0; i < nizPikselaDemo.length; i+=4){
 
-        nizPikselaDemo[i + 0] = 5;
-        nizPikselaDemo[i + 1] = 25;
-        nizPikselaDemo[i + 2] = 150;
-        nizPikselaDemo[i + 3] = 255; 
+        nizPikselaDemo[i + 0] = nasumicnaVrednostPiksela(0, 255);
+        nizPikselaDemo[i + 1] = nasumicnaVrednostPiksela(0, 255);
+        nizPikselaDemo[i + 2] = nasumicnaVrednostPiksela(0, 255);
+        nizPikselaDemo[i + 3] = nasumicnaVrednostPiksela(0, 255); 
 
+    }
+
+    for(let i= 0; i < nizPikselaDemo.length; i++){
+        noviNizPikselaDemo.push(nizPikselaDemo[i]); 
     }
 
     podaciDemoSlike = new ImageData(nizPikselaDemo, 16);
     ctxDemoA.putImageData(podaciDemoSlike, 8, 8); 
-
+    console.log(noviNizPikselaDemo);
+    console.log(noviNizPikselaDemo.length); 
 };
 
 btnGenerisanjeDemo.addEventListener('click', () => {
     generisanjeDemoCanvasa();
+    console.log(noviNizPikselaDemo);
+    console.log(nasumicnaVrednostPiksela(0, 255));
+    console.log(nasumicnaVrednostPiksela(0, 255));
+});
+
+btnNoviUnosDemo.addEventListener('click', () => {
+    window.location.reload(true);
 });
