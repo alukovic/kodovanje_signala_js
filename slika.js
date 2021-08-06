@@ -57,7 +57,7 @@ Pro 2.3.8 4.8.2021. Sre.
 //Dan14
 Pro 2.3.8. 6.8.2021. Pet. 
     Nastavak sa dodavanjem novih funkcionalnosti programa... 
-    Novo | Test | Demo | DCT| Početak 
+    Novo | Test | Demo | DCT | Početak 
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
