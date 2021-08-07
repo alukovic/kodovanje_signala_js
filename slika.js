@@ -54,8 +54,8 @@ Pro 2.3.8 4.8.2021. Sre.
     Završetak uvođenja opcionog prikaza svih RGBA vrednosti piksela. (v4 | 4.8.2021.) 
     Kreiranje efekta crno-bele slike od date ulazne slike u boji... (v6 | 4.8.2021. ) 
 
-//Dan14
-Pro 2.3.8. 6.8.2021. Pet. 
+//Dan14 && Dan15
+Pro 2.3.8. 6.8.2021. Pet. && Pro 2.3.8. 7.8.2021. Sub. 
     Nastavak sa dodavanjem novih funkcionalnosti programa... 
     Novo | Test | Demo | DCT | Početak 
 */
@@ -85,20 +85,24 @@ nizPiksela4String = '';
 
 //slika = new Image(); 
 
+const optimizacijaPrikaza = () => {
+
+    txtUcitavanje.style.display = 'none'; 
+    meniSlika.style.display = 'none'; 
+    obradaSlike.style.display = 'none'; 
+    //dodatna optimizacija prikaza
+    noviMeni.style.display = 'none';
+    opcioniPodaci.style.display = 'none';
+    opcioniPodaciInfo.style.display = 'none';
+    opcioniPodaciSakrivanje.style.display = 'none';
+    txtDemoDCTinfo.style.display = 'none';
+
+};
+
 document.onreadystatechange = function(){
 
     if(document.readyState !== 'complete'){
-
-        //optimizacija prikaza
-        txtUcitavanje.style.display = 'none'; 
-        meniSlika.style.display = 'none'; 
-        obradaSlike.style.display = 'none'; 
-        //dodatna optimizacija prikaza
-        noviMeni.style.display = 'none';
-        opcioniPodaci.style.display = 'none';
-        opcioniPodaciInfo.style.display = 'none';
-        opcioniPodaciSakrivanje.style.display = 'none';
-        
+        optimizacijaPrikaza();
     }
 
 }
