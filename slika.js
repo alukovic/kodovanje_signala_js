@@ -58,6 +58,9 @@ Pro 2.3.8 4.8.2021. Sre.
 Pro 2.3.8. 6.8.2021. Pet. && Pro 2.3.8. 7.8.2021. Sub. 
     Nastavak sa dodavanjem novih funkcionalnosti programa... 
     Novo | Test | Demo | DCT | Početak 
+
+//Dan16
+Pro 2.3.8 9.8.2021. Pon.         
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -427,10 +430,10 @@ const generisanjeDemoCanvasa = () => {
 
     for(let i = 0; i < nizPikselaDemo.length; i+=4){
 
-        nizPikselaDemo[i + 0] = nasumicnaVrednostPiksela(0, 255);
-        nizPikselaDemo[i + 1] = nasumicnaVrednostPiksela(0, 255);
-        nizPikselaDemo[i + 2] = nasumicnaVrednostPiksela(0, 255);
-        nizPikselaDemo[i + 3] = nasumicnaVrednostPiksela(0, 255); 
+        nizPikselaDemo[i + 0] = nasumicnaVrednostPiksela(0, 250);
+        nizPikselaDemo[i + 1] = nasumicnaVrednostPiksela(0, 250);
+        nizPikselaDemo[i + 2] = nasumicnaVrednostPiksela(0, 250);
+        nizPikselaDemo[i + 3] = nasumicnaVrednostPiksela(0, 250); 
 
     }
 
@@ -439,16 +442,44 @@ const generisanjeDemoCanvasa = () => {
     }
 
     podaciDemoSlike = new ImageData(nizPikselaDemo, 16);
+
+    //Nove vrednosti piksela
     ctxDemoA.putImageData(podaciDemoSlike, 8, 8); 
     console.log(noviNizPikselaDemo);
     console.log(noviNizPikselaDemo.length); 
+
 };
 
+//test
+
+noviDCTpNiz = new Array();
+
+const noviDCTpikseli = () => {
+
+    noviDCTp = new Number(); 
+    noviDCTpUint8Niz = new Uint8ClampedArray(256);
+
+
+    for(let i = 0; i < noviDCTpUint8Niz.length; i++){
+        noviDCTp = nizPikselaDemo[i] + 3; 
+        noviDCTpNiz.push(noviDCTp);
+        
+    }
+
+    noviPodaciDCTslike = new ImageData(noviDCTpUint8Niz, 16);
+
+    ctxDemoDCT.putImageData(noviPodaciDCTslike, 8, 8);
+    console.log(noviDCTpNiz);
+    console.log(noviDCTpNiz.length);
+}
+
 btnGenerisanjeDemo.addEventListener('click', () => {
+
     generisanjeDemoCanvasa();
     console.log(noviNizPikselaDemo);
     console.log(nasumicnaVrednostPiksela(0, 255));
     console.log(nasumicnaVrednostPiksela(0, 255));
+
 });
 
 btnNoviUnosDemo.addEventListener('click', () => {
@@ -466,9 +497,13 @@ const funkcijaDCT = () => {
 };
 
 btnDemoDCT.addEventListener('click', () => {
+
     funkcijaDCT();
+    noviDCTpikseli();
+
 });
 
 btnNoviUnosDemoDCT.addEventListener('click', () => {
     window.location.reload(true);
 });
+
