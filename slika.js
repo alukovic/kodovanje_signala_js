@@ -60,7 +60,8 @@ Pro 2.3.8. 6.8.2021. Pet. && Pro 2.3.8. 7.8.2021. Sub.
     Novo | Test | Demo | DCT | Početak 
 
 //Dan16
-Pro 2.3.8 9.8.2021. Pon.         
+Pro 2.3.8 9.8.2021. Pon. 
+    Novo | Test | Demo | DCT | Nastavak     
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
