@@ -426,7 +426,7 @@ const nasumicnaVrednostPiksela = (min, max) => {
 
 const generisanjeDemoCanvasa = () => {
 
-    nizPikselaDemo = new Uint8ClampedArray(256);
+    nizPikselaDemo = new Uint8ClampedArray(4 * 10000);
 
     for(let i = 0; i < nizPikselaDemo.length; i+=4){
 
@@ -441,10 +441,10 @@ const generisanjeDemoCanvasa = () => {
         noviNizPikselaDemo.push(nizPikselaDemo[i]); 
     }
 
-    podaciDemoSlike = new ImageData(nizPikselaDemo, 16);
+    podaciDemoSlike = new ImageData(nizPikselaDemo, 100);
 
     //Nove vrednosti piksela
-    ctxDemoA.putImageData(podaciDemoSlike, 8, 8); 
+    ctxDemoA.putImageData(podaciDemoSlike, 0, 0); 
     console.log(noviNizPikselaDemo);
     console.log(noviNizPikselaDemo.length); 
 
@@ -457,21 +457,23 @@ noviDCTpNiz = new Array();
 const noviDCTpikseli = () => {
 
     noviDCTp = new Number(); 
-    noviDCTpUint8Niz = new Uint8ClampedArray(256);
-
+    //noviDCTpUint8Niz = new Uint8ClampedArray(256);
+    noviDCTpUint8Niz = new Uint8ClampedArray(4 * 10000);
 
     for(let i = 0; i < noviDCTpUint8Niz.length; i++){
-        noviDCTp = nizPikselaDemo[i] + 3; 
-        noviDCTpNiz.push(noviDCTp);
+        
+        noviDCTpUint8Niz[i] = nizPikselaDemo[i] + 3; 
+        noviDCTpNiz.push(noviDCTpUint8Niz[i]);
         
     }
 
-    noviPodaciDCTslike = new ImageData(noviDCTpUint8Niz, 16);
+    //noviPodaciDCTslike = new ImageData(noviDCTpUint8Niz, 16);
+    noviPodaciDCTslike = new ImageData(noviDCTpUint8Niz, 100);
 
-    ctxDemoDCT.putImageData(noviPodaciDCTslike, 8, 8);
+    ctxDemoDCT.putImageData(noviPodaciDCTslike, 0, 0);
     console.log(noviDCTpNiz);
     console.log(noviDCTpNiz.length);
-}
+};
 
 btnGenerisanjeDemo.addEventListener('click', () => {
 

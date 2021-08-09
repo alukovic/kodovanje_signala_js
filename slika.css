@@ -14,7 +14,7 @@
     box-sizing: border-box;
 }
 
-#canvasSlike, #canvasSlikeA{
+#canvasSlike, #canvasSlikeA, #canvasDemoA, #canvasDemoDCT{
 
     max-width: 32em; 
 
@@ -108,4 +108,10 @@
 
 #btnNoviUnosDemoDCT{
     background-color: rgb(65, 65, 179);
+}
+
+#canvasDemoA, #canvasDemoDCT{
+    border: 2px solid rgb(19, 37, 139); 
+    border-radius: 16px;
+    margin-top: 0.5em;
 }
