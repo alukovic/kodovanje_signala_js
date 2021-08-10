@@ -315,7 +315,7 @@ function opcijePrikazaNoveSlike() {
             pikseliSlikaA.data[i] = vrednost;
             pikseliSlikaA.data[i + 1] = vrednost;
             pikseliSlikaA.data[i + 2] = vrednost;
-    
+
         }
     
         ctxA.putImageData(pikseliSlikaA, 0, 0); 
@@ -458,6 +458,7 @@ const generisanjeDemoCanvasaA = () => {
 
         noviNizPikselaDemoPiksel.push(piksel[i]);
         noviNizPikselaDemoPikselF = noviNizPikselaDemoPiksel.filter(x => x > 0);
+        
     }
 
     podaciDemoSlike = new ImageData(nizPikselaDemo, 100);
@@ -475,22 +476,56 @@ const generisanjeDemoCanvasaA = () => {
 
 };
 
+nizObradaUlazneSlike = new Array();
+nizObradaUlazneSlikeF = new Array();
+
 const obradaUlazneSlike = () => {
 
     //Početak kreiranja funkcije za obradu ulazne slike
+
+    /*
+    if(slika.width >= 1920){
+
+        canvasSlike.width = slika.width / 6; 
+        canvasSlike.height = slika.height / 6; 
+
+        } else {
+
+            canvasSlike.width = slika.width / 3; 
+            canvasSlike.height = slika.height / 3; 
+
+        }
+    */
+
     podaciUlazneSlike = new Uint8ClampedArray();
     podaciUlazneSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
 
     pikseliUlazneSlike = podaciUlazneSlike.data; 
 
-    ctxDemoA.putImageData(podaciUlazneSlike, 0, 0);
+    pikselA = new Array(); 
 
-};
+    for(let i = 0; i < podaciUlazneSlike.length; i++){
+        pikselA[i] = (podaciUlazneSlike.data[i] + podaciUlazneSlike.data[i + 1] + podaciUlazneSlike.data[i + 2] + podaciUlazneSlike.data[i + 3]) / 4;
+    }
+
+    for(let i = 0; i < pikselA.length; i++){
+
+        nizObradaUlazneSlike.push(pikselA[i]);
+        nizObradaUlazneSlikeF = nizObradaUlazneSlike.filter(x => x > 0);
+
+    }
+
+    podaciUlazneSlikePiksel = new ImageData(pikselA, 50);
+
+    //ctxDemoA.putImageData(podaciUlazneSlike, 0, 0);
+    ctxDemoA.putImageData(podaciUlazneSlikePiksel, 0, 0);
+    //ctxDemoA.drawImage(slika, 0, 0, canvasSlike.width, canvasSlike.height);
+}
 
 const generisanjeDemoCanvasa = () => {
 
-    generisanjeDemoCanvasaA();
-    //obradaUlazneSlike();
+    //generisanjeDemoCanvasaA();
+    obradaUlazneSlike();
     
 };
 
