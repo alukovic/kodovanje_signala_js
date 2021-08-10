@@ -59,8 +59,8 @@ Pro 2.3.8. 6.8.2021. Pet. && Pro 2.3.8. 7.8.2021. Sub.
     Nastavak sa dodavanjem novih funkcionalnosti programa... 
     Novo | Test | Demo | DCT | Početak 
 
-//Dan16
-Pro 2.3.8 9.8.2021. Pon. 
+//Dan16 && Dan17
+Pro 2.3.8 9.8.2021. Pon. && Pro 2.3.8 10.8.2021. Uto. 
     Novo | Test | Demo | DCT | Nastavak     
 */
 
