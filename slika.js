@@ -506,20 +506,26 @@ const obradaUlazneSlike = () => {
     pikselA = new Array(); 
 
     
-    for(let i = 0; i < 14400; i+=4){
+    for(let i = 0; i < 40000; i+=4){
         pikselA[i] = Math.round((pikseliUlazneSlike[i] + pikseliUlazneSlike[i + 1] + pikseliUlazneSlike[i + 2] + pikseliUlazneSlike[i + 3]) / 4);
     }
     
-    for(let i = 0; i < 14400; i++){
+    for(let i = 0; i < 40000; i++){
 
         nizObradaUlazneSlike.push(pikselA[i]);
         nizObradaUlazneSlikeF = nizObradaUlazneSlike.filter(x => x > 0);
 
     }
     
-    nizObradaUlazneSlikeUint8C = new Uint8ClampedArray(nizObradaUlazneSlike);
-
-    podaciUlazneSlikePiksel = new ImageData(nizObradaUlazneSlikeUint8C, 60, 60);
+    nizObradaUlazneSlikeUint8C = new Uint8ClampedArray(nizObradaUlazneSlikeF);
+    console.log(pikselA); 
+    console.log(pikseliUlazneSlike);
+    console.log(nizObradaUlazneSlike);
+    console.log(nizObradaUlazneSlikeF);
+    console.log(nizObradaUlazneSlike.length);
+    console.log(nizObradaUlazneSlikeF.length);
+    console.log(nizObradaUlazneSlikeUint8C);
+    podaciUlazneSlikePiksel = new ImageData(nizObradaUlazneSlikeUint8C, 50, 50);
     console.log(podaciUlazneSlikePiksel);
 
     //ctxDemoA.putImageData(podaciUlazneSlike, 0, 0);
@@ -529,8 +535,8 @@ const obradaUlazneSlike = () => {
 
 const generisanjeDemoCanvasa = () => {
 
-    generisanjeDemoCanvasaA();
-    //obradaUlazneSlike();
+    //generisanjeDemoCanvasaA();
+    obradaUlazneSlike();
     
 };
 
