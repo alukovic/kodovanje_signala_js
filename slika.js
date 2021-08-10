@@ -461,7 +461,7 @@ const generisanjeDemoCanvasa = () => {
     //Nove vrednosti piksela
     //ctxDemoA.putImageData(podaciDemoSlike, 0, 0); 
 
-    ctxDemoA.putImageData(podaciDemoSlikePiksel, 0, 0);
+    ctxDemoA.putImageData(podaciDemoSlikePiksel, 120, 50);
     console.log(noviNizPikselaDemo);
     console.log(noviNizPikselaDemo.length); 
     console.log(noviNizPikselaDemoPiksel);
@@ -482,15 +482,15 @@ const noviDCTpikseli = () => {
 
     for(let i = 0; i < noviDCTpUint8Niz.length; i++){
         
-        noviDCTpUint8Niz[i] = piksel[i]; 
+        noviDCTpUint8Niz[i] = piksel[i] * 0.5; 
         noviDCTpNiz.push(noviDCTpUint8Niz[i]);
         
     }
 
     //noviPodaciDCTslike = new ImageData(noviDCTpUint8Niz, 16);
-    noviPodaciDCTslike = new ImageData(noviDCTpUint8Niz, 100);
+    noviPodaciDCTslike = new ImageData(noviDCTpUint8Niz, 50);
 
-    ctxDemoDCT.putImageData(noviPodaciDCTslike, 0, 0);
+    ctxDemoDCT.putImageData(noviPodaciDCTslike, 120, 50);
     console.log(noviDCTpNiz);
     console.log(noviDCTpNiz.length);
 };
