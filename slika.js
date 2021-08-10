@@ -518,6 +518,8 @@ const obradaUlazneSlike = () => {
     }
     
     nizObradaUlazneSlikeUint8C = new Uint8ClampedArray(nizObradaUlazneSlikeF);
+    
+    /*
     console.log(pikselA); 
     console.log(pikseliUlazneSlike);
     console.log(nizObradaUlazneSlike);
@@ -525,11 +527,13 @@ const obradaUlazneSlike = () => {
     console.log(nizObradaUlazneSlike.length);
     console.log(nizObradaUlazneSlikeF.length);
     console.log(nizObradaUlazneSlikeUint8C);
-    podaciUlazneSlikePiksel = new ImageData(nizObradaUlazneSlikeUint8C, 50, 50);
     console.log(podaciUlazneSlikePiksel);
+    */
+
+    podaciUlazneSlikePiksel = new ImageData(nizObradaUlazneSlikeUint8C, 50, 50);
 
     //ctxDemoA.putImageData(podaciUlazneSlike, 0, 0);
-    ctxDemoA.putImageData(podaciUlazneSlikePiksel, 0, 0);
+    ctxDemoA.putImageData(podaciUlazneSlikePiksel, 120, 50);
     //ctxDemoA.drawImage(slika, 0, 0, canvasSlike.width, canvasSlike.height);
 }
 
