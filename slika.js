@@ -52,16 +52,21 @@ Pro 2.3.8 3.8.2021. Uto.
 Pro 2.3.8 4.8.2021. Sre. 
     Nastavak sa izmenama programa... 
     Završetak uvođenja opcionog prikaza svih RGBA vrednosti piksela. (v4 | 4.8.2021.) 
-    Kreiranje efekta crno-bele slike od date ulazne slike u boji... (v6 | 4.8.2021. ) 
+    Kreiranje efekta crno-bele slike od date ulazne slike u boji... (v6 | 4.8.2021.) 
 
 //Dan14 && Dan15
 Pro 2.3.8. 6.8.2021. Pet. && Pro 2.3.8. 7.8.2021. Sub. 
     Nastavak sa dodavanjem novih funkcionalnosti programa... 
     Novo | Test | Demo | DCT | Početak 
 
-//Dan16 && Dan17
-Pro 2.3.8 9.8.2021. Pon. && Pro 2.3.8 10.8.2021. Uto. 
-    Novo | Test | Demo | DCT | Nastavak     
+//Dan16
+Pro 2.3.8 9.8.2021. Pon.  
+    Novo | Test | Demo | DCT | Nastavak  
+
+//Dan17
+Pro 2.3.8 10.8.2021. Uto.
+    Novo | Test | Demo | DCT | Nastavak  
+    Početak kreiranja funkcije za obradu ulazne slike... (v4 | 10.8.2021.)
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -161,9 +166,7 @@ window.addEventListener('load', function(){
             };
 
             slika.addEventListener('load', () => {
-
                 opcijePrikazaSlike();
-
             }); 
 
         }
@@ -427,7 +430,9 @@ const nasumicnaVrednostPiksela = (min, max) => {
  return  Math.round(Math.random() * (max - min) + min);
 };
 
-const generisanjeDemoCanvasa = () => {
+
+const generisanjeDemoCanvasaA = () => {
+    //Test: demo slika
 
     nizPikselaDemo = new Uint8ClampedArray(4 * 10000);
     piksel = new Uint8ClampedArray(10000);
@@ -470,7 +475,26 @@ const generisanjeDemoCanvasa = () => {
 
 };
 
-//test
+const obradaUlazneSlike = () => {
+
+    //Početak kreiranja funkcije za obradu ulazne slike
+    podaciUlazneSlike = new Uint8ClampedArray();
+    podaciUlazneSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
+
+    pikseliUlazneSlike = podaciUlazneSlike.data; 
+
+    ctxDemoA.putImageData(podaciUlazneSlike, 0, 0);
+
+};
+
+const generisanjeDemoCanvasa = () => {
+
+    generisanjeDemoCanvasaA();
+    //obradaUlazneSlike();
+    
+};
+
+//Novi test
 
 noviDCTpNiz = new Array();
 
