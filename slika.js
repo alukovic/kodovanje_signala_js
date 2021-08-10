@@ -420,6 +420,8 @@ ctxDemoA = canvasDemoA.getContext('2d');
 ctxDemoDCT = canvasDemoDCT.getContext('2d'); 
 
 noviNizPikselaDemo = new Array();
+noviNizPikselaDemoPiksel = new Array();
+noviNizPikselaDemoPikselF = new Array();
 
 const nasumicnaVrednostPiksela = (min, max) => {
  return  Math.round(Math.random() * (max - min) + min);
@@ -428,6 +430,7 @@ const nasumicnaVrednostPiksela = (min, max) => {
 const generisanjeDemoCanvasa = () => {
 
     nizPikselaDemo = new Uint8ClampedArray(4 * 10000);
+    piksel = new Uint8ClampedArray(10000);
 
     for(let i = 0; i < nizPikselaDemo.length; i+=4){
 
@@ -436,18 +439,34 @@ const generisanjeDemoCanvasa = () => {
         nizPikselaDemo[i + 2] = nasumicnaVrednostPiksela(0, 250);
         nizPikselaDemo[i + 3] = nasumicnaVrednostPiksela(0, 250); 
 
+        //piksel[i] = (nizPikselaDemo[i + 0] + nizPikselaDemo[i + 1] + nizPikselaDemo[i + 2] + nizPikselaDemo[i + 3]) / 4;
     }
 
-    for(let i= 0; i < nizPikselaDemo.length; i++){
+    for(let i = 0; i < nizPikselaDemo.length; i++){
+
         noviNizPikselaDemo.push(nizPikselaDemo[i]); 
+        piksel[i] = (nizPikselaDemo[i + 0] + nizPikselaDemo[i + 1] + nizPikselaDemo[i + 2] + nizPikselaDemo[i + 3]) / 4; 
+
+    }
+
+    for(let i = 0; i < piksel.length; i++){
+
+        noviNizPikselaDemoPiksel.push(piksel[i]);
+        noviNizPikselaDemoPikselF = noviNizPikselaDemoPiksel.filter(x => x > 0);
     }
 
     podaciDemoSlike = new ImageData(nizPikselaDemo, 100);
+    podaciDemoSlikePiksel = new ImageData(piksel, 50);
 
     //Nove vrednosti piksela
-    ctxDemoA.putImageData(podaciDemoSlike, 0, 0); 
+    //ctxDemoA.putImageData(podaciDemoSlike, 0, 0); 
+
+    ctxDemoA.putImageData(podaciDemoSlikePiksel, 0, 0);
     console.log(noviNizPikselaDemo);
     console.log(noviNizPikselaDemo.length); 
+    console.log(noviNizPikselaDemoPiksel);
+    //console.log(noviNizPikselaDemoPikselF);
+    //console.log(noviNizPikselaDemoPikselF.length);
 
 };
 
@@ -463,7 +482,7 @@ const noviDCTpikseli = () => {
 
     for(let i = 0; i < noviDCTpUint8Niz.length; i++){
         
-        noviDCTpUint8Niz[i] = nizPikselaDemo[i] + 3; 
+        noviDCTpUint8Niz[i] = piksel[i]; 
         noviDCTpNiz.push(noviDCTpUint8Niz[i]);
         
     }
