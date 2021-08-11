@@ -110,6 +110,10 @@ const optimizacijaPrikaza = () => {
     opcioniPodaciSakrivanje.style.display = 'none';
     txtDemoDCTinfo.style.display = 'none';
 
+    //Novo
+    demoDCT.style.display = 'none';
+    testCanvas.style.display = 'none';
+
 };
 
 document.onreadystatechange = function(){
@@ -131,11 +135,18 @@ window.addEventListener('load', function(){
     txtDemoDCTinfo.style.display = 'none';
     sakrivanjeRGBA();
 
+    //Novo
+    demoDCT.style.display = 'none';
+    testCanvas.style.display = 'none';
+
     document.querySelector('input[type="file"]').addEventListener('change', function(){
 
         meniSlika.style.display = 'block'; 
         noviMeni.style.display = 'block'; 
         //obradaSlike.style.visibility = 'visible'; 
+
+        //Novo
+        testCanvas.style.display = 'block';
 
         if(this.files && this.files[0]){
 
@@ -546,6 +557,11 @@ const obradaUlazneSlike = () => {
     //ctxDemoA.putImageData(podaciUlazneSlikePiksel, 120, 50);
     ctxDemoA.drawImage(slika, 0, 0, canvasDemoA.width, canvasDemoA.height);
 
+    pikseliUlazneSlike = ctxDemoA.getImageData(0, 0, canvasDemoA.width, canvasDemoA.height);
+
+    console.log(pikseliUlazneSlike);
+    console.log(pikseliUlazneSlike.length);
+
     
 }
 
@@ -619,3 +635,5 @@ btnNoviUnosDemoDCT.addEventListener('click', () => {
     window.location.reload(true);
 });
 
+demoDCT = document.querySelector('.demoDCT');
+testCanvas = document.querySelector('.testCanvas');
