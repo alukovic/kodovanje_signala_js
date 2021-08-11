@@ -572,7 +572,7 @@ const obradaUlazneSlike = () => {
     nizSrVrPikselaFuInt8C = new Uint8ClampedArray();
 
     nizSrVrPikselaFf = new Array();
-    nizSrVrPikselaFfUInt8C = new Uint8ClampedArray();
+    nizSrVrPikselaFfUint8C = new Uint8ClampedArray();
 
     for(let i = 0; i < pikseliUlazneSlike.length; i+=4){
         
@@ -603,19 +603,21 @@ const obradaUlazneSlike = () => {
     nizSrVrPikselaFf.push(23);
     nizSrVrPikselaFf.push(23);
 
+    /*
     console.log(nizSrVrPiksela); 
     console.log(nizSrVrPikselaUint8C);
     console.log(nizSrVrPikselaF);
     console.log(nizSrVrPikselaFuInt8C); 
     console.log(nizSrVrPikselaFf);
     console.log(nizSrVrPikselaFf.length);
+    */
 
-    for(let i = 0; nizSrVrPiksela.length; i++){
-        nizSrVrPikselaFfUInt8C = new Uint8ClampedArray(nizSrVrPikselaFf);
+    for(let i = 0; i < nizSrVrPiksela.length; i++){
+        nizSrVrPikselaFfUint8C = new Uint8ClampedArray(nizSrVrPikselaFf);
     }
 
-    console.log(nizSrVrPikselaFfUInt8C); 
-    console.log(nizSrVrPikselaFfUInt8C.length); 
+    console.log(nizSrVrPikselaFfUint8C); 
+    console.log(nizSrVrPikselaFfUint8C.length); 
 
     //aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaUint8C, canvasDemoA.width, canvasDemoA.height);
     //ctxDemoA.putImageData(aaaPodaciUlazneSlike, 0, 0); 
@@ -624,11 +626,14 @@ const obradaUlazneSlike = () => {
     //ctxDemoA.putImageData(aaaPodaciUlazneSlike, 0, 0); 
 
     //Filtrirani niz piksela
-    aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaFfUInt8C, canvasDemoA.width / 4, canvasDemoA.height / 4);
-    ctxDemoA.putImageData(aaaPodaciUlazneSlike, 0, 0); 
+    //aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaFfUint8C, Number(Math.round((nizSrVrPikselaFfUint8C / (4 * canvasDemoA.height)))), Number(Math.round(nizSrVrPikselaFfUint8C / (4 * canvasDemoA.width))));
+    //ctxDemoA.putImageData(aaaPodaciUlazneSlike, 0, 0); 
     
     console.log('Funkcija je uspešno izvršena...'); 
-
+    console.log(Number(nizSrVrPikselaFfUint8C.length));
+    console.log('Dimenzije komprimovane slike: ')
+    console.log(Number(Math.round(4 * (nizSrVrPikselaFfUint8C.length / canvasDemoA.height))));
+    console.log(Number(Math.round(nizSrVrPikselaFfUint8C.length / canvasDemoA.width)));
 }
 
 const generisanjeDemoCanvasa = () => {
