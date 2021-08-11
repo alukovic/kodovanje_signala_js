@@ -514,7 +514,6 @@ const obradaUlazneSlike = () => {
 
         }
 
-        podaciUlazneSlike = new Uint8ClampedArray();
         //podaciUlazneSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
     
     /*
@@ -557,12 +556,38 @@ const obradaUlazneSlike = () => {
     //ctxDemoA.putImageData(podaciUlazneSlikePiksel, 120, 50);
     ctxDemoA.drawImage(slika, 0, 0, canvasDemoA.width, canvasDemoA.height);
 
-    pikseliUlazneSlike = ctxDemoA.getImageData(0, 0, canvasDemoA.width, canvasDemoA.height);
+    podaciUlazneSlike = ctxDemoA.getImageData(0, 0, canvasDemoA.width, canvasDemoA.height);
+    pikseliUlazneSlike = podaciUlazneSlike.data;
 
+    console.log(podaciUlazneSlike);
+    console.log(podaciUlazneSlike.data);
     console.log(pikseliUlazneSlike);
     console.log(pikseliUlazneSlike.length);
 
-    
+    srVrPiksela = new Number(); 
+    nizSrVrPiksela = new Array();
+    nizSrVrPikselaUint8C = new Uint8ClampedArray();
+
+    for(let i = 0; i < pikseliUlazneSlike.length; i+=4){
+        
+        srVrPiksela[i] = Math.round((pikseliUlazneSlike[i] + pikseliUlazneSlike[i + 1] + pikseliUlazneSlike[i + 2] + pikseliUlazneSlike[i + 3]) / 4);
+        /*
+        pikseliUlazneSlike[i] = srVrPiksela;
+        pikseliUlazneSlike[i + 1] = srVrPiksela;
+        pikseliUlazneSlike[i + 2] = srVrPiksela;
+        pikseliUlazneSlike[i + 4] = srVrPiksela;
+        */
+       nizSrVrPiksela.push(srVrPiksela[i]);
+       nizSrVrPikselaUint8C = new Uint8ClampedArray(nizSrVrPiksela);
+    }
+
+    //ctxDemoA.putImageData(srVrPiksela, 0, 0); 
+
+    console.log(nizSrVrPiksela); 
+    console.log(nizSrVrPikselaUint8C);
+
+    aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaUint8C, canvasDemoA.width / 16, canvasDemoA.height / 16);
+    ctxDemoA.putImageData(aaaPodaciUlazneSlike, 0, 0); 
 }
 
 const generisanjeDemoCanvasa = () => {
