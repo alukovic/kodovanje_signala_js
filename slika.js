@@ -568,6 +568,9 @@ const obradaUlazneSlike = () => {
     nizSrVrPiksela = new Array();
     nizSrVrPikselaUint8C = new Uint8ClampedArray();
 
+    nizSrVrPikselaF = new Array();
+    nizSrVrPikselaFuInt8C = new Uint8ClampedArray();
+
     for(let i = 0; i < pikseliUlazneSlike.length; i+=4){
         
         srVrPiksela[i] = Math.round((pikseliUlazneSlike[i] + pikseliUlazneSlike[i + 1] + pikseliUlazneSlike[i + 2] + pikseliUlazneSlike[i + 3]) / 4);
@@ -583,10 +586,20 @@ const obradaUlazneSlike = () => {
 
     //ctxDemoA.putImageData(srVrPiksela, 0, 0); 
 
+    for(let i = 0; i < nizSrVrPiksela.length; i++){
+
+        nizSrVrPikselaF.push(srVrPiksela[i]);
+        nizSrVrPikselaFuInt8C = new Uint8ClampedArray(nizSrVrPikselaF);
+    }
+
     console.log(nizSrVrPiksela); 
     console.log(nizSrVrPikselaUint8C);
+    console.log(nizSrVrPikselaF);
+    console.log(nizSrVrPikselaFuInt8C);
 
-    aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaUint8C, canvasDemoA.width / 16, canvasDemoA.height / 16);
+    //aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaUint8C, canvasDemoA.width, canvasDemoA.height);
+    //ctxDemoA.putImageData(aaaPodaciUlazneSlike, 0, 0); 
+    aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaFuInt8C, canvasDemoA.width / 2, canvasDemoA.height / 2);
     ctxDemoA.putImageData(aaaPodaciUlazneSlike, 0, 0); 
 }
 
