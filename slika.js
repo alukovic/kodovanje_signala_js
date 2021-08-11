@@ -70,7 +70,8 @@ Pro 2.3.8 10.8.2021. Uto.
 
 //Dan18
 Pro 2.3.8 11.8.2021. Sre.
-    Nastavak kreiranja funkcija za obradu ulazne slike...  (v3 | 11.8.2021.)      
+    Nastavak kreiranja funkcija za obradu ulazne slike i izmene korisničkog interfejsa programa...  
+    (v3 | 11.8.2021. % v10 | 11.8.2021. )     
     */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -554,6 +555,7 @@ const obradaUlazneSlike = () => {
 
     //ctxDemoA.putImageData(podaciUlazneSlike, 0, 0);
     //ctxDemoA.putImageData(podaciUlazneSlikePiksel, 120, 50);
+
     ctxDemoA.drawImage(slika, 0, 0, canvasDemoA.width, canvasDemoA.height);
 
     podaciUlazneSlike = ctxDemoA.getImageData(0, 0, canvasDemoA.width, canvasDemoA.height);
@@ -609,7 +611,6 @@ const obradaUlazneSlike = () => {
     console.log(nizSrVrPikselaUint8C);
     console.log(nizSrVrPikselaF);
     console.log(nizSrVrPikselaFuInt8C); 
-
     */
 
     console.log(nizSrVrPikselaFf);
@@ -641,7 +642,6 @@ const obradaUlazneSlike = () => {
     //Filtrirani niz piksela
     aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaFfUint8C, sirinaKomprimovaneSlike, visinaKomprimovaneSlike);
     ctxDemoA.putImageData(aaaPodaciUlazneSlike, 0, 0); 
-
 
 }
 
@@ -685,8 +685,6 @@ btnGenerisanjeDemo.addEventListener('click', () => {
     console.log(nasumicnaVrednostPiksela(0, 255));
     console.log(nasumicnaVrednostPiksela(0, 255));
     */
-
-
 
 });
 
