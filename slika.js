@@ -67,7 +67,11 @@ Pro 2.3.8 9.8.2021. Pon.
 Pro 2.3.8 10.8.2021. Uto.
     Novo | Test | Demo | DCT | Nastavak  
     Početak kreiranja funkcije za obradu ulazne slike... (v4 | 10.8.2021.)
-*/
+
+//Dan18
+Pro 2.3.8 11.8.2021. Sre.
+    Nastavak kreiranja funkcija za obradu ulazne slike...        
+    */
 
 canvasSlike = document.querySelector('#canvasSlike');
 ctx = canvasSlike.getContext('2d');
