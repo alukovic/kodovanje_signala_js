@@ -70,7 +70,7 @@ Pro 2.3.8 10.8.2021. Uto.
 
 //Dan18
 Pro 2.3.8 11.8.2021. Sre.
-    Nastavak kreiranja funkcija za obradu ulazne slike...        
+    Nastavak kreiranja funkcija za obradu ulazne slike...  (v3 | 11.8.2021.)      
     */
 
 canvasSlike = document.querySelector('#canvasSlike');
