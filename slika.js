@@ -488,22 +488,26 @@ const obradaUlazneSlike = () => {
 
     //Početak kreiranja funkcije za obradu ulazne slike
 
-    /*
+    //novaSlika = new Image();
+    //novaSlika = slika;
+
     if(slika.width >= 1920){
 
-        canvasSlike.width = slika.width / 6; 
-        canvasSlike.height = slika.height / 6; 
+        canvasDemoA.width = slika.width / 6; 
+        canvasDemoA.height = slika.height / 6; 
 
         } else {
 
-            canvasSlike.width = slika.width / 3; 
-            canvasSlike.height = slika.height / 3; 
+            canvasDemoA.width = slika.width / 3; 
+            canvasDemoA.height = slika.height / 3; 
 
         }
-    */
 
-    podaciUlazneSlike = new Uint8ClampedArray();
-    podaciUlazneSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
+        podaciUlazneSlike = new Uint8ClampedArray();
+        //podaciUlazneSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
+    
+    /*
+
 
     pikseliUlazneSlike = podaciUlazneSlike.data; 
 
@@ -522,6 +526,8 @@ const obradaUlazneSlike = () => {
     }
     
     nizObradaUlazneSlikeUint8C = new Uint8ClampedArray(nizObradaUlazneSlikeF);
+
+    */
     
     /*
     console.log(pikselA); 
@@ -534,11 +540,13 @@ const obradaUlazneSlike = () => {
     console.log(podaciUlazneSlikePiksel);
     */
 
-    podaciUlazneSlikePiksel = new ImageData(nizObradaUlazneSlikeUint8C, 50, 50);
+    //podaciUlazneSlikePiksel = new ImageData(nizObradaUlazneSlikeUint8C, 50, 50);
 
     //ctxDemoA.putImageData(podaciUlazneSlike, 0, 0);
-    ctxDemoA.putImageData(podaciUlazneSlikePiksel, 120, 50);
-    //ctxDemoA.drawImage(slika, 0, 0, canvasSlike.width, canvasSlike.height);
+    //ctxDemoA.putImageData(podaciUlazneSlikePiksel, 120, 50);
+    ctxDemoA.drawImage(slika, 0, 0, canvasDemoA.width, canvasDemoA.height);
+
+    
 }
 
 const generisanjeDemoCanvasa = () => {
