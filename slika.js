@@ -571,6 +571,9 @@ const obradaUlazneSlike = () => {
     nizSrVrPikselaF = new Array();
     nizSrVrPikselaFuInt8C = new Uint8ClampedArray();
 
+    nizSrVrPikselaFf = new Array();
+    nizSrVrPikselaFfUInt8C = new Uint8ClampedArray();
+
     for(let i = 0; i < pikseliUlazneSlike.length; i+=4){
         
         srVrPiksela[i] = Math.round((pikseliUlazneSlike[i] + pikseliUlazneSlike[i + 1] + pikseliUlazneSlike[i + 2] + pikseliUlazneSlike[i + 3]) / 4);
@@ -589,18 +592,43 @@ const obradaUlazneSlike = () => {
     for(let i = 0; i < nizSrVrPiksela.length; i++){
 
         nizSrVrPikselaF.push(srVrPiksela[i]);
-        nizSrVrPikselaFuInt8C = new Uint8ClampedArray(nizSrVrPikselaF);
+        nizSrVrPikselaFuInt8C = new Uint8ClampedArray(nizSrVrPikselaF); 
+
+        //Filtrirani niz piksela
+        nizSrVrPikselaFf = nizSrVrPikselaF.filter(x => x > 0);
+        
+        //nizSrVrPikselaFfUInt8C = new Uint8ClampedArray(nizSrVrPikselaFf);
     }
+
+    nizSrVrPikselaFf.push(23);
+    nizSrVrPikselaFf.push(23);
 
     console.log(nizSrVrPiksela); 
     console.log(nizSrVrPikselaUint8C);
     console.log(nizSrVrPikselaF);
-    console.log(nizSrVrPikselaFuInt8C);
+    console.log(nizSrVrPikselaFuInt8C); 
+    console.log(nizSrVrPikselaFf);
+    console.log(nizSrVrPikselaFf.length);
+
+    for(let i = 0; nizSrVrPiksela.length; i++){
+        nizSrVrPikselaFfUInt8C = new Uint8ClampedArray(nizSrVrPikselaFf);
+    }
+
+    console.log(nizSrVrPikselaFfUInt8C); 
+    console.log(nizSrVrPikselaFfUInt8C.length); 
 
     //aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaUint8C, canvasDemoA.width, canvasDemoA.height);
     //ctxDemoA.putImageData(aaaPodaciUlazneSlike, 0, 0); 
-    aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaFuInt8C, canvasDemoA.width / 2, canvasDemoA.height / 2);
+    
+    //aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaFuInt8C, canvasDemoA.width / 2, canvasDemoA.height / 2);
+    //ctxDemoA.putImageData(aaaPodaciUlazneSlike, 0, 0); 
+
+    //Filtrirani niz piksela
+    aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaFfUInt8C, canvasDemoA.width / 4, canvasDemoA.height / 4);
     ctxDemoA.putImageData(aaaPodaciUlazneSlike, 0, 0); 
+    
+    console.log('Funkcija je uspešno izvršena...'); 
+
 }
 
 const generisanjeDemoCanvasa = () => {
