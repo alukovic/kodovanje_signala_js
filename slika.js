@@ -550,12 +550,23 @@ const obradaUlazneSlike = () => {
         */
 
        nizSrVrPiksela.push(srVrPiksela[i]);
-       nizSrVrPikselaUint8C = new Uint8ClampedArray(nizSrVrPiksela); 
+       //nizSrVrPikselaUint8C = new Uint8ClampedArray(nizSrVrPiksela); 
 
     }
+
+    //nizSrVrPiksela.push(23);
+    //nizSrVrPiksela.push(23);
+
     console.log('Niz srVr piksela: ');
     console.log(nizSrVrPiksela);
     console.log(nizSrVrPiksela.length);
+
+    //+++++
+    //+++++dugo vreme obrade
+    //for(let i = 0; i < nizSrVrPiksela.length; i++){
+        nizSrVrPikselaUint8C = new Uint8ClampedArray(nizSrVrPiksela);  
+    //}
+    console.log('Uint8ClampedArray: ');
     console.log(nizSrVrPikselaUint8C);
 
     //Novi test: 
