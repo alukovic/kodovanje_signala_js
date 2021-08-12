@@ -70,8 +70,13 @@ Pro 2.3.8 10.8.2021. Uto.
 
 //Dan18
 Pro 2.3.8 11.8.2021. Sre.
+    Novo | Test | Demo | Kompresija | Početak  
     Nastavak kreiranja funkcija za obradu ulazne slike i izmene korisničkog interfejsa programa...  
     (v3 | 11.8.2021. % v10 | 11.8.2021. )     
+
+//Dan19
+Pro 2.3.9 12.8.2021. Čet. 
+    Novo | Test | Demo | Kompresija
     */
 
 canvasSlike = document.querySelector('#canvasSlike');
