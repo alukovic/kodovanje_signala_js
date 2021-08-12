@@ -163,7 +163,7 @@ window.addEventListener('load', function(){
             //slika.onload = imageIsLoaded;
 
             function opcijePrikazaSlike() {
-
+                
                 if(slika.width >= 1920){
 
                     canvasSlike.width = slika.width / 6; 
@@ -508,7 +508,6 @@ const obradaUlazneSlike = () => {
     //novaSlika = new Image();
     //novaSlika = slika;
 
-    
     if(slika.width >= 1920){
 
         canvasDemoA.width = slika.width / 6; 
@@ -599,8 +598,6 @@ const obradaUlazneSlike = () => {
     
     provera = 4 * sirinaKomprimovaneSlike * visinaKomprimovaneSlike;
     
-
-    
     console.log('Funkcija je uspešno izvršena...'); 
     console.log(Number(nizSrVrPikselaFfUint8C.length));
     console.log('Dimenzije komprimovane slike su: ')
@@ -649,6 +646,7 @@ const noviDCTpikseli = () => {
 btnGenerisanjeDemo.addEventListener('click', () => {
 
     generisanjeDemoCanvasa();
+    
     /*
     console.log(noviNizPikselaDemo);
     console.log(nasumicnaVrednostPiksela(0, 255));
