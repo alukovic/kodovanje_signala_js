@@ -508,6 +508,7 @@ const obradaUlazneSlike = () => {
     //novaSlika = new Image();
     //novaSlika = slika;
 
+    
     if(slika.width >= 1920){
 
         canvasDemoA.width = slika.width / 6; 
@@ -519,51 +520,8 @@ const obradaUlazneSlike = () => {
             canvasDemoA.height = slika.height / 3; 
 
         }
-
-        //podaciUlazneSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
     
-    /*
-
-
-    pikseliUlazneSlike = podaciUlazneSlike.data; 
-
-    pikselA = new Array(); 
-
-    
-    for(let i = 0; i < 40000; i+=4){
-        pikselA[i] = Math.round((pikseliUlazneSlike[i] + pikseliUlazneSlike[i + 1] + pikseliUlazneSlike[i + 2] + pikseliUlazneSlike[i + 3]) / 4);
-    }
-    
-    for(let i = 0; i < 40000; i++){
-
-        nizObradaUlazneSlike.push(pikselA[i]);
-        nizObradaUlazneSlikeF = nizObradaUlazneSlike.filter(x => x > 0);
-
-    }
-    
-    nizObradaUlazneSlikeUint8C = new Uint8ClampedArray(nizObradaUlazneSlikeF);
-
-    */
-    
-    /*
-    console.log(pikselA); 
-    console.log(pikseliUlazneSlike);
-    console.log(nizObradaUlazneSlike);
-    console.log(nizObradaUlazneSlikeF);
-    console.log(nizObradaUlazneSlike.length);
-    console.log(nizObradaUlazneSlikeF.length);
-    console.log(nizObradaUlazneSlikeUint8C);
-    console.log(podaciUlazneSlikePiksel);
-    */
-
-    //podaciUlazneSlikePiksel = new ImageData(nizObradaUlazneSlikeUint8C, 50, 50);
-
-    //ctxDemoA.putImageData(podaciUlazneSlike, 0, 0);
-    //ctxDemoA.putImageData(podaciUlazneSlikePiksel, 120, 50);
-
-    ctxDemoA.drawImage(slika, 0, 0, canvasDemoA.width, canvasDemoA.height);
-
-    podaciUlazneSlike = ctxDemoA.getImageData(0, 0, canvasDemoA.width, canvasDemoA.height);
+    podaciUlazneSlike = ctx.getImageData(0, 0, canvasDemoA.width, canvasDemoA.height);
     pikseliUlazneSlike = podaciUlazneSlike.data;
 
     console.log(podaciUlazneSlike);
@@ -608,8 +566,9 @@ const obradaUlazneSlike = () => {
         //nizSrVrPikselaFfUint8C = new Uint8ClampedArray(nizSrVrPikselaFf);
     }
 
-    nizSrVrPikselaFf.push(23);
-    nizSrVrPikselaFf.push(23);
+    for(let i = 0; i < 50; i++){
+        nizSrVrPikselaFf.push(23);
+    }
 
     /*
     console.log(nizSrVrPiksela); 
@@ -638,16 +597,21 @@ const obradaUlazneSlike = () => {
     sirinaKomprimovaneSlike = Number(Math.round(1 * (nizSrVrPikselaFfUint8C.length / canvasDemoA.height)));
     visinaKomprimovaneSlike = Number(Math.round(nizSrVrPikselaFfUint8C.length / canvasDemoA.width));
     
+    provera = 4 * sirinaKomprimovaneSlike * visinaKomprimovaneSlike;
+    
+
+    
     console.log('Funkcija je uspešno izvršena...'); 
     console.log(Number(nizSrVrPikselaFfUint8C.length));
     console.log('Dimenzije komprimovane slike su: ')
     console.log(sirinaKomprimovaneSlike);
     console.log(visinaKomprimovaneSlike);
+    console.log(`provera: ${provera}`);
+    console.log(nizSrVrPikselaFfUint8C.length === provera);
 
     //Filtrirani niz piksela
     aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaFfUint8C, sirinaKomprimovaneSlike, visinaKomprimovaneSlike);
     ctxDemoA.putImageData(aaaPodaciUlazneSlike, 0, 0); 
-
 }
 
 const generisanjeDemoCanvasa = () => {
