@@ -562,7 +562,7 @@ const obradaUlazneSlike = () => {
     //########
     //Novi test A: 
 
-    let parametar = 0.23 * podaciUlazneSlike.data[i] + podaciUlazneSlike.data[i + 1] + podaciUlazneSlike.data[i + 2];
+    let parametar = (podaciUlazneSlike.data[i] + podaciUlazneSlike.data[i + 1] + podaciUlazneSlike.data[i + 2]) / 4;
 
     podaciUlazneSlike.data[i] = parametar;
     podaciUlazneSlike.data[i + 1] = parametar;
