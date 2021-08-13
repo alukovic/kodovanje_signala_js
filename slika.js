@@ -84,6 +84,7 @@ Pro 2.3.9 12.8.2021. Čet.
 //Dan20
 Pro 2.3.9 13.8.2021. Pet. 
     Novo | Test | Demo | Kompresija | Nastavak
+    Otkrivanje novih mogućnosti... (v6 | 13.8.2021.)
     */
 
 canvasSlike = document.querySelector('#canvasSlike');
