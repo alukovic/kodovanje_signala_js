@@ -576,6 +576,64 @@ const obradaUlazneSlike = () => {
     console.log('Uint8ClampedArray: ');
     console.log(nizSrVrPikselaUint8C);
 
+
+    //Test deljivosti piksela... 
+    ostatakPriDeljenju = nizSrVrPikselaUint8C.length % 4;
+    noviBroj = new Number();
+    console.log('test deljivosti sa 4 - ostatak pri deljenju je: ', ostatakPriDeljenju); 
+
+    if(ostatakPriDeljenju === 1){
+
+        console.log(nizSrVrPikselaUint8C.length / 4);
+        console.log('Nije deljiv sa četiri, ostatak je: ', ostatakPriDeljenju); 
+        noviBroj = nizSrVrPikselaUint8C.length + 3; 
+
+        for(let i = 0; i < 3; i++){
+            console.log(i);
+        }
+
+
+        console.log('Novi broj: ', noviBroj); 
+        console.log('Novi test deljivosti: ');
+        console.log('Količnik je sada: ', noviBroj / 4);
+        console.log('Ostatak pri deljenju je sada: ', noviBroj % 4);
+
+    } else if(ostatakPriDeljenju === 2){
+
+        console.log(nizSrVrPikselaUint8C.length / 4);
+        console.log('Deljiv je sa četiri, ostatak je: ', ostatakPriDeljenju);
+        noviBroj = nizSrVrPikselaUint8C.length + 2; 
+
+        for(let i = 0; i < 2; i++){
+            console.log(i);
+        }
+
+        console.log('Novi broj: ', noviBroj); 
+        console.log('Novi test deljivosti: ');
+        console.log('Količnik je sada: ', noviBroj / 4);
+        console.log('Ostatak pri deljenju je sada: ', noviBroj % 4);
+
+    } else if(ostatakPriDeljenju === 3){
+
+        console.log(nizSrVrPikselaUint8C.length / 4);
+        console.log('Deljiv je sa četiri, ostatak je: ', ostatakPriDeljenju); 
+        noviBroj = nizSrVrPikselaUint8C.length + 1; 
+
+        for(let i = 0; i < 1; i++){
+            console.log(i);
+        }
+
+        console.log('Novi broj: ', noviBroj); 
+        console.log('Novi test deljivosti: ');
+        console.log('Količnik je sada: ', noviBroj / 4);
+        console.log('Ostatak pri deljenju je sada: ', noviBroj % 4);
+
+    } else {
+        console.log(ostatakPriDeljenju);
+    }
+    
+
+
     //Novi test: 
     aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaUint8C, canvasDemoA.width / 2, canvasDemoA.height / 2);
     ctxDemoA.putImageData(aaaPodaciUlazneSlike, 30, 20); 
