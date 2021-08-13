@@ -545,7 +545,7 @@ const obradaUlazneSlike = () => {
     nizSrVrPikselaFf = new Array();
     nizSrVrPikselaFfUint8C = new Uint8ClampedArray();
 
-    for(let i = 0; i < podaciUlazneSlike.data.length; i+=4){
+    for(let i = 0; i < podaciUlazneSlike.data.length; i+=3){
         
         //srVrPiksela[i] = Math.round((pikseliUlazneSlike[i] + pikseliUlazneSlike[i + 1] + pikseliUlazneSlike[i + 2] + pikseliUlazneSlike[i + 3]) / 4);
         
@@ -562,7 +562,7 @@ const obradaUlazneSlike = () => {
     //########
     //Novi test A: 
 
-    let parametar = (podaciUlazneSlike.data[i] + podaciUlazneSlike.data[i + 1] + podaciUlazneSlike.data[i + 2]) / 4;
+    let parametar = (podaciUlazneSlike.data[i] + podaciUlazneSlike.data[i + 1] + podaciUlazneSlike.data[i + 2]) / 2;
 
     podaciUlazneSlike.data[i] = parametar;
     podaciUlazneSlike.data[i + 1] = parametar;
