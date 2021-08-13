@@ -528,12 +528,12 @@ const obradaUlazneSlike = () => {
         }
     
     podaciUlazneSlike = ctx.getImageData(0, 0, canvasDemoA.width, canvasDemoA.height);
-    pikseliUlazneSlike = podaciUlazneSlike.data;
+    //pikseliUlazneSlike = podaciUlazneSlike.data;
 
     console.log('Svi podaci ulazne slike: ', podaciUlazneSlike);
     console.log('Vrednosti piksela ulazne slike (1. način prikaza): ', podaciUlazneSlike.data);
-    console.log('Pikseli ulazne slike (2. način prikaza): ', pikseliUlazneSlike);
-    console.log('Broj piksela ulazne slike: ', pikseliUlazneSlike.length);
+    //console.log('Pikseli ulazne slike (2. način prikaza): ', pikseliUlazneSlike);
+    //console.log('Broj piksela ulazne slike: ', pikseliUlazneSlike.length);
 
     srVrPiksela = new Number(); 
     nizSrVrPiksela = new Array();
@@ -545,9 +545,9 @@ const obradaUlazneSlike = () => {
     nizSrVrPikselaFf = new Array();
     nizSrVrPikselaFfUint8C = new Uint8ClampedArray();
 
-    for(let i = 0; i < pikseliUlazneSlike.length; i+=4){
+    for(let i = 0; i < podaciUlazneSlike.data.length; i+=4){
         
-        srVrPiksela[i] = Math.round((pikseliUlazneSlike[i] + pikseliUlazneSlike[i + 1] + pikseliUlazneSlike[i + 2] + pikseliUlazneSlike[i + 3]) / 4);
+        //srVrPiksela[i] = Math.round((pikseliUlazneSlike[i] + pikseliUlazneSlike[i + 1] + pikseliUlazneSlike[i + 2] + pikseliUlazneSlike[i + 3]) / 4);
         
         /*
         pikseliUlazneSlike[i] = srVrPiksela;
@@ -556,10 +556,23 @@ const obradaUlazneSlike = () => {
         pikseliUlazneSlike[i + 4] = srVrPiksela;
         */
 
-       nizSrVrPiksela.push(srVrPiksela[i]);
+       //nizSrVrPiksela.push(srVrPiksela[i]);
        //nizSrVrPikselaUint8C = new Uint8ClampedArray(nizSrVrPiksela); 
 
+    //########
+    //Novi test A: 
+
+    let parametar = 0.23 * podaciUlazneSlike.data[i] + podaciUlazneSlike.data[i + 1] + podaciUlazneSlike.data[i + 2];
+
+    podaciUlazneSlike.data[i] = parametar;
+    podaciUlazneSlike.data[i + 1] = parametar;
+    podaciUlazneSlike.data[i + 2] = parametar; 
+
+    //nizSrVrPiksela.push(pikseliUlazneSlike[i]);
+    //nizSrVrPikselaUint8C = new Uint8ClampedArray(nizSrVrPiksela);
     }
+
+    ctxDemoA.putImageData(podaciUlazneSlike, 0, 0); 
 
     //nizSrVrPiksela.push(23);
     //nizSrVrPiksela.push(23);
@@ -670,8 +683,8 @@ const obradaUlazneSlike = () => {
         console.log(ostatakPriDeljenju); 
 
         //Novi test: 
-        aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaUint8C, canvasDemoA.width / 2, canvasDemoA.height / 2);
-        ctxDemoA.putImageData(aaaPodaciUlazneSlike, 30, 20); 
+        //aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaUint8C, canvasDemoA.width / 2, canvasDemoA.height / 2);
+        //ctxDemoA.putImageData(aaaPodaciUlazneSlike, 30, 20); 
 
     }
     
