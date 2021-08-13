@@ -576,51 +576,78 @@ const obradaUlazneSlike = () => {
     console.log('Uint8ClampedArray: ');
     console.log(nizSrVrPikselaUint8C);
 
-
+    
     //Test deljivosti piksela... 
-    ostatakPriDeljenju = nizSrVrPikselaUint8C.length % 4;
+    ostatakPriDeljenju = nizSrVrPiksela.length % 4;
     noviBroj = new Number();
     console.log('test deljivosti sa 4 - ostatak pri deljenju je: ', ostatakPriDeljenju); 
 
     if(ostatakPriDeljenju === 1){
 
-        console.log(nizSrVrPikselaUint8C.length / 4);
+        console.log(nizSrVrPiksela.length / 4);
         console.log('Nije deljiv sa četiri, ostatak je: ', ostatakPriDeljenju); 
-        noviBroj = nizSrVrPikselaUint8C.length + 3; 
+        noviBroj = nizSrVrPiksela.length + 3; 
 
         for(let i = 0; i < 3; i++){
-            console.log(i);
+            nizSrVrPiksela.push(nizSrVrPiksela[nizSrVrPiksela.length - 1]);
         }
-
 
         console.log('Novi broj: ', noviBroj); 
         console.log('Novi test deljivosti: ');
         console.log('Količnik je sada: ', noviBroj / 4);
         console.log('Ostatak pri deljenju je sada: ', noviBroj % 4);
+
+        //Novo
+        console.log(nizSrVrPiksela);
+        console.log(nizSrVrPiksela.length); 
+        console.log(nizSrVrPikselaUint8C.length); 
+
+        console.log('Širina je: ', canvasDemoA.width); 
+        console.log('Visina je: ', canvasDemoA.height);
+        console.log('Druga formula za širinu je: ', (Math.round(nizSrVrPiksela.length /(canvasDemoA.height))));
+        console.log('Druga formula za visinu je: ', (Math.round(nizSrVrPiksela.length /(4 * canvasDemoA.width))));
+
+        nizSrVrPikselaUint8C = new Uint8ClampedArray(nizSrVrPiksela);  
+
+        //Novi test: 
+        aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaUint8C, canvasDemoA.width, canvasDemoA.height);
+        //aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaUint8C, (Math.round((nizSrVrPiksela.length - 3) /(canvasDemoA.height))), (Math.round((nizSrVrPiksela.length - 3) /(4 * canvasDemoA.width))));
+        ctxDemoA.putImageData(aaaPodaciUlazneSlike, 30, 20); 
 
     } else if(ostatakPriDeljenju === 2){
 
-        console.log(nizSrVrPikselaUint8C.length / 4);
+        console.log(nizSrVrPiksela.length / 4);
         console.log('Deljiv je sa četiri, ostatak je: ', ostatakPriDeljenju);
-        noviBroj = nizSrVrPikselaUint8C.length + 2; 
+        noviBroj = nizSrVrPiksela.length + 2; 
 
         for(let i = 0; i < 2; i++){
-            console.log(i);
+            nizSrVrPiksela.push(nizSrVrPiksela[nizSrVrPiksela.length - 1]);
         }
 
         console.log('Novi broj: ', noviBroj); 
         console.log('Novi test deljivosti: ');
         console.log('Količnik je sada: ', noviBroj / 4);
-        console.log('Ostatak pri deljenju je sada: ', noviBroj % 4);
+        console.log('Ostatak pri deljenju je sada: ', noviBroj % 4); 
+
+        //Novo
+        console.log(nizSrVrPiksela);
+        console.log(nizSrVrPiksela.length); 
+        console.log(nizSrVrPikselaUint8C.length); 
+
+        nizSrVrPikselaUint8C = new Uint8ClampedArray(nizSrVrPiksela);  
+
+        //Novi test: 
+        aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaUint8C, canvasDemoA.width / 2, canvasDemoA.height / 2);
+        ctxDemoA.putImageData(aaaPodaciUlazneSlike, 30, 20); 
 
     } else if(ostatakPriDeljenju === 3){
 
-        console.log(nizSrVrPikselaUint8C.length / 4);
+        console.log(nizSrVrPiksela.length / 4);
         console.log('Deljiv je sa četiri, ostatak je: ', ostatakPriDeljenju); 
-        noviBroj = nizSrVrPikselaUint8C.length + 1; 
+        noviBroj = nizSrVrPiksela.length + 1; 
 
         for(let i = 0; i < 1; i++){
-            console.log(i);
+            nizSrVrPiksela.push(nizSrVrPiksela[nizSrVrPiksela.length - 1]);
         }
 
         console.log('Novi broj: ', noviBroj); 
@@ -628,15 +655,30 @@ const obradaUlazneSlike = () => {
         console.log('Količnik je sada: ', noviBroj / 4);
         console.log('Ostatak pri deljenju je sada: ', noviBroj % 4);
 
+        //Novo
+        console.log(nizSrVrPiksela);
+        console.log(nizSrVrPiksela.length); 
+        console.log(nizSrVrPikselaUint8C.length); 
+        
+        nizSrVrPikselaUint8C = new Uint8ClampedArray(nizSrVrPiksela);  
+
+        //Novi test: 
+        aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaUint8C, canvasDemoA.width / 2, canvasDemoA.height / 2);
+        ctxDemoA.putImageData(aaaPodaciUlazneSlike, 30, 20); 
+
     } else {
-        console.log(ostatakPriDeljenju);
+        console.log(ostatakPriDeljenju); 
+
+        //Novi test: 
+        aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaUint8C, canvasDemoA.width / 2, canvasDemoA.height / 2);
+        ctxDemoA.putImageData(aaaPodaciUlazneSlike, 30, 20); 
+
     }
     
-
-
     //Novi test: 
-    aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaUint8C, canvasDemoA.width / 2, canvasDemoA.height / 2);
-    ctxDemoA.putImageData(aaaPodaciUlazneSlike, 30, 20); 
+    //aaaPodaciUlazneSlike = new ImageData(nizSrVrPikselaUint8C, canvasDemoA.width / 2, canvasDemoA.height / 2);
+    //ctxDemoA.putImageData(aaaPodaciUlazneSlike, 30, 20); 
+
 }
 
 const generisanjeDemoCanvasa = () => {
