@@ -80,6 +80,10 @@ Pro 2.3.9 12.8.2021. Čet.
     Rezultati prve kompresije slike (v2 | 12.8.2021.)
     Rezultati druge kompresije slike (v4 | 12.8.2021.)
     Rezultati treće kompresije slike (v5 | 12.8.2021.)
+    
+//Dan20
+Pro 2.3.9 13.8.2021. Pet. 
+    Novo | Test | Demo | Kompresija | Nastavak
     */
 
 canvasSlike = document.querySelector('#canvasSlike');
