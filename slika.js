@@ -530,10 +530,10 @@ const obradaUlazneSlike = () => {
     podaciUlazneSlike = ctx.getImageData(0, 0, canvasDemoA.width, canvasDemoA.height);
     pikseliUlazneSlike = podaciUlazneSlike.data;
 
-    console.log(podaciUlazneSlike);
-    console.log(podaciUlazneSlike.data);
-    console.log(pikseliUlazneSlike);
-    console.log(pikseliUlazneSlike.length);
+    console.log('Svi podaci ulazne slike: ', podaciUlazneSlike);
+    console.log('Vrednosti piksela ulazne slike (1. način prikaza): ', podaciUlazneSlike.data);
+    console.log('Pikseli ulazne slike (2. način prikaza): ', pikseliUlazneSlike);
+    console.log('Broj piksela ulazne slike: ', pikseliUlazneSlike.length);
 
     srVrPiksela = new Number(); 
     nizSrVrPiksela = new Array();
@@ -566,7 +566,7 @@ const obradaUlazneSlike = () => {
 
     console.log('Niz srVr piksela: ');
     console.log(nizSrVrPiksela);
-    console.log(nizSrVrPiksela.length);
+    console.log('Dužina niza nakon primenjene aritmetičke sredine piksela: ', nizSrVrPiksela.length);
 
     //+++++
     //+++++dugo vreme obrade
