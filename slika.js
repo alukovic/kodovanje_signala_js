@@ -85,7 +85,13 @@ Pro 2.3.9 12.8.2021. Čet.
 Pro 2.3.9 13.8.2021. Pet. 
     Novo | Test | Demo | Kompresija | Nastavak
     Otkrivanje novih mogućnosti... (v6 | 13.8.2021.)
-    */
+
+//Dan21
+Pro 2.3.9 14.8.2021. Sub. 
+    Novo | Test | Demo | Kompresija | Nastavak   
+
+    
+*/
 
 canvasSlike = document.querySelector('#canvasSlike');
 ctx = canvasSlike.getContext('2d');
