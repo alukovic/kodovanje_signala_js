@@ -89,8 +89,8 @@ Pro 2.3.9 13.8.2021. Pet.
 //Dan21
 Pro 2.3.9 14.8.2021. Sub. 
     Novo | Test | Demo | Kompresija | Nastavak   
+    Početak kreiranja funkcije kompresija25p()
 
-    
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -701,6 +701,31 @@ const obradaUlazneSlike = () => {
 
 }
 
+const uklanjanjeElementaNiza = (niz, clan) => {
+
+    for(let i = clan - 1; i < niz.length; i += clan){
+        niz.splice(i, 1);
+    };
+
+};
+
+const kompresija25p = () => {
+    console.log('Pozdrav svima'); 
+    
+    aPodaciUlazneSlike = ctx.getImageData(0, 0, canvasDemoA.width, canvasDemoA.height);
+    console.log(aPodaciUlazneSlike.data); 
+    console.log(aPodaciUlazneSlike.data.length);
+
+    aPodaciUlazneSlikeNiz = Array.prototype.slice.call(aPodaciUlazneSlike.data);
+    console.log(aPodaciUlazneSlikeNiz); 
+
+    testNiz = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    uklanjanjeElementaNiza(testNiz, 4);
+    console.log(testNiz); 
+    uklanjanjeElementaNiza(aPodaciUlazneSlikeNiz, 4);
+    console.log(aPodaciUlazneSlikeNiz);
+}
+
 const generisanjeDemoCanvasa = () => {
 
     //generisanjeDemoCanvasaA();
@@ -736,12 +761,8 @@ const noviDCTpikseli = () => {
 btnGenerisanjeDemo.addEventListener('click', () => {
 
     generisanjeDemoCanvasa();
-
-    /*
-    console.log(noviNizPikselaDemo);
-    console.log(nasumicnaVrednostPiksela(0, 255));
-    console.log(nasumicnaVrednostPiksela(0, 255));
-    */
+    //kompresija25p();
+ 
 
 });
 
