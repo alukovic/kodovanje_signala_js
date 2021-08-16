@@ -92,9 +92,10 @@ Pro 2.3.9 14.8.2021. Sub.
     Početak kreiranja funkcije kompresija25p()
 
 //Dan22
-Pro 2.3.9 16.8.2021. Ned. 
+Pro 2.3.9 16.8.2021. Pon. 
     Novo | Test | Demo | Kompresija | Nastavak   
     Nastavak kreiranja funkcije kompresija25p()   
+    
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -328,7 +329,6 @@ canvasSlikeA = document.querySelector('#canvasSlikeA');
 ctxA = canvasSlikeA.getContext('2d'); 
 noviNiz = new Uint8ClampedArray(10000);
 
-
 function opcijePrikazaNoveSlike() {
 
     if(slika.width >= 1920){
@@ -422,7 +422,6 @@ btnPrikazRGBA.addEventListener('click', () => {
 
 });
 
-
 opcioniPodaciSakrivanje = document.querySelector('.opcioniPodaciSakrivanje');
 opcioniTekstSakrivanje = document.querySelector('#opcioniTekstSakrivanje');
 opcioniPodaciSlikaSakrivanje = document.querySelector('.opcioniPodaciSlikaSakrivanje'); 
@@ -468,7 +467,6 @@ noviNizPikselaDemoPikselF = new Array();
 const nasumicnaVrednostPiksela = (min, max) => {
  return  Math.round(Math.random() * (max - min) + min);
 };
-
 
 const generisanjeDemoCanvasaA = () => {
     //Test: demo slika
@@ -599,7 +597,6 @@ const obradaUlazneSlike = () => {
     //}
     console.log('Uint8ClampedArray: ');
     console.log(nizSrVrPikselaUint8C);
-
     
     //Test deljivosti piksela... 
     ostatakPriDeljenju = nizSrVrPiksela.length % 4;
@@ -758,8 +755,7 @@ const kompresija25p = () => {
         console.log('Elementi novog niza posle kompresije: ', testNizNovo);
 
     }
- 
-    
+  
     console.log('Kompresija piksela ulazne slike...');
     uklanjanjeElementaNiza(aPodaciUlazneSlikeNiz, 4);
     console.log('Pikseli slike nakon kompresije: ', aPodaciUlazneSlikeNiz); 
@@ -791,8 +787,6 @@ const kompresija25p = () => {
     }
 
     console.log('Broj piksela slike nakon kompresije: ', aPodaciUlazneSlikeNizNovo.length / 4); 
-
-    
 
     aPodaciUlazneSlikeNizUint8C = new Uint8ClampedArray(aPodaciUlazneSlikeNizNovo);
     console.log('Smeštanje piksela nakon kompresije u Uint8Clamped niz: ', aPodaciUlazneSlikeNizUint8C);
