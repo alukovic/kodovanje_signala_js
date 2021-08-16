@@ -716,6 +716,8 @@ const uklanjanjeElementaNiza = (niz, clan) => {
 const kompresija25p = () => {
 
     testNizNovo = new Array(); 
+    aPodaciUlazneSlikeNizNovo = new Array();
+
     console.log('Pozdrav svima'); 
     
     aPodaciUlazneSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height);
@@ -757,23 +759,75 @@ const kompresija25p = () => {
 
     }
  
-    /*
+    
     console.log('Kompresija piksela ulazne slike...');
     uklanjanjeElementaNiza(aPodaciUlazneSlikeNiz, 4);
     console.log('Pikseli slike nakon kompresije: ', aPodaciUlazneSlikeNiz); 
-    console.log('Broj piksela slike nakon kompresije: ', aPodaciUlazneSlikeNiz.length / 4); 
 
-    aPodaciUlazneSlikeNizUint8C = new Uint8ClampedArray(aPodaciUlazneSlikeNiz);
+    if(aPodaciUlazneSlikeNiz.length % 4 === 1){
+
+        aPodaciUlazneSlikeNizNovo = aPodaciUlazneSlikeNiz.slice(0, aPodaciUlazneSlikeNiz.length - 1);
+        console.log('Broj elemenata novog niza je: ', aPodaciUlazneSlikeNizNovo.length);
+        console.log('Elementi novog niza posle kompresije: ', aPodaciUlazneSlikeNizNovo);
+
+    } else if(aPodaciUlazneSlikeNiz.length % 4 === 2){
+
+        aPodaciUlazneSlikeNizNovo = aPodaciUlazneSlikeNiz.slice(0, aPodaciUlazneSlikeNiz.length - 2);
+        console.log('Broj elemenata novog niza je: ', aPodaciUlazneSlikeNizNovo.length);
+        console.log('Elementi novog niza posle kompresije: ', aPodaciUlazneSlikeNizNovo);
+
+    } else if(aPodaciUlazneSlikeNiz.length % 4 === 3){
+
+        aPodaciUlazneSlikeNizNovo = aPodaciUlazneSlikeNiz.slice(0, aPodaciUlazneSlikeNiz.length - 3);
+        console.log('Broj elemenata novog niza je: ', aPodaciUlazneSlikeNizNovo.length);
+        console.log('Elementi novog niza posle kompresije: ', aPodaciUlazneSlikeNizNovo);
+
+    } else {
+
+        aPodaciUlazneSlikeNizNovo = aPodaciUlazneSlikeNiz.slice(0, aPodaciUlazneSlikeNiz.length);
+        console.log('Broj elemenata novog niza je: ', aPodaciUlazneSlikeNizNovo.length);
+        console.log('Elementi novog niza posle kompresije: ', aPodaciUlazneSlikeNizNovo);
+
+    }
+
+    console.log('Broj piksela slike nakon kompresije: ', aPodaciUlazneSlikeNizNovo.length / 4); 
+
+    
+
+    aPodaciUlazneSlikeNizUint8C = new Uint8ClampedArray(aPodaciUlazneSlikeNizNovo);
     console.log('Smeštanje piksela nakon kompresije u Uint8Clamped niz: ', aPodaciUlazneSlikeNizUint8C);
     console.log('Broj elemenata Uint8Clamped niza: ', aPodaciUlazneSlikeNizUint8C.length); 
     console.log('Broj piksela je sada: ', aPodaciUlazneSlikeNizUint8C.length / 4);
     //aSlika = new ImageData(aPodaciUlazneSlikeNizUint8C, canvasDemoA.width, canvasDemoA.height);
     //ctxDemoA.putImageData(aSlika, 300, 120); 
 
-    let sirina = 300;
-    let visina = 120; 
+    let proizvod = aPodaciUlazneSlikeNizUint8C.length; 
+    console.log('4 * sirina * visina je: ', proizvod);
 
-    console.log(aPodaciUlazneSlikeNiz.length === 4 * sirina * visina); 
+    let sirina = Number(Math.round(canvasSlike.width - canvasSlike.width * (aPodaciUlazneSlikeNizNovo.length / aPodaciUlazneSlike.data.length)));
+    let visina = Number(Math.round(canvasSlike.height - canvasSlike.height * (aPodaciUlazneSlikeNizNovo.length / aPodaciUlazneSlike.data.length)));
+    
+    //sirina = Number(Math.round((proizvod / 4) / (visina)));
+    //visina = Number(Math.round((proizvod / 4) / (sirina))); 
+
+    console.log(canvasDemoA.width);
+    console.log(canvasDemoA.height / 5); 
+
+    console.log('Broj piksela slike pre kompresije: ', aPodaciUlazneSlike.data.length);
+    console.log('Broj piksela slike nakon kompresije: ', aPodaciUlazneSlikeNizNovo.length);
+    
+    let odnos = (aPodaciUlazneSlikeNizNovo.length / aPodaciUlazneSlike.data.length);
+
+    console.log('U procesu kompresije uklonjeno je: ', odnos, 'tj. ', odnos*100, '% piksela');
+
+    console.log('Dimenzije ulazne slike: ');
+    console.log(canvasSlike.width);
+    console.log(canvasSlike.height);
+    
+    console.log('Širina je: ', sirina);
+    console.log('Visina je: ', visina);
+
+    console.log(aPodaciUlazneSlikeNizNovo.length === 4 * sirina * visina); 
     console.log(aPodaciUlazneSlikeNizUint8C.length === 4 * sirina * visina); 
 
     let podaciA = new ImageData(aPodaciUlazneSlikeNizUint8C, sirina, visina);
@@ -782,9 +836,7 @@ const kompresija25p = () => {
     canvasDemoA.width = sirina;
     canvasDemoA.height = visina; 
 
-    //ctxDemoA.putImageData(podaciA, canvasDemoA.width, canvasDemoA.height); 
-    */
-
+    ctxDemoA.putImageData(podaciA, canvasDemoA.width, canvasDemoA.height); 
 }
 
 const generisanjeDemoCanvasa = () => {
@@ -821,8 +873,8 @@ const noviDCTpikseli = () => {
 
 btnGenerisanjeDemo.addEventListener('click', () => {
 
-    //generisanjeDemoCanvasa();
-    kompresija25p();
+    generisanjeDemoCanvasa();
+    //kompresija25p();
  
 
 });
