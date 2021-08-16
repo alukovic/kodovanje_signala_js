@@ -710,7 +710,7 @@ const uklanjanjeElementaNiza = (niz, clan) => {
         for(let i = clan - 1; i < niz.length; i += clan){
             niz.splice(i, 1);
         };
-        
+
 };
 
 const kompresija25p = () => {
@@ -725,7 +725,7 @@ const kompresija25p = () => {
     aPodaciUlazneSlikeNiz = Array.prototype.slice.call(aPodaciUlazneSlike.data);
     console.log(aPodaciUlazneSlikeNiz); 
 
-    testNiz = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    testNiz = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
     console.log('Test niz: ', testNiz);
     uklanjanjeElementaNiza(testNiz, 4);
     console.log('Kompresija...'); 
@@ -735,21 +735,25 @@ const kompresija25p = () => {
 
         testNizNovo = testNiz.slice(0, testNiz.length - 1);
         console.log('Broj elemenata novog niza je: ', testNizNovo.length);
+        console.log('Elementi novog niza posle kompresije: ', testNizNovo);
 
     } else if(testNiz.length % 4 === 2){
 
         testNizNovo = testNiz.slice(0, testNiz.length - 2);
         console.log('Broj elemenata novog niza je: ', testNizNovo.length);
+        console.log('Elementi novog niza posle kompresije: ', testNizNovo);
 
     } else if(testNiz.length % 4 === 3){
 
         testNizNovo = testNiz.slice(0, testNiz.length - 3);
         console.log('Broj elemenata novog niza je: ', testNizNovo.length);
+        console.log('Elementi novog niza posle kompresije: ', testNizNovo);
 
     } else {
 
         testNizNovo = testNiz.slice(0, testNiz.length);
         console.log('Broj elemenata novog niza je: ', testNizNovo.length);
+        console.log('Elementi novog niza posle kompresije: ', testNizNovo);
 
     }
  
