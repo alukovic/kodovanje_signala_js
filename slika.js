@@ -716,18 +716,42 @@ const uklanjanjeElementaNiza = (niz, clan) => {
 const kompresija25p = () => {
     console.log('Pozdrav svima'); 
     
-    aPodaciUlazneSlike = ctx.getImageData(0, 0, canvasDemoA.width, canvasDemoA.height);
-    console.log(aPodaciUlazneSlike.data); 
-    console.log(aPodaciUlazneSlike.data.length);
+    aPodaciUlazneSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height);
+    console.log('Vrednosti svih piksela ulazne slike: ', aPodaciUlazneSlike.data); 
+    console.log('Broj piksela ulazne slike: ', aPodaciUlazneSlike.data.length / 4);
 
     aPodaciUlazneSlikeNiz = Array.prototype.slice.call(aPodaciUlazneSlike.data);
     console.log(aPodaciUlazneSlikeNiz); 
 
     testNiz = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    console.log('Test niz: ', testNiz);
     uklanjanjeElementaNiza(testNiz, 4);
-    console.log(testNiz); 
+    console.log('Kompresija test niza: ', testNiz); 
+    console.log('Kompresija piksela ulazne slike...');
     uklanjanjeElementaNiza(aPodaciUlazneSlikeNiz, 4);
-    console.log(aPodaciUlazneSlikeNiz);
+    console.log('Pikseli slike nakon kompresije: ', aPodaciUlazneSlikeNiz); 
+    console.log('Broj piksela slike nakon kompresije: ', aPodaciUlazneSlikeNiz / 4); 
+
+    aPodaciUlazneSlikeNizUint8C = new Uint8ClampedArray(aPodaciUlazneSlikeNiz);
+    console.log('Smeštanje piksela nakon kompresije u Uint8Clamped niz: ', aPodaciUlazneSlikeNizUint8C);
+    console.log('Broj elemenata Uint8Clamped niza: ', aPodaciUlazneSlikeNizUint8C.length); 
+    console.log('Broj piksela je sada: ', aPodaciUlazneSlikeNizUint8C.length / 4);
+    //aSlika = new ImageData(aPodaciUlazneSlikeNizUint8C, canvasDemoA.width, canvasDemoA.height);
+    //ctxDemoA.putImageData(aSlika, 300, 120); 
+
+    let sirina = 300;
+    let visina = 120; 
+
+    console.log(aPodaciUlazneSlikeNiz.length === 4 * sirina * visina); 
+    console.log(aPodaciUlazneSlikeNizUint8C.length === 4 * sirina * visina); 
+
+    let podaciA = new ImageData(aPodaciUlazneSlikeNizUint8C, sirina, visina);
+    console.log(podaciA.data);  
+
+    canvasDemoA.width = sirina;
+    canvasDemoA.height = visina; 
+
+    //ctxDemoA.putImageData(podaciA, canvasDemoA.width, canvasDemoA.height); 
 }
 
 const generisanjeDemoCanvasa = () => {
