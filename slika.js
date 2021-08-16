@@ -792,6 +792,7 @@ const kompresija25p = () => {
     console.log('Smeštanje piksela nakon kompresije u Uint8Clamped niz: ', aPodaciUlazneSlikeNizUint8C);
     console.log('Broj elemenata Uint8Clamped niza: ', aPodaciUlazneSlikeNizUint8C.length); 
     console.log('Broj piksela je sada: ', aPodaciUlazneSlikeNizUint8C.length / 4);
+    
     //aSlika = new ImageData(aPodaciUlazneSlikeNizUint8C, canvasDemoA.width, canvasDemoA.height);
     //ctxDemoA.putImageData(aSlika, 300, 120); 
 
@@ -870,7 +871,6 @@ btnGenerisanjeDemo.addEventListener('click', () => {
     generisanjeDemoCanvasa();
     //kompresija25p();
  
-
 });
 
 btnNoviUnosDemo.addEventListener('click', () => {
