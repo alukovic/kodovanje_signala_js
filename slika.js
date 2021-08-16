@@ -91,6 +91,10 @@ Pro 2.3.9 14.8.2021. Sub.
     Novo | Test | Demo | Kompresija | Nastavak   
     Početak kreiranja funkcije kompresija25p()
 
+//Dan22
+Pro 2.3.9 16.8.2021. Ned. 
+    Novo | Test | Demo | Kompresija | Nastavak   
+    Nastavak kreiranja funkcije kompresija25p()   
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
