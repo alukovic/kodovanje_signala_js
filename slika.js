@@ -469,6 +469,7 @@ const nasumicnaVrednostPiksela = (min, max) => {
 };
 
 const generisanjeDemoCanvasaA = () => {
+    
     //Test: demo slika
 
     nizPikselaDemo = new Uint8ClampedArray(4 * 10000);
@@ -579,6 +580,7 @@ const obradaUlazneSlike = () => {
 
     //nizSrVrPiksela.push(pikseliUlazneSlike[i]);
     //nizSrVrPikselaUint8C = new Uint8ClampedArray(nizSrVrPiksela);
+
     }
 
     ctxDemoA.putImageData(podaciUlazneSlike, 0, 0); 
@@ -792,7 +794,7 @@ const kompresija25p = () => {
     console.log('Smeštanje piksela nakon kompresije u Uint8Clamped niz: ', aPodaciUlazneSlikeNizUint8C);
     console.log('Broj elemenata Uint8Clamped niza: ', aPodaciUlazneSlikeNizUint8C.length); 
     console.log('Broj piksela je sada: ', aPodaciUlazneSlikeNizUint8C.length / 4);
-    
+
     //aSlika = new ImageData(aPodaciUlazneSlikeNizUint8C, canvasDemoA.width, canvasDemoA.height);
     //ctxDemoA.putImageData(aSlika, 300, 120); 
 
@@ -832,6 +834,7 @@ const kompresija25p = () => {
     canvasDemoA.height = visina; 
 
     ctxDemoA.putImageData(podaciA, canvasDemoA.width, canvasDemoA.height); 
+
 }
 
 const generisanjeDemoCanvasa = () => {
