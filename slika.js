@@ -1088,7 +1088,7 @@ btnRotacija.addEventListener('click', () => {
 
 btnRotacijaNovo.addEventListener('click', () => {
     ugaoRotacije.value = '';
-    rotacijaSlike(slika, 0);
+    opcijePrikazaSlikeZaRotaciju();
 });
 
 const rotacijaSlike = (img, ugao) => {
@@ -1096,7 +1096,7 @@ const rotacijaSlike = (img, ugao) => {
     ctxRotacija.save();
     ctxRotacija.translate(canvasSlikeZaRotaciju.width / 2, canvasSlikeZaRotaciju.height / 2);
     ctxRotacija.rotate(Number(ugaoRotacije.value) * Math.PI / 180);
-    ctxRotacija.drawImage(slika, -(canvasSlikeZaRotaciju.width / 2), -(canvasSlikeZaRotaciju.height / 2));
+    ctxRotacija.drawImage(slika, -(slika.width / 2), -(slika.height / 2));
     ctxRotacija.restore();
 
     console.log(Number(ugaoRotacije.value));
