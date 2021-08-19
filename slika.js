@@ -1077,3 +1077,17 @@ const opcijePrikazaSlikeZaRotaciju = () => {
 meniRotacijaSlike.addEventListener('load', () => {
     opcijePrikazaSlikeZaRotaciju();
 });
+
+btnRotacija = document.querySelector('#btnRotacija'); 
+btnRotacijaNovo = document.querySelector('#btnRotacijaNovo');
+ugaoRotacije = document.querySelector('#inpUgaoRotacije');
+
+btnRotacija.addEventListener('click', () => {
+    ctxRotacija.rotate(Number(ugaoRotacije.value * Math.PI / 180));
+    console.log(ugaoRotacije.value);
+    console.log(Number(ugaoRotacije.value) * Math.PI / 180);
+});
+
+btnRotacijaNovo.addEventListener('click', () => {
+    ugaoRotacije.value = '';
+});
