@@ -162,11 +162,11 @@ window.addEventListener('load', function(){
     noviMeni.style.display = 'none'; 
     txtDemoDCTinfo.style.display = 'none';
     sakrivanjeRGBA();
-
+    
     //Novo
     demoDCT.style.display = 'none';
     testCanvas.style.display = 'none';
-
+    
     document.querySelector('input[type="file"]').addEventListener('change', function(){
 
         meniSlika.style.display = 'block'; 
@@ -210,6 +210,7 @@ window.addEventListener('load', function(){
 
             slika.addEventListener('load', () => {
                 opcijePrikazaSlike();
+                opcijePrikazaSlikeZaRotaciju();
             }); 
 
         }
@@ -1050,3 +1051,29 @@ btnBrisanjePlavaBoja.addEventListener('click', () => {
     window.location.reload(true);
 });
 
+//Rotacija slike: 
+meniRotacijaSlike = document.querySelector('.meniRotacijaSlike'); 
+canvasSlikeZaRotaciju = document.querySelector('#canvasSlikeZaRotaciju');
+ctxRotacija = canvasSlikeZaRotaciju.getContext('2d');
+
+const opcijePrikazaSlikeZaRotaciju = () => {
+
+    if(slika.width >= 1920){
+
+        canvasSlikeZaRotaciju.width = slika.width / 6; 
+        canvasSlikeZaRotaciju.height = slika.height / 6; 
+
+        } else {
+
+            canvasSlikeZaRotaciju.width = slika.width / 3; 
+            canvasSlikeZaRotaciju.height = slika.height / 3; 
+
+        }
+
+        ctxRotacija.drawImage(slika, 0, 0, canvasSlikeZaRotaciju.width, canvasSlikeZaRotaciju.height);
+
+}
+
+meniRotacijaSlike.addEventListener('load', () => {
+    opcijePrikazaSlikeZaRotaciju();
+});
