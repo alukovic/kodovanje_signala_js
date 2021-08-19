@@ -95,7 +95,10 @@ Pro 2.3.9 14.8.2021. Sub.
 Pro 2.3.9 16.8.2021. Pon. 
     Novo | Test | Demo | Kompresija | Nastavak   
     Nastavak kreiranja funkcije kompresija25p()   
-    
+//Dan23
+Pro 2.3.9 19.8.2021. Sre. 
+    Nove ideje: 
+    Proširenje programa i uvođenje novih funckija za obradu slike 
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
