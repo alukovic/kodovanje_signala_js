@@ -954,3 +954,51 @@ btnCrvenaBoja.addEventListener('click', () => {
 btnBrisanjeCrvenaBoja.addEventListener('click', () => {
     window.location.reload(true);
 });
+
+//Prikaz efekta zelene boje
+btnZelenaBoja = document.querySelector('#btnZelenaBoja');
+btnBrisanjeZelenaBoja = document.querySelector('#btnBrisanjeZelenaBoja');
+
+canvasZeleneSlike = document.querySelector('#canvasZeleneSlike');
+ctxZelenaSlika = canvasZeleneSlike.getContext('2d');
+
+const prikazZeleneSlike = () => {
+
+    if(slika.width >= 1920){
+
+        canvasZeleneSlike.width = slika.width / 6; 
+        canvasZeleneSlike.height = slika.height / 6; 
+
+        } else {
+
+            canvasZeleneSlike.width = slika.width / 3; 
+            canvasZeleneSlike.height = slika.height / 3; 
+
+        }
+
+        ctxZelenaSlika.drawImage(slika, 0, 0, canvasZeleneSlike.width, canvasZeleneSlike.height);
+
+        pikseliZeleneSlike = ctxZelenaSlika.getImageData(0, 0, canvasZeleneSlike.width, canvasZeleneSlike.height);
+    
+        for(let i = 0; i < pikseliZeleneSlike.data.length; i+=4){
+    
+            let vrednost = pikseliZeleneSlike.data[i] + pikseliZeleneSlike.data[i + 1] +  pikseliZeleneSlike.data[i + 2]; 
+            let arSred = vrednost / 3;
+            pikseliZeleneSlike.data[i] = arSred;
+            pikseliZeleneSlike.data[i + 1] = arSred * 5;
+            pikseliZeleneSlike.data[i + 2] = arSred;
+
+        }
+    
+        ctxZelenaSlika.putImageData(pikseliZeleneSlike, 0, 0); 
+
+}
+
+btnZelenaBoja.addEventListener('click', () => {
+    prikazZeleneSlike();
+});
+
+btnBrisanjeZelenaBoja.addEventListener('click', () => {
+    window.location.reload(true);
+});
+
