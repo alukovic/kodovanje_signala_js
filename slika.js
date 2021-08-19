@@ -1083,11 +1083,22 @@ btnRotacijaNovo = document.querySelector('#btnRotacijaNovo');
 ugaoRotacije = document.querySelector('#inpUgaoRotacije');
 
 btnRotacija.addEventListener('click', () => {
-    ctxRotacija.rotate(Number(ugaoRotacije.value * Math.PI / 180));
-    console.log(ugaoRotacije.value);
-    console.log(Number(ugaoRotacije.value) * Math.PI / 180);
+    rotacijaSlike(slika,  Number(ugaoRotacije.value));
 });
 
 btnRotacijaNovo.addEventListener('click', () => {
     ugaoRotacije.value = '';
+    rotacijaSlike(slika, 0);
 });
+
+const rotacijaSlike = (img, ugao) => {
+
+    ctxRotacija.save();
+    ctxRotacija.translate(canvasSlikeZaRotaciju.width / 2, canvasSlikeZaRotaciju.height / 2);
+    ctxRotacija.rotate(Number(ugaoRotacije.value) * Math.PI / 180);
+    ctxRotacija.drawImage(slika, -(canvasSlikeZaRotaciju.width / 2), -(canvasSlikeZaRotaciju.height / 2));
+    ctxRotacija.restore();
+
+    console.log(Number(ugaoRotacije.value));
+
+};
