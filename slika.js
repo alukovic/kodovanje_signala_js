@@ -1002,3 +1002,51 @@ btnBrisanjeZelenaBoja.addEventListener('click', () => {
     window.location.reload(true);
 });
 
+
+//Prikaz efekta plave boje
+btnPlavaBoja = document.querySelector('#btnPlavaBoja');
+btnBrisanjePlavaBoja = document.querySelector('#btnBrisanjePlavaBoja');
+
+canvasPlaveSlike = document.querySelector('#canvasPlaveSlike');
+ctxPlavaSlika = canvasPlaveSlike.getContext('2d');
+
+const prikazPlaveSlike = () => {
+
+    if(slika.width >= 1920){
+
+        canvasPlaveSlike.width = slika.width / 6; 
+        canvasPlaveSlike.height = slika.height / 6; 
+
+        } else {
+
+            canvasPlaveSlike.width = slika.width / 3; 
+            canvasPlaveSlike.height = slika.height / 3; 
+
+        }
+
+        ctxPlavaSlika.drawImage(slika, 0, 0, canvasPlaveSlike.width, canvasPlaveSlike.height);
+
+        pikseliPlaveSlike = ctxPlavaSlika.getImageData(0, 0, canvasPlaveSlike.width, canvasPlaveSlike.height);
+    
+        for(let i = 0; i < pikseliPlaveSlike.data.length; i+=4){
+    
+            let vrednost = pikseliPlaveSlike.data[i] + pikseliPlaveSlike.data[i + 1] +  pikseliPlaveSlike.data[i + 2]; 
+            let arSred = vrednost / 3;
+            pikseliPlaveSlike.data[i] = arSred;
+            pikseliPlaveSlike.data[i + 1] = arSred;
+            pikseliPlaveSlike.data[i + 2] = arSred * 5;
+
+        }
+    
+        ctxPlavaSlika.putImageData(pikseliPlaveSlike, 0, 0); 
+
+}
+
+btnPlavaBoja.addEventListener('click', () => {
+    prikazPlaveSlike();
+});
+
+btnBrisanjePlavaBoja.addEventListener('click', () => {
+    window.location.reload(true);
+});
+
