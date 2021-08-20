@@ -1136,3 +1136,4 @@ canvasProizvoljniEfekat = document.querySelector('#canvasProizvoljniEfekat');
 ctxProizvoljniEfekat = canvasProizvoljniEfekat.getContext('2d');
 
 //prikazSlike(slika, canvasProizvoljniEfekat, ctxProizvoljniEfekat); 
+
