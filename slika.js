@@ -1137,3 +1137,11 @@ ctxProizvoljniEfekat = canvasProizvoljniEfekat.getContext('2d');
 
 //prikazSlike(slika, canvasProizvoljniEfekat, ctxProizvoljniEfekat); 
 
+const odabirRGB = () => {
+
+    let slajderR = document.querySelector('#slajderR').value;
+    let slajderG = document.querySelector('#slajderG').value;
+    let slajderB = document.querySelector('#slajderB').value;
+
+    
+}
