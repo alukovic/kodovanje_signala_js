@@ -97,15 +97,17 @@ Pro 2.3.9 16.8.2021. Pon.
     Nastavak kreiranja funkcije kompresija25p()   
 //Dan23
 Pro 2.3.9 19.8.2021. Čet. 
-    Nove ideje: 
+    Nove ideje 
     Proširenje programa i uvođenje novih funckija za obradu slike 
 //Dan24 
 Pro 2.3.9 20.8.2021. Pet. 
-    Nove ideje:
+    Nove ideje
     Optimizacija funkcije prikaza slike na kanvasu tj. 
     uvođenje univerzalne funkcije za prikaz slike
     Proširenja programa
     Uvođenje RGB slajdera
+    Uvođenje dugmeta za resetovanje slike na početnu vrednost
+    tj. bez efekata
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -1137,11 +1139,94 @@ ctxProizvoljniEfekat = canvasProizvoljniEfekat.getContext('2d');
 
 //prikazSlike(slika, canvasProizvoljniEfekat, ctxProizvoljniEfekat); 
 
-const odabirRGB = () => {
 
-    let slajderR = document.querySelector('#slajderR').value;
-    let slajderG = document.querySelector('#slajderG').value;
-    let slajderB = document.querySelector('#slajderB').value;
+//RGBA
+slajderR = document.querySelector('#slajderR').value;
+slajderG = document.querySelector('#slajderG').value;
+slajderB = document.querySelector('#slajderB').value;
+slajderA = document.querySelector('#slajderA').value;
 
+const odabirR = () => {
+
+    slajderR = document.querySelector('#slajderR').value;
+    //let slajderG = document.querySelector('#slajderG').value;
+    //let slajderB = document.querySelector('#slajderB').value;
+    //let slajderA = document.querySelector('#slajderA').value;
+
+    pikseliSlikeSaProizvoljnogEfekta = ctxProizvoljniEfekat.getImageData(0, 0, canvasProizvoljniEfekat.width, canvasProizvoljniEfekat.height);
     
+    //R
+    for(let i = 0; i < pikseliSlikeSaProizvoljnogEfekta.data.length; i+=4){
+        pikseliSlikeSaProizvoljnogEfekta.data[i] = slajderR;
+    }
+
+
+    ctxProizvoljniEfekat.putImageData(pikseliSlikeSaProizvoljnogEfekta, 0, 0); 
 }
+
+const odabirG= () => {
+
+    //let slajderR = document.querySelector('#slajderR').value;
+    slajderG = document.querySelector('#slajderG').value;
+    //let slajderB = document.querySelector('#slajderB').value;
+    //let slajderA = document.querySelector('#slajderA').value;
+
+    pikseliSlikeSaProizvoljnogEfekta = ctxProizvoljniEfekat.getImageData(0, 0, canvasProizvoljniEfekat.width, canvasProizvoljniEfekat.height);
+    
+    //G
+    for(let i = 0; i < pikseliSlikeSaProizvoljnogEfekta.data.length; i+=4){
+        pikseliSlikeSaProizvoljnogEfekta.data[i + 1] = slajderG;
+    }
+
+    ctxProizvoljniEfekat.putImageData(pikseliSlikeSaProizvoljnogEfekta, 0, 0); 
+
+}
+
+const odabirB= () => {
+
+    //let slajderR = document.querySelector('#slajderR').value;
+    //let slajderG = document.querySelector('#slajderG').value;
+    slajderB = document.querySelector('#slajderB').value;
+    //let slajderA = document.querySelector('#slajderA').value;
+
+    pikseliSlikeSaProizvoljnogEfekta = ctxProizvoljniEfekat.getImageData(0, 0, canvasProizvoljniEfekat.width, canvasProizvoljniEfekat.height);
+    
+    //B
+    for(let i = 0; i < pikseliSlikeSaProizvoljnogEfekta.data.length; i+=4){
+        pikseliSlikeSaProizvoljnogEfekta.data[i + 2] = slajderB;
+    }
+
+
+    ctxProizvoljniEfekat.putImageData(pikseliSlikeSaProizvoljnogEfekta, 0, 0); 
+
+}
+
+const odabirA= () => {
+
+    //let slajderR = document.querySelector('#slajderR').value;
+    //let slajderG = document.querySelector('#slajderG').value;
+    //let slajderB = document.querySelector('#slajderB').value;
+    slajderA = document.querySelector('#slajderA').value;
+
+    pikseliSlikeSaProizvoljnogEfekta = ctxProizvoljniEfekat.getImageData(0, 0, canvasProizvoljniEfekat.width, canvasProizvoljniEfekat.height);
+    
+    //B
+    for(let i = 0; i < pikseliSlikeSaProizvoljnogEfekta.data.length; i+=4){
+        pikseliSlikeSaProizvoljnogEfekta.data[i + 3] = slajderA;
+    }
+
+    ctxProizvoljniEfekat.putImageData(pikseliSlikeSaProizvoljnogEfekta, 0, 0); 
+
+}
+
+btnResetRGBA = document.querySelector('#btnResetRGBA'); 
+
+btnResetRGBA.addEventListener('click', () => {
+    prikazSlike(slika, canvasProizvoljniEfekat, ctxProizvoljniEfekat);  
+});
+
+slajderRGBA = document.querySelector('.slajderRGBA');
+
+document.querySelector('input[type="range"]').addEventListener('oninput', () => {
+    btnResetRGBA.style.backgroundColor = 'rgba('+ slajderR +','+ slajderG +','+ slajderB +','+ slajderA + ')';
+});
