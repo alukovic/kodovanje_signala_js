@@ -101,7 +101,11 @@ Pro 2.3.9 19.8.2021. Čet.
     Proširenje programa i uvođenje novih funckija za obradu slike 
 //Dan24 
 Pro 2.3.9 20.8.2021. Pet. 
-    Nove ideje i proširenja programa... 
+    Nove ideje:
+    Optimizacija funkcije prikaza slike na kanvasu tj. 
+    uvođenje univerzalne funkcije za prikaz slike
+    Proširenja programa
+    Uvođenje RGB slajdera
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -212,8 +216,11 @@ window.addEventListener('load', function(){
             };
 
             slika.addEventListener('load', () => {
+
                 opcijePrikazaSlike();
                 opcijePrikazaSlikeZaRotaciju();
+                prikazSlike(slika, canvasProizvoljniEfekat, ctxProizvoljniEfekat); 
+
             }); 
 
         }
@@ -1105,3 +1112,27 @@ const rotacijaSlike = (img, ugao) => {
     console.log(Number(ugaoRotacije.value));
     
 };
+
+//Univerzalna funkcija za prikaz slike
+const prikazSlike = (img, canvas, ctx) => {
+
+    if(img.width >= 1920){
+
+        canvas.width = img.width / 6; 
+        canvas.height = img.height / 6; 
+
+        } else {
+
+            canvas.width = img.width / 3; 
+            canvas.height = img.height / 3; 
+
+        }
+
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+};
+
+
+canvasProizvoljniEfekat = document.querySelector('#canvasProizvoljniEfekat'); 
+ctxProizvoljniEfekat = canvasProizvoljniEfekat.getContext('2d');
+
+//prikazSlike(slika, canvasProizvoljniEfekat, ctxProizvoljniEfekat); 
