@@ -98,7 +98,7 @@ Pro 2.3.9 16.8.2021. Pon.
 //Dan23
 Pro 2.3.9 19.8.2021. Čet. 
     Nove ideje 
-    Proširenje programa i uvođenje novih funckija za obradu slike 
+    Proširenje programa i uvođenje novih funkcija za obradu slike 
 //Dan24 
 Pro 2.3.9 20.8.2021. Pet. 
     Nove ideje
@@ -110,7 +110,7 @@ Pro 2.3.9 20.8.2021. Pet.
     tj. bez efekata
 //Dan25
 Pro 2.3.9 21.8.2021. Sub. 
-
+    Uvođenje opcije za isecanje slike
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -1242,3 +1242,24 @@ ctxIsecanjeSlike = canvasIsecanjeSlike.getContext('2d');
 canvasIsecanjeSlikeA = document.querySelector('#canvasIsecanjeSlikeA');
 ctxIsecanjeSlikeA = canvasIsecanjeSlikeA.getContext('2d');
 
+isecanjeXosa = document.querySelector('#isecanjeXosa');
+isecanjeYosa = document.querySelector('#isecanjeYosa');
+isecanjeSirina = document.querySelector('#isecanjeSirina');
+isecanjeVisina = document.querySelector('#isecanjeVisina'); 
+
+btnIsecanje = document.querySelector('#btnIsecanje');
+btnIsecanjeNoviUnos = document.querySelector('#btnIsecanjeNoviUnos'); 
+
+btnIsecanje.addEventListener('click', () => {
+    ctxIsecanjeSlikeA.drawImage(slika, 0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height, 0, 0, isecanjeXosa.value, isecanjeYosa.value, isecanjeSirina, isecanjeVisina);
+});
+
+btnIsecanjeNoviUnos.addEventListener('click', () => {
+
+    isecanjeXosa.value = null;
+    isecanjeYosa.value = null;
+    isecanjeSirina.value = null;
+    isecanjeVisina.value = null;
+    ctxIsecanjeSlikeA.clearRect(0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height);
+
+});
