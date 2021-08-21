@@ -108,6 +108,9 @@ Pro 2.3.9 20.8.2021. Pet.
     Uvođenje RGB slajdera
     Uvođenje dugmeta za resetovanje slike na početnu vrednost
     tj. bez efekata
+//Dan25
+Pro 2.3.9 21.8.2021. Sub. 
+
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -222,6 +225,7 @@ window.addEventListener('load', function(){
                 opcijePrikazaSlike();
                 opcijePrikazaSlikeZaRotaciju();
                 prikazSlike(slika, canvasProizvoljniEfekat, ctxProizvoljniEfekat); 
+                prikazSlike(slika, canvasIsecanjeSlike, ctxIsecanjeSlike); 
 
             }); 
 
@@ -1230,3 +1234,11 @@ slajderRGBA = document.querySelector('.slajderRGBA');
 document.querySelector('input[type="range"]').addEventListener('oninput', () => {
     btnResetRGBA.style.backgroundColor = 'rgba('+ slajderR +','+ slajderG +','+ slajderB +','+ slajderA + ')';
 });
+
+//Isecanje slike: 
+canvasIsecanjeSlike = document.querySelector('#canvasIsecanjeSlike');
+ctxIsecanjeSlike = canvasIsecanjeSlike.getContext('2d');
+
+canvasIsecanjeSlikeA = document.querySelector('#canvasIsecanjeSlikeA');
+ctxIsecanjeSlikeA = canvasIsecanjeSlikeA.getContext('2d');
+
