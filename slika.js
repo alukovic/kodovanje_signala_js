@@ -1251,7 +1251,23 @@ btnIsecanje = document.querySelector('#btnIsecanje');
 btnIsecanjeNoviUnos = document.querySelector('#btnIsecanjeNoviUnos'); 
 
 btnIsecanje.addEventListener('click', () => {
-    ctxIsecanjeSlikeA.drawImage(slika, 0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height, 0, 0, isecanjeXosa.value, isecanjeYosa.value, isecanjeSirina, isecanjeVisina);
+
+    if(slika.width >= 1920){
+
+        canvasIsecanjeSlikeA.width = slika.width / 6; 
+        canvasIsecanjeSlikeA.height = slika.height / 6; 
+
+        ctxIsecanjeSlikeA.drawImage(slika, 0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height, 0, 0, isecanjeXosa.value, isecanjeYosa.value, isecanjeSirina, isecanjeVisina);
+
+        } else {
+
+            canvasIsecanjeSlikeA.width = slika.width / 3; 
+            canvasIsecanjeSlikeA.height = slika.height / 3; 
+
+            ctxIsecanjeSlikeA.drawImage(slika, 0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height, 0, 0, isecanjeXosa.value, isecanjeYosa.value, isecanjeSirina, isecanjeVisina);
+        }
+
+    //ctxIsecanjeSlikeA.drawImage(slika, 0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height, 0, 0, isecanjeXosa.value, isecanjeYosa.value, isecanjeSirina, isecanjeVisina);
 });
 
 btnIsecanjeNoviUnos.addEventListener('click', () => {
