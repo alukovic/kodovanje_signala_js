@@ -137,3 +137,13 @@
     border: 2px solid rgb(65, 83, 182);
     border-radius: 5px;
 }
+
+#btnVizuelizacijaPiksela{
+    width: 12em;
+    background-color: #A6FF4D;
+}
+
+#btnVizuelizacijaDCT{
+    width: 12em;
+    background-color: #FFE14D;
+}

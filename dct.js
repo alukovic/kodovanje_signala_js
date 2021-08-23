@@ -174,25 +174,18 @@ btnVizuelizacijaPiksela = document.querySelector('#btnVizuelizacijaPiksela');
 canvasPrikazPikselaMatrice = document.querySelector('#canvasPrikazPikselaMatrice');
 ctxPrikazPikselaMatrice = canvasPrikazPikselaMatrice.getContext('2d');
 
-btnKonvertovanjeMatriceUniz = document.querySelector('#btnKonvertovanjeMatriceUniz');
-
-
 ulazniNiz = new Array();
 ulazniNizUint8C = new Uint8ClampedArray();
 sirina = new Number();
 visina = new Number();
 
-btnKonvertovanjeMatriceUniz.addEventListener('click', () => {
+btnVizuelizacijaPiksela.addEventListener('click', () => {
 
     for(let i = 0; i < ulaznaMatrica.length; i++){
         ulazniNiz = ulazniNiz.concat(ulaznaMatrica[i]);
     }
 
     console.log(ulazniNiz);
-
-});
-
-btnVizuelizacijaPiksela.addEventListener('click', () => {
 
     sirina = 4;
     visina = 4;
@@ -204,6 +197,12 @@ btnVizuelizacijaPiksela.addEventListener('click', () => {
     ctxPrikazPikselaMatrice.putImageData(podaciVizuelizacijePikselaMatrice, sirina, visina);
 
 });
+
+
+//Vizuelizacija vrednosti amplituda piksela nakon DCT
+btnVizuelizacijaDCT = document.querySelector('#btnVizuelizacijaDCT');
+canvasPrikazDCT = document.querySelector('#canvasPrikazDCT'); 
+
 
 
 
