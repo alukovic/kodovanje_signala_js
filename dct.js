@@ -20,6 +20,8 @@ Pro 2.3.9 23.8.2021. Pon.
     Ažuriranja, proširenja funkcija i integracija programa u jednu celinu 
 */
 
+ulaznaMatrica = new Array();
+
 ulaznaMatricaTekst = new String();
 izlaznaMatricaTekst = new String(); 
 
@@ -159,7 +161,50 @@ const DCT = () => {
     console.log(izlaznaMatrica[1][1]);
 
     console.log(izlaznaMatrica);
+    console.log(ulaznaMatrica);
 
 };
 
 btnDCT.onclick = DCT; 
+
+//Nastavak 
+
+//Vizuelizacija piksela ulazne matrice
+btnVizuelizacijaPiksela = document.querySelector('#btnVizuelizacijaPiksela');
+canvasPrikazPikselaMatrice = document.querySelector('#canvasPrikazPikselaMatrice');
+ctxPrikazPikselaMatrice = canvasPrikazPikselaMatrice.getContext('2d');
+
+btnKonvertovanjeMatriceUniz = document.querySelector('#btnKonvertovanjeMatriceUniz');
+
+
+ulazniNiz = new Array();
+ulazniNizUint8C = new Uint8ClampedArray();
+sirina = new Number();
+visina = new Number();
+
+btnKonvertovanjeMatriceUniz.addEventListener('click', () => {
+
+    for(let i = 0; i < ulaznaMatrica.length; i++){
+        ulazniNiz = ulazniNiz.concat(ulaznaMatrica[i]);
+    }
+
+    console.log(ulazniNiz);
+
+});
+
+btnVizuelizacijaPiksela.addEventListener('click', () => {
+
+    sirina = 4;
+    visina = 4;
+
+    ulazniNizUint8C = new Uint8ClampedArray(ulazniNiz);
+    console.log(ulazniNizUint8C);
+
+    podaciVizuelizacijePikselaMatrice = new ImageData(ulazniNizUint8C, sirina, visina);
+    ctxPrikazPikselaMatrice.putImageData(podaciVizuelizacijePikselaMatrice, sirina, visina);
+
+});
+
+
+
+

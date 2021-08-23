@@ -171,6 +171,9 @@ document.onreadystatechange = function(){
 
 window.addEventListener('load', function(){
 
+    optimizacijaPrikaza();
+    optimizacijaPrikazaDCTsadrzaja();
+
     //DCT sadržaj
     dctSadrzajPodrazumevano();
 
