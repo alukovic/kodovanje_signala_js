@@ -117,7 +117,7 @@ Pro 2.3.9 23.8.2021. Pon.
     u jednu, funkcionalnu celinu
     Optimizacija korisničkog interfejsa programa
     Vizuelizacija piksela ulazne matrice
-    Vizuelizacija vrednosti amplituda siglana slike nakon DCT
+    Vizuelizacija vrednosti amplituda signala slike nakon DCT
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
