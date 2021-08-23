@@ -21,6 +21,7 @@ Pro 2.3.9 23.8.2021. Pon.
 */
 
 ulaznaMatrica = new Array();
+//izlaznaMatrica = new Array();
 
 ulaznaMatricaTekst = new String();
 izlaznaMatricaTekst = new String(); 
@@ -83,7 +84,6 @@ const brisanje = () => {
 
 btnBrisanje.onclick = brisanje;
 
-
 const demo = () => {
 
     txtIzlaz.value = 'Projekat je u fazi izrade'; 
@@ -91,7 +91,6 @@ const demo = () => {
 };
 
 btnDCT.onclick = demo; 
-
 
 const DCT = () => {
 
@@ -175,7 +174,12 @@ canvasPrikazPikselaMatrice = document.querySelector('#canvasPrikazPikselaMatrice
 ctxPrikazPikselaMatrice = canvasPrikazPikselaMatrice.getContext('2d');
 
 ulazniNiz = new Array();
+sortiraniUlazniNiz = new Array();
+izlazniNiz = new Array();
+sortiraniIzlazniNiz = new Array();
+
 ulazniNizUint8C = new Uint8ClampedArray();
+
 sirina = new Number();
 visina = new Number();
 
@@ -198,12 +202,54 @@ btnVizuelizacijaPiksela.addEventListener('click', () => {
 
 });
 
-
 //Vizuelizacija vrednosti amplituda piksela nakon DCT
 btnVizuelizacijaDCT = document.querySelector('#btnVizuelizacijaDCT');
 canvasPrikazDCT = document.querySelector('#canvasPrikazDCT'); 
+ctxCanvasPrikazDCT = canvasPrikazDCT.getContext('2d');
+
+const funkcijaVizuelizacijeDCT = () => {
+
+    let  canvasPrikazDCT = new Chart(ctxCanvasPrikazDCT, {
+        type: 'bar',
+        data: {
+            labels: ulazniNiz,
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    
+
+};
 
 
-
+btnVizuelizacijaDCT.addEventListener('click', () => {
+    funkcijaVizuelizacijeDCT();
+});
 
 
