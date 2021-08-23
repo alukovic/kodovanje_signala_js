@@ -118,6 +118,7 @@ Pro 2.3.9 23.8.2021. Pon.
     Optimizacija korisničkog interfejsa programa
     Vizuelizacija piksela ulazne matrice
     Vizuelizacija vrednosti amplituda signala slike nakon DCT
+    Prilagođavanje opcija za isecanje slike
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -212,7 +213,7 @@ window.addEventListener('load', function(){
             //slika.onload = imageIsLoaded;
 
             function opcijePrikazaSlike() {
-                
+
                 if(slika.width >= 1920){
 
                     canvasSlike.width = slika.width / 6; 
@@ -224,7 +225,7 @@ window.addEventListener('load', function(){
                         canvasSlike.height = slika.height / 3; 
     
                     }
-    
+
                     ctx.drawImage(slika, 0, 0, canvasSlike.width, canvasSlike.height); 
     
                     canvasSlike.style.border = '2px';
@@ -1272,17 +1273,21 @@ btnIsecanje.addEventListener('click', () => {
         canvasIsecanjeSlikeA.width = slika.width / 6; 
         canvasIsecanjeSlikeA.height = slika.height / 6; 
 
-        ctxIsecanjeSlikeA.drawImage(slika, 0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height, 0, 0, isecanjeXosa.value, isecanjeYosa.value, isecanjeSirina, isecanjeVisina);
+        ctxIsecanjeSlikeA.drawImage(slika, isecanjeXosa.value * 6, isecanjeYosa.value * 6, isecanjeSirina.value * 6, isecanjeVisina.value * 6, 0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height);
 
         } else {
 
             canvasIsecanjeSlikeA.width = slika.width / 3; 
             canvasIsecanjeSlikeA.height = slika.height / 3; 
 
-            ctxIsecanjeSlikeA.drawImage(slika, 0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height, 0, 0, isecanjeXosa.value, isecanjeYosa.value, isecanjeSirina, isecanjeVisina);
+            ctxIsecanjeSlikeA.drawImage(slika, isecanjeXosa.value * 3, isecanjeYosa.value * 3, isecanjeSirina.value * 3, isecanjeVisina.value * 3, 0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height);
+        
         }
 
     //ctxIsecanjeSlikeA.drawImage(slika, 0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height, 0, 0, isecanjeXosa.value, isecanjeYosa.value, isecanjeSirina, isecanjeVisina);
+    //ctxIsecanjeSlikeA.drawImage(slika, 0, 0, canvasIsecanjeSlike.width, canvasIsecanjeSlike.height, isecanjeXosa.value, isecanjeYosa.value, isecanjeSirina.value, isecanjeVisina.value);
+    //ctxIsecanjeSlikeA.drawImage(slika, isecanjeXosa.value * 3, isecanjeYosa.value * 3, isecanjeSirina.value * 3, isecanjeVisina.value * 3, 0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height);
+
 });
 
 btnIsecanjeNoviUnos.addEventListener('click', () => {
