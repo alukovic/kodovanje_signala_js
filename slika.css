@@ -131,3 +131,9 @@
 #btnResetRGBA{
     margin: 0.5em;
 }
+
+#prikazDCTsadrzaja:hover, #sakrivanjeDCTsadrzaja:hover{
+    padding: 0.5em;
+    border: 2px solid rgb(65, 83, 182);
+    border-radius: 5px;
+}

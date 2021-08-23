@@ -111,6 +111,8 @@ Pro 2.3.9 20.8.2021. Pet.
 //Dan25
 Pro 2.3.9 21.8.2021. Sub. 
     Uvođenje opcije za isecanje slike
+Pro 2.3.9 23.8.2021. Pon. 
+
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -159,12 +161,18 @@ const optimizacijaPrikaza = () => {
 document.onreadystatechange = function(){
 
     if(document.readyState !== 'complete'){
+        
         optimizacijaPrikaza();
+        optimizacijaPrikazaDCTsadrzaja();
+
     }
 
 }
 
 window.addEventListener('load', function(){
+
+    //DCT sadržaj
+    dctSadrzajPodrazumevano();
 
     txtUcitavanje.style.display = 'none'; 
 
@@ -175,7 +183,6 @@ window.addEventListener('load', function(){
     txtDemoDCTinfo.style.display = 'none';
     sakrivanjeRGBA();
     
-    //Novo
     demoDCT.style.display = 'none';
     testCanvas.style.display = 'none';
     
@@ -1278,4 +1285,52 @@ btnIsecanjeNoviUnos.addEventListener('click', () => {
     isecanjeVisina.value = null;
     ctxIsecanjeSlikeA.clearRect(0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height);
 
+});
+
+//DCT meni
+dctPocetniMeni = document.querySelector('.dctPocetniMeni');
+dctMeniSakrivanje = document.querySelector('.dctMeniSakrivanje');
+dctSadrzaj = document.querySelector('.dctSadrzaj');
+
+const dctSadrzajPodrazumevano = () => {
+
+    dctSadrzaj.style.display = 'none';
+    dctPocetniMeni.style.display = 'block';
+    dctMeniSakrivanje.style.display = 'none';
+
+};
+
+const optimizacijaPrikazaDCTsadrzaja = () => {
+
+    dctSadrzaj.style.display = 'none';
+    dctPocetniMeni.style.display = 'none';
+    dctMeniSakrivanje.style.display = 'none';
+
+}
+
+const dctPrikazSadrzaja = () => {
+
+    dctSadrzaj.style.display = 'block';
+    dctPocetniMeni.style.display = 'none';
+    dctMeniSakrivanje.style.display = 'block';
+
+};
+
+const dctSakrivanjeSadrzaja = () => {
+
+    dctSadrzaj.style.display = 'none';
+    dctPocetniMeni.style.display = 'none';
+    dctMeniSakrivanje.style.display = 'block';
+
+};
+
+prikazDCTsadrzaja = document.querySelector('#prikazDCTsadrzaja');
+sakrivanjeDCTsadrzaja = document.querySelector('#sakrivanjeDCTsadrzaja');
+
+prikazDCTsadrzaja.addEventListener('click', () => {
+    dctPrikazSadrzaja();
+});
+
+sakrivanjeDCTsadrzaja.addEventListener('click', () => {
+    dctSadrzajPodrazumevano();
 });
