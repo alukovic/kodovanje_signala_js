@@ -42,97 +42,108 @@
 
         <div class="dctSadrzaj">
 
-            <div>
-                <p>Nasumično generisanje matrice reda 8x8: </p>
-                <button id="btnMatrica">Generisanje matrice</button>
-            </div>
-
-            <div>
-
-                <p>Vrednosti koeficijenata početne slike: </p>
-                <p id="infoP1"></p>
-                <textarea name="txtUlaz" id="txtUlaz" cols="30" rows="10"></textarea>
-                <hr>
-
-            </div>
-
-            <div class="infoA">
+            <div class="dctSadrzajA">
 
                 <div>
-                    
-                    <p>Broj koeficijenata slike je: </p>
-                    <input id="inpBrKoef" type="text"> 
-
-                    <p>Ulazna matrica koeficijenata je tipa: </p>
-                    <input id="inpMatr" type="text"> 
-
-                    <hr>
-
+                    <p>Nasumično generisanje matrice reda 8x8: </p>
+                    <button id="btnMatrica">Generisanje matrice</button>
                 </div>
 
             </div>
 
-            <div> 
+
+            <div class="dctSadrzajB">
 
                 <div>
-                    <p>Pritisnite taster za proračun DCT: </p>
-                    <button id="btnDCT">DCT</button>
 
-                </div>
-
-                <p>
-                    <p>Pritisnite taster za brisanje: </p>
-                    <button id="btnBrisanje">Brisanje</button>
+                    <p>Vrednosti koeficijenata početne slike: </p>
+                    <p id="infoP1"></p>
+                    <textarea name="txtUlaz" id="txtUlaz" cols="30" rows="10"></textarea>
                     <hr>
-
-                </p>
-                
-            </div>
-
-            <div class="a a1">
+    
+                </div>
+    
+                <div class="infoA">
+    
+                    <div>
+                        
+                        <p>Broj koeficijenata slike je: </p>
+                        <input id="inpBrKoef" type="text"> 
+    
+                        <p>Ulazna matrica koeficijenata je tipa: </p>
+                        <input id="inpMatr" type="text"> 
+    
+                        <hr>
+    
+                    </div>
+    
+                </div>
     
                 <div> 
+    
+                    <div>
+                        <p>Pritisnite taster za proračun DCT: </p>
+                        <button id="btnDCT">DCT</button>
+    
+                    </div>
+    
+                    <p>
+                        <p>Pritisnite taster za brisanje: </p>
+                        <button id="btnBrisanje">Brisanje</button>
+                        <hr>
+    
+                    </p>
                     
-                    <p>Prikaz vrednosti koeficijenata nakon DCT:  </p>
-                    <textarea name="txtIzlaz" id="txtIzlaz" cols="30" rows="10"></textarea>
-    
                 </div>
-                <hr>
     
-            </div>
-
-            <div class="prikazMatrice">
-
-                <p>Pritisnite taster za vizuelizaciju piksela ulazne matrice: </p>
-
-                <div>
-
-                    <button id="btnVizuelizacijaPiksela">Vizuelizacija piksela</button>
+                <div class="a a1">
+        
+                    <div> 
+                        
+                        <p>Prikaz vrednosti koeficijenata nakon DCT:  </p>
+                        <textarea name="txtIzlaz" id="txtIzlaz" cols="30" rows="10"></textarea>
+        
+                    </div>
                     <hr>
-
+        
                 </div>
-
-                <canvas id="canvasPrikazPikselaMatrice"></canvas>
-
-                <p>Vizuelizacija vrednosti amplituda piksela posle DCT: </p>
-
-                <div>
-                    <button id="btnVizuelizacijaDCT">Vizuelizacija amplituda</button>
+    
+                <div class="prikazMatrice">
+    
+                    <p>Pritisnite taster za vizuelizaciju piksela ulazne matrice: </p>
+    
+                    <div>
+    
+                        <button id="btnVizuelizacijaPiksela">Vizuelizacija piksela</button>
+                        <hr>
+    
+                    </div>
+    
+                    <canvas id="canvasPrikazPikselaMatrice"></canvas>
+    
+                    <p>Vizuelizacija vrednosti amplituda siglana slike nakon DCT: </p>
+    
+                    <div>
+                        <button id="btnVizuelizacijaDCT">Vizuelizacija amplituda</button>
+                    </div>
+    
+                    <canvas id="canvasPrikazDCT"></canvas>
+                    <hr>
+    
                 </div>
-
-                <canvas id="canvasPrikazDCT"></canvas>
-                <hr>
+    
+                <div class="dctMeniSakrivanje">
+    
+                    <p>Klik za sakrivanje DCT menija: </p>
+                    <img id="sakrivanjeDCTsadrzajaA" src="ico/opcioniMeniSakrivanje.png" title="Klik za sakrivanje opcionog prikaza DCT testa">
+                    <hr>
+        
+                </div>
+        
 
             </div>
 
-            <div class="dctMeniSakrivanje">
 
-                <p>Klik za sakrivanje DCT menija: </p>
-                <img id="sakrivanjeDCTsadrzajaA" src="ico/opcioniMeniSakrivanje.png" title="Klik za sakrivanje opcionog prikaza DCT testa">
-                <hr>
-    
-            </div>
-    
         </div>
 
 

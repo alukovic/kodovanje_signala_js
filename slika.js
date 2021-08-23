@@ -111,8 +111,13 @@ Pro 2.3.9 20.8.2021. Pet.
 //Dan25
 Pro 2.3.9 21.8.2021. Sub. 
     Uvođenje opcije za isecanje slike
+//Dan26    
 Pro 2.3.9 23.8.2021. Pon. 
-
+    Spajanje delova programa [DCT (dct.js | dct.html) i obrada slike (slika.js | slika.html)] 
+    u jednu, funkcionalnu celinu
+    Optimizacija korisničkog interfejsa programa
+    Vizuelizacija piksela ulazne matrice
+    Vizuelizacija vrednosti amplituda siglana slike nakon DCT
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -1300,6 +1305,8 @@ const dctSadrzajPodrazumevano = () => {
     dctSadrzaj.style.display = 'none';
     dctPocetniMeni.style.display = 'block';
     dctMeniSakrivanje.style.display = 'none';
+    dctSadrzajA.style.display = 'block';
+    dctSadrzajB.style.display = 'none';
 
 };
 
@@ -1340,10 +1347,13 @@ sakrivanjeDCTsadrzaja.addEventListener('click', () => {
 });
 
 sakrivanjeDCTsadrzajaA.addEventListener('click', () => {
+
     dctSadrzajPodrazumevano();
+    dctSadrzajB.style.display = 'block';
+
 });
 
-
-
 //DCT kod
+dctSadrzajA = document.querySelector('.dctSadrzajA');
+dctSadrzajB = document.querySelector('.dctSadrzajB');
 

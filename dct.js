@@ -76,7 +76,15 @@ const generisanjeMatrice = () => {
 
 }; 
 
-btnMatrica.onclick = generisanjeMatrice;  
+//btnMatrica.onclick = generisanjeMatrice;  
+
+
+btnMatrica.addEventListener('click', () => {
+
+    generisanjeMatrice();
+    dctSadrzajB.style.display = 'block';
+    
+});
 
 const brisanje = () => {
     window.location.reload(true); 
@@ -271,5 +279,6 @@ const funkcijaVizuelizacijeDCT = () => {
 btnVizuelizacijaDCT.addEventListener('click', () => {
     funkcijaVizuelizacijeDCT();
 });
+
 
 
