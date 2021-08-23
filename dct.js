@@ -144,7 +144,8 @@ const DCT = () => {
             }
 
             //izlaznaMatrica[u][v] = ulaznaMatrica[u][v];
-            izlaznaMatrica[u][v] = Number((1/4)*Cu*Cv*suma).toFixed(0); 
+            //izlaznaMatrica[u][v] = Number((1/4)*Cu*Cv*suma).toFixed(0); 
+            izlaznaMatrica[u][v] = parseInt(Number((1/4)*Cu*Cv*suma).toFixed(0));
             console.log(izlaznaMatrica[u][v]); 
         }
 
@@ -175,8 +176,10 @@ ctxPrikazPikselaMatrice = canvasPrikazPikselaMatrice.getContext('2d');
 
 ulazniNiz = new Array();
 sortiraniUlazniNiz = new Array();
+sortiraniUlazniNizF = new Array();
 izlazniNiz = new Array();
 sortiraniIzlazniNiz = new Array();
+sortiraniIzlazniNizF = new Array();
 
 ulazniNizUint8C = new Uint8ClampedArray();
 
@@ -185,11 +188,28 @@ visina = new Number();
 
 btnVizuelizacijaPiksela.addEventListener('click', () => {
 
-    for(let i = 0; i < ulaznaMatrica.length; i++){
-        ulazniNiz = ulazniNiz.concat(ulaznaMatrica[i]);
+    for(let i = 1; i < ulaznaMatrica.length * ulaznaMatrica.length; i++){
+        //ulazniNiz = ulazniNiz.concat(ulaznaMatrica[i]);
+        ulazniNiz[i] = i;
     }
 
-    console.log(ulazniNiz);
+    for(let i = 0; i < izlaznaMatrica.length; i++){
+        izlazniNiz = izlazniNiz.concat(izlaznaMatrica[i]);
+    }
+
+    sortiraniUlazniNiz = ulazniNiz.sort((a, b) => a - b);
+    //sortiraniIzlazniNiz = izlazniNiz.sort((a, b) => b - a);
+
+    sortiraniUlazniNizF = [...new Set(sortiraniUlazniNiz)];
+    //sortiraniIzlazniNizF = [...new Set(sortiraniIzlazniNiz)]; 
+
+    console.log('ulazni niz', ulazniNiz);
+    console.log('sortirani ulazni niz', sortiraniUlazniNiz);
+    console.log('sortirani ulazni niz f', sortiraniUlazniNizF);
+
+    console.log('izlazni niz', izlazniNiz);
+    //console.log('sortirani izlazni niz', sortiraniIzlazniNiz);
+    //console.log('sortirani izlazni niz f', sortiraniIzlazniNizF);
 
     sirina = 4;
     visina = 4;
@@ -212,10 +232,10 @@ const funkcijaVizuelizacijeDCT = () => {
     let  canvasPrikazDCT = new Chart(ctxCanvasPrikazDCT, {
         type: 'bar',
         data: {
-            labels: ulazniNiz,
+            labels: sortiraniUlazniNizF,
             datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                label: 'Amplituda signala slike nakon DCT',
+                data: izlazniNiz,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
