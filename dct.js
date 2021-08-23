@@ -1,3 +1,4 @@
+/*
 //Dan1
 //29.6.2021. Uto. 
 
@@ -13,6 +14,14 @@
 //Dan5
 //4.7.2021. Ned. 
     //Realizovana diskretna kosinusna transformacija
+
+//Dan6
+Pro 2.3.9 23.8.2021. Pon. 
+    Ažuriranja, proširenja funkcija i integracija programa u jednu celinu 
+*/
+
+ulaznaMatricaTekst = new String();
+izlaznaMatricaTekst = new String(); 
 
 const generisanjeMatrice = () => {
 

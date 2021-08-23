@@ -1326,6 +1326,7 @@ const dctSakrivanjeSadrzaja = () => {
 
 prikazDCTsadrzaja = document.querySelector('#prikazDCTsadrzaja');
 sakrivanjeDCTsadrzaja = document.querySelector('#sakrivanjeDCTsadrzaja');
+sakrivanjeDCTsadrzajaA = document.querySelector('#sakrivanjeDCTsadrzajaA');
 
 prikazDCTsadrzaja.addEventListener('click', () => {
     dctPrikazSadrzaja();
@@ -1334,3 +1335,12 @@ prikazDCTsadrzaja.addEventListener('click', () => {
 sakrivanjeDCTsadrzaja.addEventListener('click', () => {
     dctSadrzajPodrazumevano();
 });
+
+sakrivanjeDCTsadrzajaA.addEventListener('click', () => {
+    dctSadrzajPodrazumevano();
+});
+
+
+
+//DCT kod
+

@@ -46,7 +46,81 @@
                 <button id="btnMatrica">Generisanje matrice</button>
             </div>
 
+            <div>
+
+                <p>Vrednosti koeficijenata početne slike: </p>
+                <p id="infoP1"></p>
+                <textarea name="txtUlaz" id="txtUlaz" cols="30" rows="10"></textarea>
+                <hr>
+
+            </div>
+
+            <div class="infoA">
+
+                <div>
+                    
+                    <p>Broj koeficijenata slike je: </p>
+                    <input id="inpBrKoef" type="text"> 
+
+                    <p>Ulazna matrica koeficijenata je tipa: </p>
+                    <input id="inpMatr" type="text"> 
+
+                    <hr>
+
+                </div>
+
+            </div>
+
+            <div> 
+
+                <div>
+                    <p>Pritisnite taster za proračun DCT: </p>
+                    <button id="btnDCT">DCT</button>
+
+                </div>
+
+                <p>
+                    <p>Pritisnite taster za brisanje: </p>
+                    <button id="btnBrisanje">Brisanje</button>
+                    <hr>
+
+                </p>
+                
+            </div>
+
+            <div class="a a1">
+
+            </div>
+    
+            <div class="a a2">
+    
+                <div> 
+                    
+                    <p>Prikaz vrednosti koeficijenata nakon DCT:  </p>
+                    <textarea name="txtIzlaz" id="txtIzlaz" cols="30" rows="10"></textarea>
+    
+                </div>
+                <hr>
+    
+            </div>
+
+            <div class="dctMeniSakrivanje">
+
+                <p>Klik za sakrivanje DCT menija: </p>
+                <img id="sakrivanjeDCTsadrzajaA" src="ico/opcioniMeniSakrivanje.png" title="Klik za sakrivanje opcionog prikaza DCT testa">
+                <hr>
+    
+            </div>
+    
         </div>
+
+
+
+        <!--
+            ***************
+            Obrada slike
+            ***************
+        -->
 
         <div>
 
@@ -379,5 +453,6 @@
 </body>
 
 <script src="slika.js"></script>
+<script src="dct.js"></script>
 
 </html>
