@@ -246,6 +246,9 @@ window.addEventListener('load', function(){
                 prikazSlike(slika, canvasProizvoljniEfekat, ctxProizvoljniEfekat); 
                 prikazSlike(slika, canvasIsecanjeSlike, ctxIsecanjeSlike); 
 
+                //Efekat ogledala
+                prikazSlike(slika, canvasSlikeOgledala, ctxSlikeOgledala); 
+
             }); 
 
         }
@@ -1162,7 +1165,6 @@ ctxProizvoljniEfekat = canvasProizvoljniEfekat.getContext('2d');
 
 //prikazSlike(slika, canvasProizvoljniEfekat, ctxProizvoljniEfekat); 
 
-
 //RGBA
 slajderR = document.querySelector('#slajderR').value;
 slajderG = document.querySelector('#slajderG').value;
@@ -1218,7 +1220,6 @@ const odabirB= () => {
     for(let i = 0; i < pikseliSlikeSaProizvoljnogEfekta.data.length; i+=4){
         pikseliSlikeSaProizvoljnogEfekta.data[i + 2] = slajderB;
     }
-
 
     ctxProizvoljniEfekat.putImageData(pikseliSlikeSaProizvoljnogEfekta, 0, 0); 
 
@@ -1365,3 +1366,15 @@ sakrivanjeDCTsadrzajaA.addEventListener('click', () => {
 dctSadrzajA = document.querySelector('.dctSadrzajA');
 dctSadrzajB = document.querySelector('.dctSadrzajB');
 
+//Efekat ogledala slike
+btnEfekatOgledala = document.querySelector('#btnEfekatOgledala');
+canvasSlikeOgledala = document.querySelector('#canvasSlikeOgledala'); 
+ctxSlikeOgledala = canvasSlikeOgledala.getContext('2d');
+
+btnEfekatOgledala.addEventListener('click', () => { 
+    
+    //ctxSlikeOgledala.scale(-1, 1);
+    console.log('Efekat ogledala: ');
+    ctxSlikeOgledala.translate(90 + slika.width, 0);
+    
+});
