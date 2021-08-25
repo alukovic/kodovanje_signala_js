@@ -119,6 +119,9 @@ Pro 2.3.9 23.8.2021. Pon.
     Vizuelizacija piksela ulazne matrice
     Vizuelizacija vrednosti amplituda signala slike nakon DCT
     Prilagođavanje opcija za isecanje slike
+
+//Dan27    
+Pro 2.3.9 25.8.2021. Sre.     
 */
 
 canvasSlike = document.querySelector('#canvasSlike');

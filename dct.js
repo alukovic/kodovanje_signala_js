@@ -281,4 +281,20 @@ btnVizuelizacijaDCT.addEventListener('click', () => {
 });
 
 
+//Funkcija za uvecanje piksela na kanvasu
+btnUvecanjePiksela = document.querySelector('#btnUvecanjePiksela');
+canvasPrikazUvecanihPikselaMatrice = document.querySelector('#canvasPrikazUvecanihPikselaMatrice');
+ctxPrikazUvecanihPikselaMatrice = canvasPrikazUvecanihPikselaMatrice.getContext('2d');
 
+btnUvecanjePiksela.addEventListener('click', () => {
+      uvecanjePiksela(ctxPrikazPikselaMatrice, 0, 0, sirina, visina);
+});
+
+const uvecanjePiksela = (ctx, ax, ay, sirina, visina) => {
+
+    let podaci = ctx.getImageData(ax, ay, sirina, visina);
+    console.log('Izvršavanje funkcije za uvećanje piksela: '); 
+    console.log(podaci);
+    console.log(podaci.data);
+
+};
