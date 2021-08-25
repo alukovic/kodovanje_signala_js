@@ -18,6 +18,9 @@
 //Dan6
 Pro 2.3.9 23.8.2021. Pon. 
     Ažuriranja, proširenja funkcija i integracija programa u jednu celinu 
+
+//Dan7
+Pro 2.3.9 25.8.2021. Sre.     
 */
 
 ulaznaMatrica = new Array();
