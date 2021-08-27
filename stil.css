@@ -78,6 +78,13 @@ input{
 
 }
 
+#btnBrisanje{
+
+    background-color: #D3212D;
+    opacity: 0.9;
+    
+}
+
 .container a {
 
     color: rgb(24, 138, 231);

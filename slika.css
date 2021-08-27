@@ -116,6 +116,19 @@
     margin-top: 0.5em;
 }
 
+#btnBrisanjeCrvenaBoja, #btnBrisanjeZelenaBoja, #btnBrisanjePlavaBoja{
+    background-color: #D3212D;
+    opacity: 0.9;
+}
+
+#btnRotacijaNovo, #btnResetRGBA, #btnIsecanjeNoviUnos, #btnNoviUnosDemo{
+    background-color: #00CC66;
+}
+
+#btnGenerisanjeDemo{
+    background-color: #3399FF;
+}
+
 .meniRotacijaSlikeOpcije{
     margin-bottom: 0.5em;
 }

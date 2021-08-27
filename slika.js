@@ -121,7 +121,10 @@ Pro 2.3.9 23.8.2021. Pon.
     Prilagođavanje opcija za isecanje slike
 
 //Dan27    
-Pro 2.3.9 25.8.2021. Sre.     
+Pro 2.3.9 25.8.2021. Sre. 
+
+//Dan28    
+Pro 2.3.9 27.8.2021. Pet.   
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
