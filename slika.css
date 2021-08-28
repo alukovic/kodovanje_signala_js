@@ -15,20 +15,15 @@
 }
 
 #canvasSlike, #canvasSlikeA, #canvasDemoA, #canvasDemoDCT, #canvasCrveneSlike, #canvasZeleneSlike, #canvasPlaveSlike, #canvasSlikeZaRotaciju, #canvasSlikeOgledala, #canvasProizvoljniEfekat, #canvasIsecanjeSlike, #canvasIsecanjeSlikeA, #testCanvas{
-
     max-width: 32em; 
-
-    /*
-    border: 2px solid rgb(24, 138, 231);
     border-radius: 16px; 
-    */
-
+    /* border: 2px solid rgb(24, 138, 231); */
 }
 
 #ulaznaSlika{
     max-width: 34em;
-    /* border: 2px solid rgb(24, 138, 231); */
     border-radius: 16px; 
+    /* border: 2px solid rgb(24, 138, 231); */
 }
 
 .containerA button, #btnPodaciSlika{
