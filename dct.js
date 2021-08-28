@@ -20,7 +20,11 @@ Pro 2.3.9 23.8.2021. Pon.
     Ažuriranja, proširenja funkcija i integracija programa u jednu celinu 
 
 //Dan7
-Pro 2.3.9 25.8.2021. Sre.     
+Pro 2.3.9 25.8.2021. Sre. 
+
+//Dan8
+Pro 2.3.9 28.8.2021. Sub. 
+    reiranje slike pomoću canvas.toDataURL() funkcije
 */
 
 ulaznaMatrica = new Array();
@@ -290,7 +294,10 @@ canvasPrikazUvecanihPikselaMatrice = document.querySelector('#canvasPrikazUvecan
 ctxPrikazUvecanihPikselaMatrice = canvasPrikazUvecanihPikselaMatrice.getContext('2d');
 
 btnUvecanjePiksela.addEventListener('click', () => {
-      uvecanjePiksela(ctxPrikazPikselaMatrice, 0, 0, sirina, visina);
+
+      //uvecanjePiksela(ctxPrikazPikselaMatrice, 0, 0, sirina, visina);
+      uvecanjePikselaA();
+      
 });
 
 const uvecanjePiksela = (ctx, ax, ay, sirina, visina) => {
@@ -301,3 +308,13 @@ const uvecanjePiksela = (ctx, ax, ay, sirina, visina) => {
     console.log(podaci.data);
 
 };
+
+const uvecanjePikselaA = () => {
+
+    let slikaURL = canvasPrikazPikselaMatrice.toDataURL('img/jpeg', 1.0);
+    console.log(slikaURL);
+    let novaSlikaURL = document.querySelector('#novaSlikaURL');
+    novaSlikaURL.src = slikaURL;
+    ctxPrikazUvecanihPikselaMatrice.drawImage(novaSlikaURL, 0, 0, 4, 4, 50, 50, 200, 200);
+
+};s

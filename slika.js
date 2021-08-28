@@ -132,6 +132,8 @@ Pro 2.3.9 28.8.2021. Sub.
     Optimizacija i prilagođavanje prikaza slike
     Ulazna slika sada ne menja svoje dimenzije
     Dodavanje opcije za kompresiju slike 
+    Nove ideje za uvećanje piksela slike (DCT)
+    + Kreiranje slike pomoću canvas.toDataURL() funkcije
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
