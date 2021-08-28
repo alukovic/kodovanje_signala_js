@@ -121,7 +121,7 @@
     opacity: 0.9;
 }
 
-#btnRotacijaNovo, #btnResetRGBA, #btnIsecanjeNoviUnos, #btnNoviUnosDemo{
+#btnRotacijaNovo, #btnResetRGBA, #btnIsecanjeNoviUnos, #btnNoviUnosDemo, #btnEfekatOgledalaNovo{
     background-color: #00CC66;
 }
 
@@ -169,4 +169,8 @@
 #btnEfekatOgledala{
     width: 12em;
     background-color: #40f38b;
+}
+
+#meniRotacijaSlikeOpcije, #btnEfekatOgledala{
+    margin-bottom: 0.5em; 
 }

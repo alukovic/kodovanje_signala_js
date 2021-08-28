@@ -125,6 +125,11 @@ Pro 2.3.9 25.8.2021. Sre.
 
 //Dan28    
 Pro 2.3.9 27.8.2021. Pet.   
+
+//Dan29    
+Pro 2.3.9 28.8.2021. Sub. 
+Dodavanje opcije za horizontalno i vertikalno okretanje slike,
+tj. efekat slike ogledala
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -1128,8 +1133,10 @@ btnRotacija.addEventListener('click', () => {
 });
 
 btnRotacijaNovo.addEventListener('click', () => {
+
     ugaoRotacije.value = '';
     opcijePrikazaSlikeZaRotaciju();
+
 });
 
 const rotacijaSlike = (img, ugao) => {
@@ -1370,7 +1377,59 @@ dctSadrzajA = document.querySelector('.dctSadrzajA');
 dctSadrzajB = document.querySelector('.dctSadrzajB');
 
 //Efekat ogledala slike
+horizontalnoOkretanje = document.querySelector('#horizontalnoOkretanje');
+vertikalnoOkretanje = document.querySelector('#vertikalnoOkretanje');
+
+const podesavanjeOkretanjaSlike = (img, ctx, horizontalno, vertikalno) => {
+    
+    let hor;
+    let ver;
+    let x;
+    let y;
+
+    if(horizontalno){
+
+        hor = -1;
+        x = img.width * -1;
+
+    } else {
+
+        hor = 1;
+        x = 0;
+
+    }
+
+    if(vertikalno){
+
+        ver = -1;
+        y = img.height * -1;
+
+    } else {
+
+        ver = 1;
+        y = 0;
+
+    }
+
+    ctx.save();
+    ctx.scale(hor, ver);
+    ctx.drawImage(img, x, y, img.width, img.height);
+    ctx.restore();
+
+};
+
+const okretanjeSlike = () => {
+
+    let horizontalno = document.querySelector('#horizontalnoOkretanje').checked;
+    let vertikalno = document.querySelector('#vertikalnoOkretanje').checked; 
+
+    podesavanjeOkretanjaSlike(slika, ctxSlikeOgledala, horizontalno, vertikalno);
+    return false;
+
+};
+
 btnEfekatOgledala = document.querySelector('#btnEfekatOgledala');
+btnEfekatOgledalaNovo = document.querySelector('#btnEfekatOgledalaNovo');
 canvasSlikeOgledala = document.querySelector('#canvasSlikeOgledala'); 
 ctxSlikeOgledala = canvasSlikeOgledala.getContext('2d');
 
@@ -1378,6 +1437,16 @@ btnEfekatOgledala.addEventListener('click', () => {
     
     //ctxSlikeOgledala.scale(-1, 1);
     console.log('Efekat ogledala: ');
-    ctxSlikeOgledala.translate(90 + slika.width, 0);
+    //ctxSlikeOgledala.translate(90 + slika.width, 0);
+    okretanjeSlike();
+
+});
+
+btnEfekatOgledalaNovo.addEventListener('click', () => {
     
+    //ctxSlikeOgledala.save();
+    //ctxSlikeOgledala.restore();
+    //ctxSlikeOgledala.clearRect(0, 0, canvasSlikeOgledala.width, canvasSlikeOgledala.height);
+    prikazSlike(slika, canvasSlikeOgledala, ctxSlikeOgledala); 
+
 });
