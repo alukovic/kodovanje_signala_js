@@ -168,9 +168,10 @@
 
 #btnEfekatOgledala{
     width: 12em;
-    background-color: #40f38b;
+    background-color: #FFDD33;
 }
 
 #meniRotacijaSlikeOpcije, #btnEfekatOgledala{
     margin-bottom: 0.5em; 
 }
+
