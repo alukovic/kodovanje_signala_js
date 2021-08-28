@@ -106,7 +106,7 @@
 }
 
 #canvasDemoA, #canvasDemoDCT{
-    border: 2px solid rgb(19, 37, 139); 
+    /* border: 2px solid rgb(19, 37, 139); */ 
     border-radius: 16px;
     margin-top: 0.5em;
 }

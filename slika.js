@@ -128,9 +128,10 @@ Pro 2.3.9 27.8.2021. Pet.
 
 //Dan29    
 Pro 2.3.9 28.8.2021. Sub. 
-Dodavanje opcije za horizontalno i vertikalno okretanje slike, tj. efekat slike ogledala
-Optimizacija i prilagođavanje prikaza slike
-Ulazna slika sada ne menja svoje dimenzije
+    Dodavanje opcije za horizontalno i vertikalno okretanje slike, tj. efekat slike ogledala
+    Optimizacija i prilagođavanje prikaza slike
+    Ulazna slika sada ne menja svoje dimenzije
+    Dodavanje opcije za kompresiju slike 
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
