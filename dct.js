@@ -297,7 +297,7 @@ btnUvecanjePiksela.addEventListener('click', () => {
 
       //uvecanjePiksela(ctxPrikazPikselaMatrice, 0, 0, sirina, visina);
       uvecanjePikselaA();
-      
+
 });
 
 const uvecanjePiksela = (ctx, ax, ay, sirina, visina) => {
@@ -315,6 +315,9 @@ const uvecanjePikselaA = () => {
     console.log(slikaURL);
     let novaSlikaURL = document.querySelector('#novaSlikaURL');
     novaSlikaURL.src = slikaURL;
-    ctxPrikazUvecanihPikselaMatrice.drawImage(novaSlikaURL, 0, 0, 4, 4, 50, 50, 200, 200);
 
-};s
+    //ctxIsecanjeSlikeA.drawImage(slika, isecanjeXosa.value * 1, isecanjeYosa.value * 1, isecanjeSirina.value * 1, isecanjeVisina.value * 1, 0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height);
+    ctxPrikazUvecanihPikselaMatrice.drawImage(novaSlikaURL, 0, 0, 4, 4, 0, 0, 16 * 4, 16 * 4);
+    //ctxPrikazUvecanihPikselaMatrice.drawImage(novaSlikaURL, 0, 0, 4, 4, 50, 50, 200, 200);
+
+};
