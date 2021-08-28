@@ -128,8 +128,9 @@ Pro 2.3.9 27.8.2021. Pet.
 
 //Dan29    
 Pro 2.3.9 28.8.2021. Sub. 
-Dodavanje opcije za horizontalno i vertikalno okretanje slike,
-tj. efekat slike ogledala
+Dodavanje opcije za horizontalno i vertikalno okretanje slike, tj. efekat slike ogledala
+Optimizacija i prilagođavanje prikaza slike
+Ulazna slika sada ne menja svoje dimenzije
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -225,6 +226,9 @@ window.addEventListener('load', function(){
 
             function opcijePrikazaSlike() {
 
+                /* AAAAA #1 */
+
+                /*
                 if(slika.width >= 1920){
 
                     canvasSlike.width = slika.width / 6; 
@@ -235,6 +239,19 @@ window.addEventListener('load', function(){
                         canvasSlike.width = slika.width / 3; 
                         canvasSlike.height = slika.height / 3; 
     
+                    }
+                */
+               
+                if(slika.width >= 1920){
+
+                    canvasSlike.width = slika.width; 
+                    canvasSlike.height = slika.height; 
+        
+                    } else {
+        
+                        canvasSlike.width = slika.width; 
+                        canvasSlike.height = slika.height; 
+        
                     }
 
                     ctx.drawImage(slika, 0, 0, canvasSlike.width, canvasSlike.height); 
@@ -382,6 +399,7 @@ noviNiz = new Uint8ClampedArray(10000);
 //Crno-beli efekat slike
 function opcijePrikazaNoveSlike() {
 
+    /*AAAAAAA #2
     if(slika.width >= 1920){
 
         canvasSlikeA.width = slika.width / 6; 
@@ -392,6 +410,18 @@ function opcijePrikazaNoveSlike() {
             canvasSlikeA.width = slika.width / 3; 
             canvasSlikeA.height = slika.height / 3; 
 
+        }
+        */
+        if(slika.width >= 1920){
+
+        canvasSlikeA.width = slika.width; 
+        canvasSlikeA.height = slika.height; 
+    
+        } else {
+    
+        canvasSlikeA.width = slika.width; 
+        canvasSlikeA.height = slika.height; 
+    
         }
 
         ctxA.drawImage(slika, 0, 0, canvasSlike.width, canvasSlike.height);
@@ -576,6 +606,8 @@ const obradaUlazneSlike = () => {
     //novaSlika = new Image();
     //novaSlika = slika;
 
+    /* 
+    AAAAAAAAAA #3
     if(slika.width >= 1920){
 
         canvasDemoA.width = slika.width / 6; 
@@ -587,7 +619,20 @@ const obradaUlazneSlike = () => {
             canvasDemoA.height = slika.height / 3; 
 
         }
+    */
+
+    if(slika.width >= 1920){
+
+        canvasDemoA.width = slika.width; 
+        canvasDemoA.height = slika.height; 
     
+        } else {
+    
+            canvasDemoA.width = slika.width; 
+            canvasDemoA.height = slika.height; 
+    
+        }
+
     podaciUlazneSlike = ctx.getImageData(0, 0, canvasDemoA.width, canvasDemoA.height);
     //pikseliUlazneSlike = podaciUlazneSlike.data;
 
@@ -964,6 +1009,8 @@ ctxCrvenaSlika = canvasCrveneSlike.getContext('2d');
 
 const prikazCrveneSlike = () => {
 
+    /* AAAAAA #4 
+
     if(slika.width >= 1920){
 
         canvasCrveneSlike.width = slika.width / 6; 
@@ -974,6 +1021,19 @@ const prikazCrveneSlike = () => {
             canvasCrveneSlike.width = slika.width / 3; 
             canvasCrveneSlike.height = slika.height / 3; 
 
+        }
+    */
+
+    if(slika.width >= 1920){
+
+        canvasCrveneSlike.width = slika.width; 
+        canvasCrveneSlike.height = slika.height; 
+    
+        } else {
+    
+            canvasCrveneSlike.width = slika.width; 
+            canvasCrveneSlike.height = slika.height; 
+    
         }
 
         ctxCrvenaSlika.drawImage(slika, 0, 0, canvasCrveneSlike.width, canvasCrveneSlike.height);
@@ -1011,6 +1071,8 @@ ctxZelenaSlika = canvasZeleneSlike.getContext('2d');
 
 const prikazZeleneSlike = () => {
 
+    /* AAAAAA #5
+
     if(slika.width >= 1920){
 
         canvasZeleneSlike.width = slika.width / 6; 
@@ -1021,6 +1083,20 @@ const prikazZeleneSlike = () => {
             canvasZeleneSlike.width = slika.width / 3; 
             canvasZeleneSlike.height = slika.height / 3; 
 
+        }
+
+    */
+
+    if(slika.width >= 1920){
+
+        canvasZeleneSlike.width = slika.width; 
+        canvasZeleneSlike.height = slika.height; 
+    
+        } else {
+    
+            canvasZeleneSlike.width = slika.width; 
+            canvasZeleneSlike.height = slika.height; 
+    
         }
 
         ctxZelenaSlika.drawImage(slika, 0, 0, canvasZeleneSlike.width, canvasZeleneSlike.height);
@@ -1059,6 +1135,7 @@ ctxPlavaSlika = canvasPlaveSlike.getContext('2d');
 
 const prikazPlaveSlike = () => {
 
+    /* AAAAAA #6 
     if(slika.width >= 1920){
 
         canvasPlaveSlike.width = slika.width / 6; 
@@ -1068,6 +1145,19 @@ const prikazPlaveSlike = () => {
 
             canvasPlaveSlike.width = slika.width / 3; 
             canvasPlaveSlike.height = slika.height / 3; 
+
+        }
+
+    */
+    if(slika.width >= 1920){
+
+        canvasPlaveSlike.width = slika.width; 
+        canvasPlaveSlike.height = slika.height; 
+
+        } else {
+
+            canvasPlaveSlike.width = slika.width; 
+            canvasPlaveSlike.height = slika.height; 
 
         }
 
@@ -1104,6 +1194,8 @@ ctxRotacija = canvasSlikeZaRotaciju.getContext('2d');
 
 const opcijePrikazaSlikeZaRotaciju = () => {
 
+    /* AAAAAA #7
+
     if(slika.width >= 1920){
 
         canvasSlikeZaRotaciju.width = slika.width / 6; 
@@ -1115,9 +1207,21 @@ const opcijePrikazaSlikeZaRotaciju = () => {
             canvasSlikeZaRotaciju.height = slika.height / 3; 
 
         }
+    */
+
+    if(slika.width >= 1920){
+
+        canvasSlikeZaRotaciju.width = slika.width; 
+        canvasSlikeZaRotaciju.height = slika.height; 
+    
+        } else {
+    
+            canvasSlikeZaRotaciju.width = slika.width; 
+            canvasSlikeZaRotaciju.height = slika.height; 
+    
+        }
 
         ctxRotacija.drawImage(slika, 0, 0, canvasSlikeZaRotaciju.width, canvasSlikeZaRotaciju.height);
-
 }
 
 meniRotacijaSlike.addEventListener('load', () => {
@@ -1154,6 +1258,9 @@ const rotacijaSlike = (img, ugao) => {
 //Univerzalna funkcija za prikaz slike
 const prikazSlike = (img, canvas, ctx) => {
 
+    /* 
+    AAAAAA #8
+
     if(img.width >= 1920){
 
         canvas.width = img.width / 6; 
@@ -1164,6 +1271,20 @@ const prikazSlike = (img, canvas, ctx) => {
             canvas.width = img.width / 3; 
             canvas.height = img.height / 3; 
 
+        }
+
+    */
+
+    if(img.width >= 1920){
+
+        canvas.width = img.width; 
+        canvas.height = img.height; 
+    
+        } else {
+    
+            canvas.width = img.width; 
+            canvas.height = img.height; 
+    
         }
 
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
@@ -1282,20 +1403,29 @@ btnIsecanjeNoviUnos = document.querySelector('#btnIsecanjeNoviUnos');
 
 btnIsecanje.addEventListener('click', () => {
 
+    /*AAAAAA #9 */
     if(slika.width >= 1920){
 
-        canvasIsecanjeSlikeA.width = slika.width / 6; 
-        canvasIsecanjeSlikeA.height = slika.height / 6; 
+        //canvasIsecanjeSlikeA.width = slika.width / 6; 
+        //canvasIsecanjeSlikeA.height = slika.height / 6; 
 
-        ctxIsecanjeSlikeA.drawImage(slika, isecanjeXosa.value * 6, isecanjeYosa.value * 6, isecanjeSirina.value * 6, isecanjeVisina.value * 6, 0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height);
+        canvasIsecanjeSlikeA.width = slika.width / 1; 
+        canvasIsecanjeSlikeA.height = slika.height / 1; 
+
+        //ctxIsecanjeSlikeA.drawImage(slika, isecanjeXosa.value * 6, isecanjeYosa.value * 6, isecanjeSirina.value * 6, isecanjeVisina.value * 6, 0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height);
+        ctxIsecanjeSlikeA.drawImage(slika, isecanjeXosa.value * 1, isecanjeYosa.value * 1, isecanjeSirina.value * 1, isecanjeVisina.value * 1, 0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height);
 
         } else {
 
-            canvasIsecanjeSlikeA.width = slika.width / 3; 
-            canvasIsecanjeSlikeA.height = slika.height / 3; 
+            //canvasIsecanjeSlikeA.width = slika.width / 3; 
+            //canvasIsecanjeSlikeA.height = slika.height / 3; 
 
-            ctxIsecanjeSlikeA.drawImage(slika, isecanjeXosa.value * 3, isecanjeYosa.value * 3, isecanjeSirina.value * 3, isecanjeVisina.value * 3, 0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height);
-        
+            //ctxIsecanjeSlikeA.drawImage(slika, isecanjeXosa.value * 3, isecanjeYosa.value * 3, isecanjeSirina.value * 3, isecanjeVisina.value * 3, 0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height);
+
+            canvasIsecanjeSlikeA.width = slika.width / 1; 
+            canvasIsecanjeSlikeA.height = slika.height / 1; 
+
+            ctxIsecanjeSlikeA.drawImage(slika, isecanjeXosa.value * 1, isecanjeYosa.value * 1, isecanjeSirina.value * 1, isecanjeVisina.value * 1, 0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height);            
         }
 
     //ctxIsecanjeSlikeA.drawImage(slika, 0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height, 0, 0, isecanjeXosa.value, isecanjeYosa.value, isecanjeSirina, isecanjeVisina);
@@ -1382,6 +1512,8 @@ vertikalnoOkretanje = document.querySelector('#vertikalnoOkretanje');
 
 const podesavanjeOkretanjaSlike = (img, ctx, horizontalno, vertikalno) => {
     
+    /* AAAAAA #10*/
+
     let hor;
     let ver;
     let x;
@@ -1390,7 +1522,8 @@ const podesavanjeOkretanjaSlike = (img, ctx, horizontalno, vertikalno) => {
     if(horizontalno){
 
         hor = -1;
-        x = (img.width / 6) * -1;
+        //x = (img.width / 6) * -1;
+        x = (img.width / 1) * -1;
 
     } else {
 
@@ -1402,7 +1535,8 @@ const podesavanjeOkretanjaSlike = (img, ctx, horizontalno, vertikalno) => {
     if(vertikalno){
 
         ver = -1;
-        y = (img.height / 6) * -1;
+        //y = (img.height / 6) * -1;
+        y = (img.height / 1) * -1;
 
     } else {
 
@@ -1415,7 +1549,6 @@ const podesavanjeOkretanjaSlike = (img, ctx, horizontalno, vertikalno) => {
     ctx.scale(hor, ver);
 
     /*
-
     if(img.width >= 1920){
 
         //canvas.width = slika.width / 6; 
@@ -1434,7 +1567,8 @@ const podesavanjeOkretanjaSlike = (img, ctx, horizontalno, vertikalno) => {
         }
         */
 
-    ctx.drawImage(img, x, y, img.width / 6, img.height / 6);
+    //ctx.drawImage(img, x, y, img.width / 6, img.height / 6);
+    ctx.drawImage(img, x, y, img.width / 1, img.height / 1);
     ctx.restore();
 
 };

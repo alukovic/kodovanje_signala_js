@@ -14,7 +14,7 @@
     box-sizing: border-box;
 }
 
-#canvasSlike, #canvasSlikeA, #canvasDemoA, #canvasDemoDCT{
+#canvasSlike, #canvasSlikeA, #canvasDemoA, #canvasDemoDCT, #canvasCrveneSlike, #canvasZeleneSlike, #canvasPlaveSlike, #canvasSlikeZaRotaciju, #canvasSlikeOgledala, #canvasProizvoljniEfekat, #canvasIsecanjeSlike, #canvasIsecanjeSlikeA, #testCanvas{
 
     max-width: 32em; 
 
@@ -175,3 +175,6 @@
     margin-bottom: 0.5em; 
 }
 
+hr{
+    max-width: 25em;
+}
