@@ -1390,7 +1390,7 @@ const podesavanjeOkretanjaSlike = (img, ctx, horizontalno, vertikalno) => {
     if(horizontalno){
 
         hor = -1;
-        x = img.width * -1;
+        x = (img.width / 6) * -1;
 
     } else {
 
@@ -1402,7 +1402,7 @@ const podesavanjeOkretanjaSlike = (img, ctx, horizontalno, vertikalno) => {
     if(vertikalno){
 
         ver = -1;
-        y = img.height * -1;
+        y = (img.height / 6) * -1;
 
     } else {
 
@@ -1413,7 +1413,28 @@ const podesavanjeOkretanjaSlike = (img, ctx, horizontalno, vertikalno) => {
 
     ctx.save();
     ctx.scale(hor, ver);
-    ctx.drawImage(img, x, y, img.width, img.height);
+
+    /*
+
+    if(img.width >= 1920){
+
+        //canvas.width = slika.width / 6; 
+        //canvasSlikeOgledala.height = slika.height / 6; 
+
+        //ctxSlikeOgledala.drawImage(slika, isecanjeXosa.value * 6, isecanjeYosa.value * 6, isecanjeSirina.value * 6, isecanjeVisina.value * 6, 0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height);
+        ctx.drawImage(img, x * 6, y * 6, img.width / 6, img.height / 6);
+
+        } else {
+
+            //canvasIsecanjeSlikeA.width = slika.width / 3; 
+            //canvasIsecanjeSlikeA.height = slika.height / 3; 
+
+            //ctxIsecanjeSlikeA.drawImage(slika, isecanjeXosa.value * 3, isecanjeYosa.value * 3, isecanjeSirina.value * 3, isecanjeVisina.value * 3, 0, 0, canvasIsecanjeSlikeA.width, canvasIsecanjeSlikeA.height);
+            ctx.drawImage(img, x * 3, y * 3, img.width / 3, img.height / 3);
+        }
+        */
+
+    ctx.drawImage(img, x, y, img.width / 6, img.height / 6);
     ctx.restore();
 
 };
