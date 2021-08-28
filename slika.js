@@ -1605,3 +1605,18 @@ btnEfekatOgledalaNovo.addEventListener('click', () => {
     prikazSlike(slika, canvasSlikeOgledala, ctxSlikeOgledala); 
 
 });
+
+//Kompresija ulazne slike
+meniKompresijaUlazneSlike = document.querySelector('#meniKompresijaUlazneSlike'); 
+btnKompresijaUlazneSlike = document.querySelector('#btnKompresijaUlazneSlike');
+btnKompresijaUlazneSlikeNovo = document.querySelector('#btnKompresijaUlazneSlikeNovo');
+canvasKompresijeUlazneSlike = document.querySelector('#canvasKompresijeUlazneSlike');
+ctxKompresijaUlazneSlike = canvasKompresijeUlazneSlike.getContext('2d');
+
+btnKompresijaUlazneSlike.addEventListener('click', () => {
+    ctxKompresijaUlazneSlike.drawImage(slika, 0, 0, canvasSlike.width, canvasSlike.height, 0, 0, canvasSlike.width / 4, canvasSlike.height / 4);
+});
+
+btnKompresijaUlazneSlikeNovo.addEventListener('click', () => {
+    window.location.reload(true);
+});

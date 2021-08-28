@@ -116,7 +116,7 @@
     opacity: 0.9;
 }
 
-#btnRotacijaNovo, #btnResetRGBA, #btnIsecanjeNoviUnos, #btnNoviUnosDemo, #btnEfekatOgledalaNovo{
+#btnRotacijaNovo, #btnResetRGBA, #btnIsecanjeNoviUnos, #btnNoviUnosDemo, #btnEfekatOgledalaNovo, #btnKompresijaUlazneSlikeNovo{
     background-color: #00CC66;
 }
 
@@ -166,10 +166,14 @@
     background-color: #FFDD33;
 }
 
-#meniRotacijaSlikeOpcije, #btnEfekatOgledala{
+#meniRotacijaSlikeOpcije, #btnEfekatOgledala, #meniKompresijaUlazneSlike{
     margin-bottom: 0.5em; 
 }
 
 hr{
     max-width: 25em;
+}
+
+#btnKompresijaUlazneSlike{
+    background-color: #9999FF;
 }
