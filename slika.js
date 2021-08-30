@@ -137,7 +137,10 @@ Pro 2.3.9 28.8.2021. Sub.
 
 //Dan30  
 Pro 2.3.9 30.8.2021. Pon. 
-
+    Nove opcije i proširenja programa: 
+        Rezolucija slike u megapikselima (MP)
+        Tip slike
+        URL slike
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -213,6 +216,9 @@ window.addEventListener('load', function(){
     
     demoDCT.style.display = 'none';
     testCanvas.style.display = 'none';
+
+    //Podaci o kompresiji slike: 
+    //kompresijaSlikePodaci.style.display = 'none'; 
     
     document.querySelector('input[type="file"]').addEventListener('change', function(){
 
@@ -1680,3 +1686,12 @@ const preuzimanjeSlike = (canvas, slURL, slSlika) => {
 };
 
 */
+
+//Prikaz podataka komprimovane slike: 
+prikazPodatakaKomprimovaneSlike = document.querySelector('#prikazPodatakaKomprimovaneSlike'); 
+kompresijaSlikePodaci = document.querySelector('#kompresijaSlikePodaci');
+
+prikazPodatakaKomprimovaneSlike.addEventListener('click', () => {
+    kompresijaSlikePodaci.style.display = 'block'; 
+});
+
