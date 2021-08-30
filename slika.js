@@ -1690,7 +1690,15 @@ const preuzimanjeSlike = (canvas, sadrzaj, img) => {
 prikazPodatakaKomprimovaneSlike = document.querySelector('#prikazPodatakaKomprimovaneSlike'); 
 kompresijaSlikePodaci = document.querySelector('#kompresijaSlikePodaci');
 
+inpRezolucijaKompSlike = document.querySelector('#inpRezolucijaKompSlike'); 
+inpBrojPikselaKompSlike = document.querySelector('#inpBrojPikselaKompSlike'); 
+inpMPKompSlike = document.querySelector('#inpMPKompSlike'); 
+inpTipKompSlike = document.querySelector('#inpTipKompSlike'); 
+inpURLkompSlike = document.querySelector('#inpURLkompSlike'); 
+
 prikazPodatakaKomprimovaneSlike.addEventListener('click', () => {
+
     kompresijaSlikePodaci.style.display = 'block'; 
+    inpRezolucijaKompSlike.value = `${canvasKompresijeUlazneSlike.width} x ${canvasKompresijeUlazneSlike.width}`; 
 });
 
