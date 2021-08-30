@@ -141,6 +141,8 @@ Pro 2.3.9 30.8.2021. Pon.
         Rezolucija slike u megapikselima (MP)
         Tip slike
         URL slike
+        Početak kreiranja funkcija za peuzimanje slike 
+        Podaci komprimovane slike
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -1701,13 +1703,18 @@ inpURLkompSlike = document.querySelector('#inpURLkompSlike');
 
 const funkcijaKompresije = () => {
 
-    inpRezolucijaKompSlike.value = `${canvasKompresijeUlazneSlike.width} x ${canvasKompresijeUlazneSlike.height}`; 
+    inpRezolucijaKompSlike.value = `${canvasKompresijeUlazneSlike.width} x ${canvasKompresijeUlazneSlike.height} piksela`; 
     inpBrojPikselaKompSlike.value = Number(canvasKompresijeUlazneSlike.width * canvasKompresijeUlazneSlike.height); 
     inpMPKompSlikeVrednost = Number((canvasKompresijeUlazneSlike.width * canvasKompresijeUlazneSlike.height) / Math.pow(10, 6)).toFixed(2);
     inpMPKompSlike.value = `${inpMPKompSlikeVrednost} MP`;   
     
     urlKompSlikeVrednost = new String();
+    urlKompSlikeVrednost = canvasKompresijeUlazneSlike.toDataURL(); 
+    inpURLkompSlike.value = urlKompSlikeVrednost; 
 
+    urlKompSlikeVrednostF = new String();
+    urlKompSlikeVrednostF = urlKompSlikeVrednost.slice(5, 14); 
+    inpTipKompSlike.value = urlKompSlikeVrednostF; 
 };
 
 prikazPodatakaKomprimovaneSlike.addEventListener('click', () => {
