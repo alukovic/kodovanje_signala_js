@@ -1654,7 +1654,10 @@ canvasKompresijeUlazneSlike = document.querySelector('#canvasKompresijeUlazneSli
 ctxKompresijaUlazneSlike = canvasKompresijeUlazneSlike.getContext('2d');
 
 btnKompresijaUlazneSlike.addEventListener('click', () => {
+
     ctxKompresijaUlazneSlike.drawImage(slika, 0, 0, canvasSlike.width, canvasSlike.height, 0, 0, canvasSlike.width / 4, canvasSlike.height / 4);
+    funkcijaKompresije();
+
 });
 
 btnKompresijaUlazneSlikeNovo.addEventListener('click', () => {
@@ -1696,9 +1699,18 @@ inpMPKompSlike = document.querySelector('#inpMPKompSlike');
 inpTipKompSlike = document.querySelector('#inpTipKompSlike'); 
 inpURLkompSlike = document.querySelector('#inpURLkompSlike'); 
 
-prikazPodatakaKomprimovaneSlike.addEventListener('click', () => {
+const funkcijaKompresije = () => {
 
-    kompresijaSlikePodaci.style.display = 'block'; 
-    inpRezolucijaKompSlike.value = `${canvasKompresijeUlazneSlike.width} x ${canvasKompresijeUlazneSlike.width}`; 
+    inpRezolucijaKompSlike.value = `${canvasKompresijeUlazneSlike.width} x ${canvasKompresijeUlazneSlike.height}`; 
+    inpBrojPikselaKompSlike.value = Number(canvasKompresijeUlazneSlike.width * canvasKompresijeUlazneSlike.height); 
+    inpMPKompSlikeVrednost = Number((canvasKompresijeUlazneSlike.width * canvasKompresijeUlazneSlike.height) / Math.pow(10, 6)).toFixed(2);
+    inpMPKompSlike.value = `${inpMPKompSlikeVrednost} MP`;   
+    
+    urlKompSlikeVrednost = new String();
+
+};
+
+prikazPodatakaKomprimovaneSlike.addEventListener('click', () => {
+    funkcijaKompresije();
 });
 
