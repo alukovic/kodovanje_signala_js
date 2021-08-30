@@ -1667,24 +1667,23 @@ btnKompresijaUlazneSlikeNovo.addEventListener('click', () => {
 /*
 btnPreuzimanje = document.querySelector('#btnPreuzimanje');
 btnPreuzimanje.addEventListener('click', () => {
-    preuzimanjeSlike(canvasSlike, slika, "slikaA.png");
+    preuzimanjeSlike(canvasSlike, urlSlikeVrednost, "slika.png");
 });
 
-const preuzimanjeSlike = (canvas, slURL, slSlika) => {
+const preuzimanjeSlike = (canvas, sadrzaj, img) => {
 
-    slURL = canvas.toDataURL();
+    sadrzaj = canvas.toDataURL();
     
     let podatak = document.createElement('podatak'); 
     //podatak.href = slURL; 
-    podatak.setAttribute('href', 'data:image/png;base64,' + encodeURIComponent(slURL)); 
-    podatak.setAttribute('download', slSlika);
-    document.body.appendChild(podatak);
+    podatak.setAttribute('href', 'data:image/png;base64,' + encodeURIComponent(sadrzaj)); 
+    podatak.setAttribute('download', img);
+    document.body.appendChild(img);
     podatak.click();
-    document.body.removeChild(podatak);
+    document.body.removeChild(img);
     podatak.remove(); 
 
 };
-
 */
 
 //Prikaz podataka komprimovane slike: 
