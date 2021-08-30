@@ -298,18 +298,25 @@ window.addEventListener('load', function(){
         //Cela slika - svi pikseli
         //test #2
 
+        
+        testA = [1, 2, 3, 4, 5]; 
+
         podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
-    
         nizPiksela = podaciSaSlike.data;
-        console.log(nizPiksela); 
-    
+        //console.log('Uint8Clamped niz piksela: ', nizPiksela); 
+
+        
         nizPikselaA = Array.prototype.slice.call(nizPiksela);
-    
+        console.log('JavaScript niz piksela: ', nizPikselaA); 
+
         //nizPiksela4String = ''; 
         nizPiksela4elementa = new Array(); 
         console.log('nizPikselaA.length: ' + nizPikselaA.length); 
         console.log('nizPiksela.length: ' + nizPiksela.length); 
-    
+        
+        
+        //Opciono formatiranje prikaza piksela: 
+
         //for(i = 0; i < nizPikselaA.length; i++){
         i = 0;
     
@@ -319,7 +326,7 @@ window.addEventListener('load', function(){
             nizPiksela4elementa = nizPikselaA.splice(0, 4);
             nizPiksela4String += i + '. piksel sa RGBA komponentama je: ' + nizPiksela4elementa + '\n';
         }
-    
+        
     };
 
     let iA = 0; 
@@ -337,20 +344,21 @@ window.addEventListener('load', function(){
 
         txtUcitavanje.style.display = 'block'; 
         //txtUcitavanje.innerHTML = 'Učitavanje...'; 
+
     };
     
     sviRGBA = document.querySelector('#txtRGBA'); 
     
     spanNovo = document.getElementById('spanNovo'); 
     
-    let rezolucijaSlike = document.querySelector('#inpRezolucijaSlike'); 
-    let brojPiksela = document.querySelector('#inpBrojPiksela');
-    let brojMP = document.querySelector('#inpMP');
-    let brojMPbr = new Number();
-    let tipSlike = document.querySelector('#inpTipSlike'); 
-    let urlSlike = document.querySelector('#inpURLslike');
-    let urlSlikeVrednost; 
-    let urlSlikeVrednostF; 
+     rezolucijaSlike = document.querySelector('#inpRezolucijaSlike'); 
+     brojPiksela = document.querySelector('#inpBrojPiksela');
+     brojMP = document.querySelector('#inpMP');
+     brojMPbr = new Number();
+     tipSlike = document.querySelector('#inpTipSlike'); 
+     urlSlike = document.querySelector('#inpURLslike');
+     urlSlikeVrednost = new String(); 
+     urlSlikeVrednostF = new String(); 
 
     btnPodaciSlika.addEventListener('click', async function(){
 
@@ -358,7 +366,11 @@ window.addEventListener('load', function(){
         korak1 = await setTimeout(() => {
 
             txtRGBA.value = nizPiksela4String;
-            //funkcijaUcitavanje();
+            //funkcijaUcitavanje(); 
+
+            //Novi kod: 30.8.2021. 
+            //txtRGBA.value = `${testA}`;
+
             setInterval(funkcijaUcitavanje, 500);
 
         }, 0); 
@@ -1642,3 +1654,29 @@ btnKompresijaUlazneSlike.addEventListener('click', () => {
 btnKompresijaUlazneSlikeNovo.addEventListener('click', () => {
     window.location.reload(true);
 });
+
+
+//Preuzimanje slike 
+
+/*
+btnPreuzimanje = document.querySelector('#btnPreuzimanje');
+btnPreuzimanje.addEventListener('click', () => {
+    preuzimanjeSlike(canvasSlike, slika, "slikaA.png");
+});
+
+const preuzimanjeSlike = (canvas, slURL, slSlika) => {
+
+    slURL = canvas.toDataURL();
+    
+    let podatak = document.createElement('podatak'); 
+    //podatak.href = slURL; 
+    podatak.setAttribute('href', 'data:image/png;base64,' + encodeURIComponent(slURL)); 
+    podatak.setAttribute('download', slSlika);
+    document.body.appendChild(podatak);
+    podatak.click();
+    document.body.removeChild(podatak);
+    podatak.remove(); 
+
+};
+
+*/

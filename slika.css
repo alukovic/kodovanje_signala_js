@@ -177,3 +177,8 @@ hr{
 #btnKompresijaUlazneSlike{
     background-color: #9999FF;
 }
+
+#btnPreuzimanje {
+    width: 7em; 
+    background-color: orange;
+}
