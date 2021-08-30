@@ -133,7 +133,11 @@ Pro 2.3.9 28.8.2021. Sub.
     Ulazna slika sada ne menja svoje dimenzije
     Dodavanje opcije za kompresiju slike 
     Nove ideje za uvećanje piksela slike (DCT)
-    + Kreiranje slike pomoću canvas.toDataURL() funkcije
+    + Kreiranje slike pomoću canvas.toDataURL() funkcije 
+
+//Dan30  
+Pro 2.3.9 30.8.2021. Pon. 
+
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -339,8 +343,10 @@ window.addEventListener('load', function(){
     
     spanNovo = document.getElementById('spanNovo'); 
     
-    dimenzijeSlike = document.querySelector('#inpDimenzijeSlike'); 
-    brojPiksela = document.querySelector('#inpBrojPiksela');
+    let rezolucijaSlike = document.querySelector('#inpRezolucijaSlike'); 
+    let brojPiksela = document.querySelector('#inpBrojPiksela');
+    let brojMP = document.querySelector('#inpMP');
+    let brojMPbr = new Number();
 
     btnPodaciSlika.addEventListener('click', async function(){
 
@@ -356,8 +362,10 @@ window.addEventListener('load', function(){
         korak2 = await setTimeout(() => {
 
             obradaSlike.style.display = 'block'; 
-            dimenzijeSlike.value = `${canvasSlike.width} x ${canvasSlike.height}`; 
+            rezolucijaSlike.value = `${canvasSlike.width} x ${canvasSlike.height} piksela`; 
             brojPiksela.value = Number(canvasSlike.width * canvasSlike.height); 
+            brojMPbr = Number((canvasSlike.width * canvasSlike.height) / Math.pow(10, 6)).toFixed(2);
+            brojMP.value = `${brojMPbr} MP`;
 
         }, 1000);
 
