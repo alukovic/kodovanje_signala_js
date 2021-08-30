@@ -347,6 +347,8 @@ window.addEventListener('load', function(){
     let brojPiksela = document.querySelector('#inpBrojPiksela');
     let brojMP = document.querySelector('#inpMP');
     let brojMPbr = new Number();
+    let urlSlike = document.querySelector('#inpURLslike');
+    let urlSlikeVrednost; 
 
     btnPodaciSlika.addEventListener('click', async function(){
 
@@ -367,6 +369,9 @@ window.addEventListener('load', function(){
             brojMPbr = Number((canvasSlike.width * canvasSlike.height) / Math.pow(10, 6)).toFixed(2);
             brojMP.value = `${brojMPbr} MP`;
 
+            urlSlikeVrednost = canvasSlike.toDataURL();
+            console.log(urlSlikeVrednost);
+            urlSlike.value = urlSlikeVrednost; 
         }, 1000);
 
         /*
