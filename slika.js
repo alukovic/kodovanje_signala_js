@@ -370,8 +370,8 @@ window.addEventListener('load', function(){
             brojMP.value = `${brojMPbr} MP`;
 
             urlSlikeVrednost = canvasSlike.toDataURL();
-            console.log(urlSlikeVrednost);
             urlSlike.value = urlSlikeVrednost; 
+            
         }, 1000);
 
         /*
