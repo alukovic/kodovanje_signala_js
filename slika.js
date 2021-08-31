@@ -143,6 +143,8 @@ Pro 2.3.9 30.8.2021. Pon.
         URL slike
         Početak kreiranja funkcija za peuzimanje slike 
         Podaci komprimovane slike
+//Dan31
+Pro 2.3.9 31.8.2021. Uto.          
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -1655,10 +1657,35 @@ btnKompresijaUlazneSlikeNovo = document.querySelector('#btnKompresijaUlazneSlike
 canvasKompresijeUlazneSlike = document.querySelector('#canvasKompresijeUlazneSlike');
 ctxKompresijaUlazneSlike = canvasKompresijeUlazneSlike.getContext('2d');
 
+const funkcijaKompresijeUlazneSlike = () => {
+
+    sirinaUlazneSlike = canvasSlike.width;
+    visinaUlazneSlike = canvasSlike.height;
+
+    razmeraUlazneSlike = Number(sirinaUlazneSlike / visinaUlazneSlike).toFixed(1);
+
+    console.log(sirinaUlazneSlike);
+    console.log(visinaUlazneSlike);
+    console.log(razmeraUlazneSlike); 
+
+    sirinaIzlazneSlike = Number(sirinaUlazneSlike * razmeraUlazneSlike).toFixed(0);
+    visinaIzlazneSlike = Number(visinaUlazneSlike * razmeraUlazneSlike).toFixed(0);
+
+    console.log(sirinaIzlazneSlike);
+    console.log(visinaIzlazneSlike); 
+
+    canvasKompresijeUlazneSlike.width = sirinaIzlazneSlike;
+    canvasKompresijeUlazneSlike.height = visinaIzlazneSlike; 
+
+    //ctxKompresijaUlazneSlike.drawImage(slika, 0, 0, canvasSlike.width, canvasSlike.height, 0, 0, canvasSlike.width / 4, canvasSlike.height / 4);
+    ctxKompresijaUlazneSlike.drawImage(slika, 0, 0, sirinaUlazneSlike, visinaUlazneSlike, 0, 0, canvasKompresijeUlazneSlike.width, canvasKompresijeUlazneSlike.height);
+
+};
+
 btnKompresijaUlazneSlike.addEventListener('click', () => {
 
-    ctxKompresijaUlazneSlike.drawImage(slika, 0, 0, canvasSlike.width, canvasSlike.height, 0, 0, canvasSlike.width / 4, canvasSlike.height / 4);
-    funkcijaKompresije();
+    funkcijaKompresijeUlazneSlike();
+    podaciKompresije();
 
 });
 
@@ -1701,7 +1728,7 @@ inpMPKompSlike = document.querySelector('#inpMPKompSlike');
 inpTipKompSlike = document.querySelector('#inpTipKompSlike'); 
 inpURLkompSlike = document.querySelector('#inpURLkompSlike'); 
 
-const funkcijaKompresije = () => {
+const podaciKompresije = () => {
 
     inpRezolucijaKompSlike.value = `${canvasKompresijeUlazneSlike.width} x ${canvasKompresijeUlazneSlike.height} piksela`; 
     inpBrojPikselaKompSlike.value = Number(canvasKompresijeUlazneSlike.width * canvasKompresijeUlazneSlike.height); 
