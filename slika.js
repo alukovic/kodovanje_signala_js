@@ -144,7 +144,12 @@ Pro 2.3.9 30.8.2021. Pon.
         Početak kreiranja funkcija za peuzimanje slike 
         Podaci komprimovane slike
 //Dan31
-Pro 2.3.9 31.8.2021. Uto.          
+Pro 2.3.9 31.8.2021. Uto.  
+    Izmene intefejsa programa
+    testCanvas => specijalni efekat A
+    Kompresija ulazne slike uz proporcionalnost odnosa dimenzija slike 
+    Proširenje prikaza rezultata kompresije 
+           
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
