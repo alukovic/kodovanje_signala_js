@@ -1662,20 +1662,45 @@ const funkcijaKompresijeUlazneSlike = () => {
     sirinaUlazneSlike = canvasSlike.width;
     visinaUlazneSlike = canvasSlike.height;
 
-    razmeraUlazneSlike = Number(sirinaUlazneSlike / visinaUlazneSlike).toFixed(1);
+    razmeraUlazneSlikeA = Number(sirinaUlazneSlike / visinaUlazneSlike).toFixed(1); 
+    razmeraUlazneSlikeB = new Number();
 
-    console.log(sirinaUlazneSlike);
-    console.log(visinaUlazneSlike);
-    console.log(razmeraUlazneSlike); 
+    sirinaIzlazneSlike = new Number();
+    visinaIzlazneSlike = new Number(); 
 
-    sirinaIzlazneSlike = Number(sirinaUlazneSlike * razmeraUlazneSlike).toFixed(0);
-    visinaIzlazneSlike = Number(visinaUlazneSlike * razmeraUlazneSlike).toFixed(0);
+    if(razmeraUlazneSlikeA > 1){
 
-    console.log(sirinaIzlazneSlike);
-    console.log(visinaIzlazneSlike); 
+        razmeraUlazneSlikeB = Number(visinaUlazneSlike / sirinaUlazneSlike).toFixed(1);
 
-    canvasKompresijeUlazneSlike.width = sirinaIzlazneSlike;
-    canvasKompresijeUlazneSlike.height = visinaIzlazneSlike; 
+        console.log('Razmera je veća od 1, tj: ', razmeraUlazneSlikeB);
+
+        console.log(sirinaUlazneSlike);
+        console.log(visinaUlazneSlike);
+        console.log(razmeraUlazneSlikeB); 
+
+        sirinaIzlazneSlike = Number(sirinaUlazneSlike * razmeraUlazneSlikeB).toFixed(0);
+        visinaIzlazneSlike = Number(visinaUlazneSlike * razmeraUlazneSlikeB).toFixed(0);
+    
+        console.log(sirinaIzlazneSlike);
+        console.log(visinaIzlazneSlike); 
+    
+        canvasKompresijeUlazneSlike.width = sirinaIzlazneSlike;
+        canvasKompresijeUlazneSlike.height = visinaIzlazneSlike; 
+
+    } else {
+
+        console.log('Razmera je manja od 1, tj: ', razmeraUlazneSlikeA);
+
+        sirinaIzlazneSlike = Number(sirinaUlazneSlike * razmeraUlazneSlikeA).toFixed(0); 
+        visinaIzlazneSlike = Number(visinaUlazneSlike * razmeraUlazneSlikeA).toFixed(0);  
+
+        console.log(sirinaIzlazneSlike);
+        console.log(visinaIzlazneSlike); 
+
+        canvasKompresijeUlazneSlike.width = sirinaIzlazneSlike;
+        canvasKompresijeUlazneSlike.height = visinaIzlazneSlike; 
+
+    }
 
     //ctxKompresijaUlazneSlike.drawImage(slika, 0, 0, canvasSlike.width, canvasSlike.height, 0, 0, canvasSlike.width / 4, canvasSlike.height / 4);
     ctxKompresijaUlazneSlike.drawImage(slika, 0, 0, sirinaUlazneSlike, visinaUlazneSlike, 0, 0, canvasKompresijeUlazneSlike.width, canvasKompresijeUlazneSlike.height);
