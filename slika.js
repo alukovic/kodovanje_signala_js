@@ -1231,6 +1231,10 @@ btnBrisanjePlavaBoja.addEventListener('click', () => {
     window.location.reload(true);
 });
 
+
+//Specijalni efekti slike:
+
+
 //Rotacija slike: 
 meniRotacijaSlike = document.querySelector('.meniRotacijaSlike'); 
 canvasSlikeZaRotaciju = document.querySelector('#canvasSlikeZaRotaciju');
