@@ -1232,9 +1232,6 @@ btnBrisanjePlavaBoja.addEventListener('click', () => {
 });
 
 
-//Specijalni efekti slike:
-
-
 //Rotacija slike: 
 meniRotacijaSlike = document.querySelector('.meniRotacijaSlike'); 
 canvasSlikeZaRotaciju = document.querySelector('#canvasSlikeZaRotaciju');
@@ -1654,6 +1651,30 @@ btnEfekatOgledalaNovo.addEventListener('click', () => {
 
 });
 
+//Preuzimanje slike 
+
+/*
+btnPreuzimanje = document.querySelector('#btnPreuzimanje');
+btnPreuzimanje.addEventListener('click', () => {
+    preuzimanjeSlike(canvasSlike, urlSlikeVrednost, "slika.png");
+});
+
+const preuzimanjeSlike = (canvas, sadrzaj, img) => {
+
+    sadrzaj = canvas.toDataURL();
+    
+    let podatak = document.createElement('podatak'); 
+    //podatak.href = slURL; 
+    podatak.setAttribute('href', 'data:image/png;base64,' + encodeURIComponent(sadrzaj)); 
+    podatak.setAttribute('download', img);
+    document.body.appendChild(img);
+    podatak.click();
+    document.body.removeChild(img);
+    podatak.remove(); 
+
+};
+*/
+
 //Kompresija ulazne slike
 meniKompresijaUlazneSlike = document.querySelector('#meniKompresijaUlazneSlike'); 
 btnKompresijaUlazneSlike = document.querySelector('#btnKompresijaUlazneSlike');
@@ -1714,7 +1735,8 @@ const funkcijaKompresijeUlazneSlike = () => {
 btnKompresijaUlazneSlike.addEventListener('click', () => {
 
     funkcijaKompresijeUlazneSlike();
-    podaciKompresije();
+    podaciKompresijeA();
+    podaciKompresijeB();
 
 });
 
@@ -1722,42 +1744,33 @@ btnKompresijaUlazneSlikeNovo.addEventListener('click', () => {
     window.location.reload(true);
 });
 
-
-//Preuzimanje slike 
-
-/*
-btnPreuzimanje = document.querySelector('#btnPreuzimanje');
-btnPreuzimanje.addEventListener('click', () => {
-    preuzimanjeSlike(canvasSlike, urlSlikeVrednost, "slika.png");
-});
-
-const preuzimanjeSlike = (canvas, sadrzaj, img) => {
-
-    sadrzaj = canvas.toDataURL();
-    
-    let podatak = document.createElement('podatak'); 
-    //podatak.href = slURL; 
-    podatak.setAttribute('href', 'data:image/png;base64,' + encodeURIComponent(sadrzaj)); 
-    podatak.setAttribute('download', img);
-    document.body.appendChild(img);
-    podatak.click();
-    document.body.removeChild(img);
-    podatak.remove(); 
-
-};
-*/
-
-//Prikaz podataka komprimovane slike: 
+//Prikaz rezultata kompresije
 prikazPodatakaKomprimovaneSlike = document.querySelector('#prikazPodatakaKomprimovaneSlike'); 
 kompresijaSlikePodaci = document.querySelector('#kompresijaSlikePodaci');
 
+
+//A
+inpRezolucijaA = document.querySelector('#inpRezolucijaA');
+inpBrojPikselaA = document.querySelector('#inpBrojPikselaA');
+inpMPA  = document.querySelector('#inpMPA');
+inpTipA = document.querySelector('#inpTipA');
+inpOdnosA = document.querySelector('#inpOdnosA'); 
+
+const podaciKompresijeA = () => {
+
+    
+
+};
+
+
+//B
 inpRezolucijaKompSlike = document.querySelector('#inpRezolucijaKompSlike'); 
 inpBrojPikselaKompSlike = document.querySelector('#inpBrojPikselaKompSlike'); 
 inpMPKompSlike = document.querySelector('#inpMPKompSlike'); 
 inpTipKompSlike = document.querySelector('#inpTipKompSlike'); 
 inpURLkompSlike = document.querySelector('#inpURLkompSlike'); 
 
-const podaciKompresije = () => {
+const podaciKompresijeB = () => {
 
     inpRezolucijaKompSlike.value = `${canvasKompresijeUlazneSlike.width} x ${canvasKompresijeUlazneSlike.height} piksela`; 
     inpBrojPikselaKompSlike.value = Number(canvasKompresijeUlazneSlike.width * canvasKompresijeUlazneSlike.height); 
