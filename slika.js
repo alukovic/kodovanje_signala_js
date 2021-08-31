@@ -149,6 +149,8 @@ Pro 2.3.9 31.8.2021. Uto.
     testCanvas => specijalni efekat A
     Kompresija ulazne slike uz proporcionalnost odnosa dimenzija slike 
     Proširenje prikaza rezultata kompresije 
+    Prikaz memorijskog zauzeća ulazne slike
+    Okvirni završetak izrade programa
            
 */
 
@@ -228,6 +230,9 @@ window.addEventListener('load', function(){
 
     //Podaci o kompresiji slike: 
     //kompresijaSlikePodaci.style.display = 'none'; 
+
+    memorijskoZauzeceVrednost = new Number(); 
+    memorijskoZauzece = document.querySelector('#memorijskoZauzece');
     
     document.querySelector('input[type="file"]').addEventListener('change', function(){
 
@@ -240,11 +245,16 @@ window.addEventListener('load', function(){
 
         if(this.files && this.files[0]){
 
-            
             //slika = document.querySelector('img');
             slika = new Image(); 
             slika.src = URL.createObjectURL(this.files[0]);
             //slika.onload = imageIsLoaded;
+
+            memorijskoZauzeceVrednost = this.files[0].size;
+            memorijskoZauzeceKB = Number(memorijskoZauzeceVrednost / 1024).toFixed(2);
+            console.log(memorijskoZauzeceVrednost, ' bajtova'); 
+            console.log(memorijskoZauzeceKB, 'KB');
+            memorijskoZauzece.value = `${memorijskoZauzeceKB} KB`; 
 
             function opcijePrikazaSlike() {
 
