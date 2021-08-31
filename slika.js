@@ -1682,6 +1682,8 @@ btnKompresijaUlazneSlikeNovo = document.querySelector('#btnKompresijaUlazneSlike
 canvasKompresijeUlazneSlike = document.querySelector('#canvasKompresijeUlazneSlike');
 ctxKompresijaUlazneSlike = canvasKompresijeUlazneSlike.getContext('2d');
 
+odnosA = document.querySelector('#inpOdnosA'); 
+
 const funkcijaKompresijeUlazneSlike = () => {
 
     sirinaUlazneSlike = canvasSlike.width;
@@ -1695,7 +1697,8 @@ const funkcijaKompresijeUlazneSlike = () => {
 
     if(razmeraUlazneSlikeA > 1){
 
-        razmeraUlazneSlikeB = Number(visinaUlazneSlike / sirinaUlazneSlike).toFixed(1);
+        razmeraUlazneSlikeB = Number(visinaUlazneSlike / sirinaUlazneSlike).toFixed(1); 
+        odnosA.value = `${razmeraUlazneSlikeB}`;
 
         console.log('Razmera je veća od 1, tj: ', razmeraUlazneSlikeB);
 
@@ -1715,6 +1718,7 @@ const funkcijaKompresijeUlazneSlike = () => {
     } else {
 
         console.log('Razmera je manja od 1, tj: ', razmeraUlazneSlikeA);
+        odnosA.value = `${razmeraUlazneSlikeA}`;
 
         sirinaIzlazneSlike = Number(sirinaUlazneSlike * razmeraUlazneSlikeA).toFixed(0); 
         visinaIzlazneSlike = Number(visinaUlazneSlike * razmeraUlazneSlikeA).toFixed(0);  
@@ -1750,15 +1754,19 @@ kompresijaSlikePodaci = document.querySelector('#kompresijaSlikePodaci');
 
 
 //A
-inpRezolucijaA = document.querySelector('#inpRezolucijaA');
-inpBrojPikselaA = document.querySelector('#inpBrojPikselaA');
-inpMPA  = document.querySelector('#inpMPA');
-inpTipA = document.querySelector('#inpTipA');
-inpOdnosA = document.querySelector('#inpOdnosA'); 
+rezolucijaA = document.querySelector('#inpRezolucijaA');
+brojPikselaA = document.querySelector('#inpBrojPikselaA');
+brojMPA  = document.querySelector('#inpMPA');
+tipA = document.querySelector('#inpTipA');
+//odnosA = document.querySelector('#inpOdnosA'); 
 
 const podaciKompresijeA = () => {
 
-    
+    rezolucijaA.value = `${canvasSlike.width} x ${canvasSlike.height} piksela`; 
+    brojPikselaA.value = Number(canvasSlike.width * canvasSlike.height); 
+    brojMPAbr = Number((canvasSlike.width * canvasSlike.height) / Math.pow(10, 6)).toFixed(2);
+    brojMPA.value = `${brojMPAbr} MP`;
+    tipA.value = `${urlSlikeVrednostF}`; 
 
 };
 
