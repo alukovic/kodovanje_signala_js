@@ -1803,3 +1803,26 @@ prikazPodatakaKomprimovaneSlike.addEventListener('click', () => {
     //funkcijaKompresije();
 });
 
+/*
+//Test prikaza slike
+txtBase64 = document.querySelector('#txtBase64');
+btnBase64 = document.querySelector('#btnBase64'); 
+canvasBase64 = document.querySelector('#canvasBase64'); 
+ctxBase64 = canvasBase64.getContext('2d'); 
+tekstBase64 = new String();
+
+const base64slika = () => {
+
+    txtBase64.value = tekstBase64; 
+    tekstBase64 = canvasBase64.toDataURL().split(',')[1];
+    console.log(tekstBase64);
+    ctxBase64.drawImage(tekstBase64, 0, 0, canvasBase64.width, canvasBase64.height); 
+
+};
+
+btnBase64.addEventListener('click', () => {
+
+    base64slika();
+
+});
+*/
