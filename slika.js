@@ -1770,6 +1770,6 @@ const podaciKompresije = () => {
 };
 
 prikazPodatakaKomprimovaneSlike.addEventListener('click', () => {
-    funkcijaKompresije();
+    //funkcijaKompresije();
 });
 
