@@ -1,5 +1,5 @@
 #### Projekat u okviru master rada. -  Project for master thesis of telecommunications. 
-#### Naziv projekta: kodovanje_signala_js
+#### Naziv projekta: obrada_slike.js
 #### Programski jezik: JavaScript
 ---
 ### <p align="center"> Okvirna tema master rada  </p>
