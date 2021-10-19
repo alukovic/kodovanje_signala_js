@@ -1,5 +1,5 @@
 #### Projekat u okviru master rada. -  Project for master thesis of telecommunications. 
-#### Naziv projekta: kodovanje_signala_js
+#### Naziv projekta: obrada_slike.js
 #### Programski jezik: JavaScript
 ---
 ### <p align="center"> Okvirna tema master rada  </p>
@@ -15,4 +15,4 @@ U prvom procesu realizacije projekta, za početak, korisnik odabira nasumično g
 Program nasumično generiše date koeficijente matrice, koja bi predstavljala određeni multimedijalni signal.
 Klikom na dugme DCT, vrši se diskretna kosinusna transformacija nad ulaznim multimedijalnim signalom, tj. matricom reda 8x8.  
  </p>
-<p align="center"> Link projekta: https://alukovic.github.io/kodovanje_signala_js/dct.html </p>
+<p align="center"> Link projekta: https://alukovic.github.io/obrada_slike.js/slika.html </p>
