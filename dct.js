@@ -25,6 +25,10 @@ Pro 2.3.9 25.8.2021. Sre.
 //Dan8
 Pro 2.3.9 28.8.2021. Sub. 
     reiranje slike pomoću canvas.toDataURL() funkcije
+
+//Dan9
+Pro 2.3.b 19.10.2021. Uto. 
+
 */
 
 ulaznaMatrica = new Array();
@@ -69,7 +73,16 @@ const generisanjeMatrice = () => {
    
     txtUlaz.value = ulaznaMatricaTekst; 
 
-    infoP1.innerHTML = ` Koeficijenti slike su nasumično generisani. ` ; 
+    const infoP1srF = () => {
+        infoP1sr.innerHTML = ` Koeficijenti slike su nasumično generisani. ` ; 
+    }
+    
+
+    const infoP1enF = () => {
+        infoP1en.innerHTML = ` Picture coefficients are randomly generated. ` ; 
+    }
+
+    
 
     /*
     console.log(Number(dimMatr.value)); 

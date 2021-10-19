@@ -13,7 +13,10 @@
 
 </head>
 <body>
-
+    <!-- 
+        Verzija stranice slika.html na engleskom jeziku
+        English version of slika.html => image.html
+    -->
     <div class="containerA">
 
         <div class="opisSlike">
@@ -39,15 +42,15 @@
         <div class="dctPocetniMeni">
 
             <p>Click for DCT test: </p>
-            <img id="prikazDCTsadrzaja" src="ico/opcioniMeni.png" tittle="Klik za opcioni prikaz DCT testa">
+            <img id="prikazDCTsadrzaja" src="ico/opcioniMeni.png" tittle="Click to show the detailed view of the DCT test">
             <hr>
 
         </div>
 
         <div class="dctMeniSakrivanje">
 
-            <p>Click for hide DCT meny: </p>
-            <img id="sakrivanjeDCTsadrzaja" src="ico/opcioniMeniSakrivanje.png" title="Klik za sakrivanje opcionog prikaza DCT testa">
+            <p>Click for hide DCT menu: </p>
+            <img id="sakrivanjeDCTsadrzaja" src="ico/opcioniMeniSakrivanje.png" title="Click to hide the detailed view of the DCT test">
             <hr>
 
         </div>
@@ -58,8 +61,8 @@
 
                 <div>
 
-                    <p>Nasumično generisanje matrice reda 8x8: </p>
-                    <button id="btnMatrica">Generisanje matrice</button>
+                    <p>Generate random 8x8 order matrix:  </p>
+                    <button id="btnMatrica">Generate matrix</button>
                     <hr>
                     
                 </div>
@@ -71,8 +74,9 @@
 
                 <div>
 
-                    <p>Vrednosti koeficijenata početne slike: </p>
-                    <p id="infoP1"></p>
+                    <p>Initial image coefficient values: </p>
+                    <p id="infoP1sr"></p>
+                    <p id="infoP1en"></p>
                     <textarea name="txtUlaz" id="txtUlaz" cols="30" rows="10"></textarea>
                     <hr>
     
@@ -82,10 +86,10 @@
     
                     <div>
                         
-                        <p>Broj koeficijenata slike je: </p>
+                        <p>Number of image coefficient is: </p>
                         <input id="inpBrKoef" type="text"> 
-    
-                        <p>Ulazna matrica koeficijenata je tipa: </p>
+                      <!--  <p>Ulazna matrica koeficijenata je tipa: </p> --> 
+                        <p>Input matrix of coefficient type is: </p>
                         <input id="inpMatr" type="text"> 
     
                         <hr>
@@ -97,14 +101,18 @@
                 <div> 
     
                     <div>
-                        <p>Pritisnite taster za proračun DCT: </p>
+
+                       <!-- <p>Pritisnite taster za proračun DCT: </p> --> 
+                        <p>Press the button to calcutate DCT: </p>
                         <button id="btnDCT">DCT</button>
     
                     </div>
     
                     <p>
-                        <p>Pritisnite taster za brisanje: </p>
-                        <button id="btnBrisanje">Brisanje</button>
+
+                        <!-- <p>Pritisnite taster za brisanje: </p> -->
+                        <p>Press the clear button: </p>
+                        <button id="btnBrisanje">Clear</button>
                         <hr>
     
                     </p>
@@ -114,8 +122,9 @@
                 <div class="a a1">
         
                     <div> 
-                        
-                        <p>Prikaz vrednosti koeficijenata nakon DCT:  </p>
+
+                        <!-- Prikaz vrednosti koeficijenata nakon DCT:  -->
+                        <p>Coefficient values after DCT: </p>
                         <textarea name="txtIzlaz" id="txtIzlaz" cols="30" rows="10"></textarea>
         
                     </div>
@@ -125,11 +134,13 @@
     
                 <div class="prikazMatrice">
     
-                    <p>Pritisnite taster za vizuelizaciju piksela ulazne matrice: </p>
+                    <!-- Pritisnite taster za vizuelizaciju piksela ulazne matrice:  -->
+                    <p>Press the button for input matrix pixel visualization: </p>
     
                     <div>
-    
-                        <button id="btnVizuelizacijaPiksela">Vizuelizacija piksela</button>
+                        
+                        <!-- Vizuelizacija piksela -->
+                        <button id="btnVizuelizacijaPiksela">Pixel visualization</button>
                         <hr>
     
                     </div>
@@ -157,11 +168,14 @@
                         <img src="" alt="" id="novaSlikaURL">
                     </div>
                     
-                    
-                    <p>Vizuelizacija vrednosti amplituda signala slike nakon DCT: </p>
+                    <!-- Vizuelizacija vrednosti amplituda signala slike nakon DCT:  -->
+                    <p>Visualization of image signal amplitute values after DCT: </p>
     
                     <div>
-                        <button id="btnVizuelizacijaDCT">Vizuelizacija amplituda</button>
+
+                        <!-- Vizuelizacija amplituda  -->
+                        <button id="btnVizuelizacijaDCT">Amplitude visualization</button>
+
                     </div>
     
                     <canvas id="canvasPrikazDCT"></canvas>
@@ -171,8 +185,9 @@
     
                 <div class="dctMeniSakrivanje">
     
-                    <p>Klik za sakrivanje DCT menija: </p>
-                    <img id="sakrivanjeDCTsadrzajaA" src="ico/opcioniMeniSakrivanje.png" title="Klik za sakrivanje opcionog prikaza DCT testa">
+                    <!-- <p>Klik za sakrivanje DCT menija: </p> -->
+                    <p>Click for DCT menu hide: </p>
+                    <img id="sakrivanjeDCTsadrzajaA" src="ico/opcioniMeniSakrivanje.png" title="Click to hide the detailed view of the DCT test">
                     <hr>
         
                 </div>
