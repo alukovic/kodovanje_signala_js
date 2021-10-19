@@ -182,3 +182,24 @@ hr{
     width: 7em; 
     background-color: orange;
 }
+
+.meniSlikaJezik{
+    list-style: none;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto 0 auto;
+    border: 1px solid blue;
+    border-radius: 0.2em; 
+    width: 5em;
+    padding: 0;
+}
+
+.meniSlikaJezik li{
+    border: 1px solid blue;
+    padding: 0.4em;
+    margin: 0 auto 0 auto;
+    width: 5em;
+    text-align: center;
+}
