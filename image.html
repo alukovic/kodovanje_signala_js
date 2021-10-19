@@ -205,7 +205,8 @@
 
         <div>
 
-            <p>Odaberite sliku: </p>
+            <!--  <p>Odaberite sliku: </p> --> 
+            <p>Choose an image: </p>
 
         </div>
 
@@ -227,8 +228,10 @@
 
         <div class="meniSlika">
 
-            <button id="btnPodaciSlika">Podaci</button>
-            <button id="btnNovaSlika">Nova slika</button>
+            <!-- <button id="btnPodaciSlika">Podaci</button> --> 
+            <button id="btnPodaciSlika">Data</button>
+            <!-- <button id="btnPodaciSlika">Podaci</button> --> 
+            <button id="btnNovaSlika">New image</button>
 
             <!-- 
             <button class="btnPreuzimanje" id="btnPreuzimanje">Preuzimanje</button>
@@ -244,25 +247,32 @@
 
         <div class="obradaSlike">
 
-            <p><b>Prikaz podataka o slici: </b></p>
+            <!-- <p><b>Prikaz podataka o slici: </b></p> --> 
+            <p><b>View image data: </b></p>
             <!-- <textarea id="txtSlikaPodaci" cols="30" rows="10"></textarea> --> 
 
-            <p>Rezolucija slike u pikselima je: </p>
+            <!-- <p>Rezolucija slike u pikselima je: </p> --> 
+            <p>The image resolution in pixels is: </p>
             <input type="text" id="inpRezolucijaSlike">
 
-            <p>Broj piksela date slike je: </p> 
+            <!-- <p>Broj piksela date slike je: </p>  --> 
+            <p>The number of pixels in a given image is: </p> 
             <input type="text" id="inpBrojPiksela">
 
-            <p>Rezolucija slike u megapikselima (MP) je: </p> 
+            <!-- <p>Rezolucija slike u megapikselima (MP) je: </p> --> 
+            <p>The image resolution in megapixels (MP) is: </p> 
             <input type="text" id="inpMP">
 
-            <p>Tip slike: </p>
+            <!-- <p>Tip slike: </p> --> 
+            <p>Image type is: </p>
             <input type="text" id="inpTipSlike">
 
-            <p>URL slike: </p>
+            <!-- <p>URL slike </p> --> 
+            <p>Image URL: </p>
             <textarea name="" id="inpURLslike" cols="30" rows="10"></textarea>
 
-            <p>Memorijsko zauzeće slike u kilobajtima (KB): </p>
+            <!-- <p>Memorijsko zauzeće slike u kilobajtima (KB): </p> --> 
+            <p>Image memory usage in kilobytes (KB): </p>
             <input type="text" id="memorijskoZauzece">
             <hr>
 
@@ -276,7 +286,8 @@
             
             <div class="opcioniPodaciSlika">
 
-                <img id="slikaMeni" src="ico/opcioniMeni.png" tittle="Klik za opcioni prikaz svih piksela" srcset="">
+                <!-- tittle="Klik za opcioni prikaz svih piksela" --> 
+                <img id="slikaMeni" src="ico/opcioniMeni.png" tittle="Click for optional view of all pixels" srcset="">
                 <hr>
 
             </div>
@@ -293,7 +304,8 @@
 
             <div class="opcioniPodaciSlikaSakrivanje">
 
-                <img id="slikaSakrivanje" src="ico/opcioniMeniSakrivanje.png" title="Klik za sakrivanje opcionog prikaza svih piksela" srcset="">
+                <!-- title="Klik za sakrivanje opcionog prikaza svih piksela" --> 
+                <img id="slikaSakrivanje" src="ico/opcioniMeniSakrivanje.png" title="Click to hide the optional view of all pixels" srcset="">
                 <hr>
 
             </div>
@@ -310,7 +322,8 @@
 
             <div>
 
-                <button id="btnPrikazRGBA">Prikaz svih piksela: </button>
+                <!-- <button id="btnPrikazRGBA">Prikaz svih piksela: </button> --> 
+                <button id="btnPrikazRGBA">Show all pixels: </button>
                 <p id="opcioniTekstInfo"></p>
 
             </div>
@@ -327,15 +340,21 @@
         <div class="noviMeni">
 
             <div>
-                <p>Efekti slike:  </p>
+
+                <!-- <p>Efekti slike: </p> --> 
+                <p>Image effects: </p>
                 <hr>
+
             </div>
             
             <div>
 
+                <!-- <p>Prikaz efekta sive boje (<i>grayscale</i>): </p> --> 
                 <p>Prikaz efekta sive boje (<i>grayscale</i>): </p>
                 <p id="txtPrikazInfo"></p>
+                <!-- <button id="btnNovaSlikaA">Prikaz</button> --> 
                 <button id="btnNovaSlikaA">Prikaz</button>
+                <!-- <button id="btnBrisanjeA">Brisanje</button> --> 
                 <button id="btnBrisanjeA">Brisanje</button>
                 <hr>
                 <canvas id="canvasSlikeA"></canvas>
@@ -345,8 +364,11 @@
 
             <div>
 
+                <!-- --> 
                 <p>Prikaz efekta crvene boje: </p>
+                <!-- --> 
                 <button id="btnCrvenaBoja">Prikaz</button>
+                <!-- --> 
                 <button id="btnBrisanjeCrvenaBoja">Brisanje</button>
                 <hr>
                 <canvas id="canvasCrveneSlike"></canvas>
@@ -356,18 +378,25 @@
 
             <div>
 
+                <!-- --> 
                 <p>Prikaz efekta zelene boje:  </p>
+                <!-- --> 
                 <button id="btnZelenaBoja">Prikaz</button>
+                <!-- --> 
                 <button id="btnBrisanjeZelenaBoja">Brisanje</button>
                 <hr>
                 <canvas id="canvasZeleneSlike"></canvas>
                 <hr>
+
             </div>
 
             <div>
 
+                <!-- --> 
                 <p>Prikaz efekta plave boje: </p>
+                <!-- --> 
                 <button id="btnPlavaBoja">Prikaz</button>
+                <!-- --> 
                 <button id="btnBrisanjePlavaBoja">Brisanje</button>
                 <hr>
                 <canvas id="canvasPlaveSlike"></canvas>
@@ -379,13 +408,16 @@
 
             <div>
 
+                <!-- --> 
                 <p>Prikaz specijalnog efekta A: </p>
 
                 <div class="testCanvas">
 
                     <div>
-        
+                        
+                        <!-- --> 
                         <button id="btnGenerisanjeDemo">Efekat</button>
+                        <!-- --> 
                         <button id="btnNoviUnosDemo">Novi unos</button>
         
                     </div>
@@ -409,12 +441,14 @@
 
                 <div>
 
+                    <!-- --> 
                     <p>Rotacija slike: </p>
 
                 </div>
 
                 <div>
 
+                    <!-- --> 
                     <p>Unesite ugao u stepenima pod kojim želite da slika bude rotirana: </p>
                     
                 </div>
@@ -425,7 +459,9 @@
 
                 <div class="meniRotacijaSlikeOpcije">
 
+                    <!-- --> 
                     <button id="btnRotacija">Rotacija</button>
+                    <!-- --> 
                     <button id="btnRotacijaNovo">Novi unos</button>
 
                 </div>
@@ -441,19 +477,27 @@
             <!-- Efekat ogledala slike...-->
 
             <div>
+
+                <!-- --> 
                 <p>Efekat ogledala slike: </p>
+
             </div>
 
             <div>
 
+                <!-- --> 
                 <input type="checkbox" id="horizontalnoOkretanje"><label for="horizontalnoOkretanje">Horizontalno okretanje</label>
+                <!-- --> 
                 <input type="checkbox" id="vertikalnoOkretanje"><label for="vertikalnoOkretanje">Vertikalno okretanje</label>
                 <hr>
                 
             </div>
 
             <div>
+
+                <!-- --> 
                 <button id="btnEfekatOgledala">Efekat ogledala</button>
+
             </div>
 
             <canvas id="canvasSlikeOgledala"></canvas>
@@ -461,7 +505,10 @@
             <hr>
 
             <div>
+
+                <!-- --> 
                 <button id="btnEfekatOgledalaNovo">Novi unos</button>
+
             </div>
 
             <hr>
@@ -469,11 +516,16 @@
         </div>
 
         <div>
+
             <!-- Proizvoljni efekat slike -->
+            <!-- --> 
             <p>Proizvoljni efekat slike: </p>
 
             <div>
+
+                <!-- --> 
                 <p>Izaberite proizvoljni efekat i providnost: </p>
+
             </div>
 
             <div class="slajderRGBmeni"> 
@@ -499,7 +551,10 @@
             <canvas id="canvasProizvoljniEfekat"></canvas>
 
             <div>
+
+                <!-- --> 
                 <button id="btnResetRGBA">Novi unos</button>
+
             </div>
 
             <hr>
@@ -507,24 +562,31 @@
         </div>
 
         <div>
+
             <!-- Isecanje slike -->
             <p>Isecanje slike: </p>
 
             <canvas id="canvasIsecanjeSlike"></canvas>
             <hr>
 
+                <!-- --> 
                 <p>Unesite parametre za isecanje slike: </p>
 
             <div>
+
+                <!-- --> 
                 <p>X osa: </p>
                 <input type="text" id="isecanjeXosa">
 
+                <!-- --> 
                 <p>Y osa: </p>
                 <input type="text" id="isecanjeYosa">
 
+                <!-- --> 
                 <p>Širina:  </p>
                 <input type="text" id="isecanjeSirina">
 
+                <!-- --> 
                 <p>Visina:  </p>
                 <input type="text" id="isecanjeVisina">
 
@@ -532,11 +594,14 @@
 
             <div>
 
+                <!-- --> 
                 <button id="btnIsecanje">Isecanje</button>
+                <!-- --> 
                 <button id="btnIsecanjeNoviUnos">Novi unos</button>
 
             </div>
 
+            <!-- --> 
             <p>Slika nakon isecanja: </p>
             
             <canvas id="canvasIsecanjeSlikeA"></canvas>
@@ -584,12 +649,17 @@
         <div class="demoDCT">
 
             <div>
+
+                <!-- --> 
                 <p>DCT probne slike </p>
+
             </div>
 
             <div>
 
+                <!-- --> 
                 <button id="btnDemoDCT">DCT</button>
+                <!-- --> 
                 <button id="btnNoviUnosDemoDCT">Brisanje</button>
 
             </div>
@@ -611,12 +681,17 @@
         <div class="kompresijaUlazneSlike">
 
             <div>
+
+                <!-- --> 
                 <p>Klik za kompresiju ulazne slike: </p>
+
             </div>
             
             <div id="meniKompresijaUlazneSlike">
+
                 <button id="btnKompresijaUlazneSlike">Kompresija</button>
                 <button id="btnKompresijaUlazneSlikeNovo">Novi unos</button>
+
             </div>
 
             <canvas id="canvasKompresijeUlazneSlike"></canvas>
@@ -638,36 +713,46 @@
             <div class="kompresijaSlikePodaci">
 
                <!-- A --> 
+               <!-- --> 
                 <p>Rezolucija ulazne slike u pikselima je: </p>
                 <input type="text" id="inpRezolucijaA">
 
+                <!-- --> 
                 <p>Broj piksela ulazne slike je: </p>
                 <input type="text" id="inpBrojPikselaA">
 
+                <!-- --> 
                 <p>Rezolucija ulazne slike u megapikselima (MP) je: </p>
                 <input type="text" id="inpMPA">
 
+                <!-- --> 
                 <p>Tip ulazne slike je: </p>
                 <input type="text" id="inpTipA">
 
+                <!-- --> 
                 <p>Odnos dimenzija slike <i>(aspect ratio)</i> je: </p>
                 <input type="text" id="inpOdnosA">
 
                 <hr>
 
                 <!-- B --> 
+                <!-- --> 
                 <p>Rezolucija komprimovane slike u pikselima je: </p>
                 <input type="text" id="inpRezolucijaKompSlike">
 
+                <!-- --> 
                 <p>Broj piksela date slike je: </p> 
                 <input type="text" id="inpBrojPikselaKompSlike">
-    
+                
+                <!-- --> 
                 <p>Rezolucija slike u megapikselima (MP) je: </p> 
                 <input type="text" id="inpMPKompSlike">
-    
+                
+                <!-- --> 
                 <p>Tip slike: </p>
                 <input type="text" id="inpTipKompSlike">
-    
+                
+                <!-- --> 
                 <p>URL slike: </p>
                 <textarea name="" id="inpURLkompSlike" cols="30" rows="10"></textarea>
                 <hr>
