@@ -1,37 +1,7 @@
 /*
 //Dan1
-//29.6.2021. Uto. 
-
-//Dan2
-//30.6.2021. Sre. 
-
-//Dan3
-//1.7.2021. Čet. 
-
-//Dan4
-//3.7.2021. Sub. 
-
-//Dan5
-//4.7.2021. Ned. 
-    //Realizovana diskretna kosinusna transformacija
-
-//Dan6
-Pro 2.3.9 23.8.2021. Pon. 
-    Ažuriranja, proširenja funkcija i integracija programa u jednu celinu 
-
-//Dan7
-Pro 2.3.9 25.8.2021. Sre. 
-
-//Dan8
-Pro 2.3.9 28.8.2021. Sub. 
-    Kreiranje slike pomoću canvas.toDataURL() funkcije
-
-//Dan9
 Pro 2.3.b 19.10.2021. Uto. 
-    Nastavak izrade projekta posle najduže pauze do sada.
-    Dodatna proširenja i poboljšanja koda
-    Uvođenje engleske verzije programa
-    Kreiranje novih datoteka image.html dctEN.js 
+    Kreiranje verzije JavaScript koda za stranicu image.html
 */
 
 ulaznaMatrica = new Array();
@@ -75,7 +45,7 @@ const generisanjeMatrice = () => {
     console.log(ulaznaMatrica[1][1]); 
    
     txtUlaz.value = ulaznaMatricaTekst; 
-    infoP1.innerHTML = ` Koeficijenti slike su nasumično generisani. ` ; 
+    infoP1.innerHTML = ` Picture coefficients are randomly generated. ` ; 
 
     /*
     console.log(Number(dimMatr.value)); 
@@ -255,7 +225,7 @@ const funkcijaVizuelizacijeDCT = () => {
         data: {
             labels: sortiraniUlazniNizF,
             datasets: [{
-                label: 'Amplituda signala slike nakon DCT',
+                label: 'Image signal amplitude after DCT',
                 data: izlazniNiz,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
