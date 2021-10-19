@@ -289,6 +289,8 @@ btnVizuelizacijaDCT.addEventListener('click', () => {
 
 
 //Funkcija za uvecanje piksela na kanvasu
+
+/* 
 btnUvecanjePiksela = document.querySelector('#btnUvecanjePiksela');
 canvasPrikazUvecanihPikselaMatrice = document.querySelector('#canvasPrikazUvecanihPikselaMatrice');
 ctxPrikazUvecanihPikselaMatrice = canvasPrikazUvecanihPikselaMatrice.getContext('2d');
@@ -321,3 +323,5 @@ const uvecanjePikselaA = () => {
     //ctxPrikazUvecanihPikselaMatrice.drawImage(novaSlikaURL, 0, 0, 4, 4, 50, 50, 200, 200);
 
 };
+
+*/
