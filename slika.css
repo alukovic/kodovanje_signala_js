@@ -81,6 +81,10 @@
 
 #opcioniTekstInfo{
     font-size: smaller; 
+    width: 23em; 
+    padding: 0.6em; 
+    border: 2px dashed rgb(24, 138, 231);
+    border-radius: 10px;
 }
 
 #btnGenerisanjeDemo{

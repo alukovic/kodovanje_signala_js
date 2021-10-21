@@ -358,13 +358,19 @@ window.addEventListener('load', function(){
     
             //i++;
             //nizPiksela4elementa = nizPikselaA.splice(0, 4);
-            // nizPiksela4String += i + '. pixel with RGBA components is: ' + nizPiksela4elementa + '\n';
+            //nizPiksela4String += i + '. piksel sa RGBA komponentama je : ' + nizPiksela4elementa + '\n';
             nizPiksela4String += nizPikselaA[i] + ' ';
 
         }
+
+        console.log('Proces je uspeo...');
+
+        console.log(nizPiksela4String);
+        //opcioniTekstInfo.innerHTML = `Vrednosti svih piksela su izračunate.` + `\n` + ` Spisak svih piksela možete videti u JavaScript konzoli. ` + `\n` + ` Za pristup konzoli potrebite kombinaciju tastera Ctrl + Shift + J.`; 
         
-        //console.log(nizPiksela4String);
-        txtRGBA.value = nizPiksela4String; 
+        opcioniTekstInfo.innerHTML = 'Vrednosti svih piksela su izračunate. <br> Spisak svih piksela možete videti u JavaScript konzoli. <br> Za pristup konzoli upotrebite kombinaciju tastera Ctrl + Shift + J.'; 
+
+        //txtRGBA.value = nizPiksela4String; 
 
     };
 
@@ -401,10 +407,6 @@ window.addEventListener('load', function(){
 
     btnPodaciSlika.addEventListener('click', async function(){
 
-        korak0 = await setTimeout(() => {
-            funkcijaProracun();
-        }, 0);
-    
         korak1 = await setTimeout(() => {
 
             //txtRGBA.value = nizPiksela4String;
@@ -455,6 +457,10 @@ window.addEventListener('load', function(){
 
         //funkcijaProracun();
 
+        korak5 = await setTimeout(() => {
+            funkcijaProracun();
+        }, 3500);
+
     });                
 
 //btnPodaciSlika.addEventListener('loadstart', funkcijaProracun());
@@ -472,7 +478,7 @@ canvasSlikeA = document.querySelector('#canvasSlikeA');
 ctxA = canvasSlikeA.getContext('2d'); 
 noviNiz = new Uint8ClampedArray(10000);
 
-//Crno-beli efekat slike
+//Efekat sive slike
 function opcijePrikazaNoveSlike() {
 
     /*AAAAAAA #2
@@ -574,12 +580,11 @@ opcioniPodaciSlika.addEventListener('click', () => {
 });
 
 /*
-Uklonjeno*: 21.10.2021. 
 btnPrikazRGBA.addEventListener('click', () => {
 
-    //funkcijaProracun(); 
-    console.log('Proces je uspeo...');
-    console.log(nizPiksela4String);
+    funkcijaProracun(); 
+    //console.log('Proces je uspeo...');
+    //console.log(nizPiksela4String); 
     //txtRGBA.value = nizPiksela4String;
 
 });

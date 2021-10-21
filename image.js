@@ -310,7 +310,7 @@ canvasSlikeA = document.querySelector('#canvasSlikeA');
 ctxA = canvasSlikeA.getContext('2d'); 
 noviNiz = new Uint8ClampedArray(10000);
 
-//Crno-beli efekat slike
+//Efekat sive slike
 function opcijePrikazaNoveSlike() {
 
     /*AAAAAAA #2
