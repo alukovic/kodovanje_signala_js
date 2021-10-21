@@ -364,6 +364,7 @@ window.addEventListener('load', function(){
         }
 
         console.log('Proces je uspeo...');
+        console.log('Vrednosti svih piksela slike su: '); 
 
         console.log(nizPiksela4String);
         //opcioniTekstInfo.innerHTML = `Vrednosti svih piksela su izračunate.` + `\n` + ` Spisak svih piksela možete videti u JavaScript konzoli. ` + `\n` + ` Za pristup konzoli potrebite kombinaciju tastera Ctrl + Shift + J.`; 
@@ -446,14 +447,14 @@ window.addEventListener('load', function(){
         }, 3600);
         */
 
-        korak3 = await setTimeout(() => prikazRGBA(), 2500);
+        korak3 = await setTimeout(() => prikazRGBA(), 2000);
 
         korak4 = await setTimeout(() => {
 
             ucitavanje.style.display = 'none';
             txtUcitavanje.style.display = 'none'; 
 
-        }, 3000);
+        }, 1600);
 
         //funkcijaProracun();
 
@@ -542,7 +543,7 @@ btnNovaSlikaA.addEventListener('click', function(){
 
     //Prikaz ulazne slike
 
-    opcijePrikazaNoveSlike();
+    opcijePrikazaNoveSlike(); 
 });
 
 btnBrisanjeA.addEventListener('click', function(){
@@ -580,6 +581,7 @@ opcioniPodaciSlika.addEventListener('click', () => {
 });
 
 /*
+Uklonjeno*: 21.10.2021. 
 btnPrikazRGBA.addEventListener('click', () => {
 
     funkcijaProracun(); 

@@ -161,7 +161,7 @@ window.addEventListener('load', function(){
 
      funkcijaProracun = () => {
 
-       podaciSaSlike = new Uint8ClampedArray();
+        podaciSaSlike = new Uint8ClampedArray();
         //test #1
         //podaciSaSlike = ctx.getImageData(0, 0, 180, 180); 
         
@@ -196,13 +196,19 @@ window.addEventListener('load', function(){
     
             //i++;
             //nizPiksela4elementa = nizPikselaA.splice(0, 4);
-            // nizPiksela4String += i + '. pixel with RGBA components is: ' + nizPiksela4elementa + '\n';
+            //nizPiksela4String += i + '. piksel sa RGBA komponentama je : ' + nizPiksela4elementa + '\n';
             nizPiksela4String += nizPikselaA[i] + ' ';
 
         }
+
+        console.log('The process is successful...');
+        console.log('The values of all pixels of the image are: '); 
+
+        console.log(nizPiksela4String);
         
-        //console.log(nizPiksela4String);
-        txtRGBA.value = nizPiksela4String; 
+        opcioniTekstInfo.innerHTML = 'The values of all pixels are calculated. <br> You can see a list of all pixels in the JavaScript Console. . <br> Use Ctrl + Shift + J to access the console.'; 
+
+        //txtRGBA.value = nizPiksela4String; 
 
     };
 
@@ -238,10 +244,6 @@ window.addEventListener('load', function(){
      urlSlikeVrednostF = new String(); 
 
     btnPodaciSlika.addEventListener('click', async function(){
-
-        korak0 = await setTimeout(() => {
-            funkcijaProracun();
-        }, 0);
 
         korak1 = await setTimeout(() => {
 
@@ -282,7 +284,7 @@ window.addEventListener('load', function(){
         }, 3600);
         */
 
-        korak3 = await setTimeout(() => prikazRGBA(), 2500);
+        korak3 = await setTimeout(() => prikazRGBA(), 2000);
 
         korak4 = await setTimeout(() => {
 
@@ -291,7 +293,12 @@ window.addEventListener('load', function(){
 
         }, 1600);
 
-        //funkcijaProracun();
+        //funkcijaProracun(); 
+
+        korak5 = await setTimeout(() => {
+            funkcijaProracun();
+        }, 3500);
+
 
     });                
 
@@ -375,7 +382,7 @@ btnNovaSlikaA.addEventListener('click', function(){
 
     //Prikaz ulazne slike
 
-    opcijePrikazaNoveSlike();
+    opcijePrikazaNoveSlike(); 
 });
 
 btnBrisanjeA.addEventListener('click', function(){
