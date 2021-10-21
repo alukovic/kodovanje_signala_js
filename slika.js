@@ -358,12 +358,13 @@ window.addEventListener('load', function(){
     
             //i++;
             //nizPiksela4elementa = nizPikselaA.splice(0, 4);
-            // nizPiksela4String += i + '. piksel sa RGBA komponentama je: ' + nizPiksela4elementa + '\n';
+            // nizPiksela4String += i + '. pixel with RGBA components is: ' + nizPiksela4elementa + '\n';
             nizPiksela4String += nizPikselaA[i] + ' ';
 
         }
         
         //console.log(nizPiksela4String);
+        txtRGBA.value = nizPiksela4String; 
 
     };
 
@@ -400,16 +401,19 @@ window.addEventListener('load', function(){
 
     btnPodaciSlika.addEventListener('click', async function(){
 
+        korak0 = await setTimeout(() => {
+            funkcijaProracun();
+        }, 0);
     
         korak1 = await setTimeout(() => {
 
-            txtRGBA.value = nizPiksela4String;
+            //txtRGBA.value = nizPiksela4String;
             //funkcijaUcitavanje(); 
 
             //Novi kod: 30.8.2021. 
             //txtRGBA.value = `${testA}`;
 
-            setInterval(funkcijaUcitavanje, 500);
+            setInterval(funkcijaUcitavanje, 100);
 
         }, 0); 
         
@@ -428,7 +432,7 @@ window.addEventListener('load', function(){
             tipSlike.value = `${urlSlikeVrednostF}`; 
             console.log(urlSlikeVrednostF); 
 
-        }, 1000);
+        }, 500);
 
         /*
         korak3 = await setTimeout(() => {
@@ -440,14 +444,14 @@ window.addEventListener('load', function(){
         }, 3600);
         */
 
-        korak3 = await setTimeout(() => prikazRGBA(), 1500);
+        korak3 = await setTimeout(() => prikazRGBA(), 2500);
 
         korak4 = await setTimeout(() => {
 
             ucitavanje.style.display = 'none';
             txtUcitavanje.style.display = 'none'; 
 
-        }, 2000);
+        }, 3000);
 
         //funkcijaProracun();
 
@@ -569,12 +573,17 @@ opcioniPodaciSlika.addEventListener('click', () => {
 
 });
 
+/*
+Uklonjeno*: 21.10.2021. 
 btnPrikazRGBA.addEventListener('click', () => {
 
-    funkcijaProracun(); 
-    txtRGBA.value = nizPiksela4String;
+    //funkcijaProracun(); 
+    console.log('Proces je uspeo...');
+    console.log(nizPiksela4String);
+    //txtRGBA.value = nizPiksela4String;
 
 });
+*/
 
 opcioniPodaciSakrivanje = document.querySelector('.opcioniPodaciSakrivanje');
 opcioniTekstSakrivanje = document.querySelector('#opcioniTekstSakrivanje');
@@ -583,7 +592,7 @@ opcioniPodaciSlikaSakrivanje = document.querySelector('.opcioniPodaciSlikaSakriv
 const OpcioniMeniSakrivanje = () => {
 
     opcioniPodaciSakrivanje.style.display = 'block';
-    opcioniTekstInfo.innerHTML = 'Proces može da potraje malo duže...'; 
+    //* opcioniTekstInfo.innerHTML = 'Proces može da potraje malo duže...'; 
     opcioniTekstSakrivanje.innerHTML = 'Sakrijte opcioni prikaz piksela: ';
 
 };

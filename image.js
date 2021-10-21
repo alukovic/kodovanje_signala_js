@@ -202,7 +202,8 @@ window.addEventListener('load', function(){
         }
         
         //console.log(nizPiksela4String);
-        
+        txtRGBA.value = nizPiksela4String; 
+
     };
 
     let iA = 0; 
@@ -238,16 +239,19 @@ window.addEventListener('load', function(){
 
     btnPodaciSlika.addEventListener('click', async function(){
 
-    
+        korak0 = await setTimeout(() => {
+            funkcijaProracun();
+        }, 0);
+
         korak1 = await setTimeout(() => {
 
-            txtRGBA.value = nizPiksela4String;
+            //txtRGBA.value = nizPiksela4String;
             //funkcijaUcitavanje(); 
 
             //Novi kod: 30.8.2021. 
             //txtRGBA.value = `${testA}`;
 
-            setInterval(funkcijaUcitavanje, 500);
+            setInterval(funkcijaUcitavanje, 100);
 
         }, 0); 
         
@@ -266,7 +270,7 @@ window.addEventListener('load', function(){
             tipSlike.value = `${urlSlikeVrednostF}`; 
             console.log(urlSlikeVrednostF); 
 
-        }, 1000);
+        }, 500);
 
         /*
         korak3 = await setTimeout(() => {
@@ -278,14 +282,14 @@ window.addEventListener('load', function(){
         }, 3600);
         */
 
-        korak3 = await setTimeout(() => prikazRGBA(), 1500);
+        korak3 = await setTimeout(() => prikazRGBA(), 2500);
 
         korak4 = await setTimeout(() => {
 
             ucitavanje.style.display = 'none';
             txtUcitavanje.style.display = 'none'; 
 
-        }, 2000);
+        }, 1600);
 
         //funkcijaProracun();
 
@@ -408,12 +412,17 @@ opcioniPodaciSlika.addEventListener('click', () => {
 
 });
 
+/*
+Uklonjeno*: 21.10.2021. 
 btnPrikazRGBA.addEventListener('click', () => {
 
-    funkcijaProracun(); 
-    txtRGBA.value = nizPiksela4String;
+    //funkcijaProracun(); 
+    console.log('Progress is successful...');
+    console.log(nizPiksela4String);
+    //txtRGBA.value = nizPiksela4String;
 
 });
+*/
 
 opcioniPodaciSakrivanje = document.querySelector('.opcioniPodaciSakrivanje');
 opcioniTekstSakrivanje = document.querySelector('#opcioniTekstSakrivanje');
@@ -422,7 +431,7 @@ opcioniPodaciSlikaSakrivanje = document.querySelector('.opcioniPodaciSlikaSakriv
 const OpcioniMeniSakrivanje = () => {
 
     opcioniPodaciSakrivanje.style.display = 'block';
-    opcioniTekstInfo.innerHTML = 'The process may take a bit longer...'; 
+    //* opcioniTekstInfo.innerHTML = 'The process may take a bit longer...'; 
     opcioniTekstSakrivanje.innerHTML = 'Hide the optional display of pixels: ';
 
 };
