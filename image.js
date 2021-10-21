@@ -206,7 +206,7 @@ window.addEventListener('load', function(){
 
         console.log(nizPiksela4String);
         
-        opcioniTekstInfo.innerHTML = 'The values of all pixels are calculated. <br> You can see a list of all pixels in the JavaScript Console. . <br> Use Ctrl + Shift + J to access the console.'; 
+        opcioniTekstInfo.innerHTML = 'The values of all pixels are calculated. <br> You can see a list of all pixels in the JavaScript Console. <br> Use Ctrl + Shift + J to access the console.'; 
 
         //txtRGBA.value = nizPiksela4String; 
 
