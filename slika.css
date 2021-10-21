@@ -176,7 +176,7 @@ hr{
 }
 
 #btnKompresijaUlazneSlike{
-    background-color: #9999FF;
+    background-color: #4D6AFF;
 }
 
 #btnPreuzimanje {
@@ -215,7 +215,7 @@ hr{
     align-items: center;
 }
 
-#btnPodaciSlika, #btnNovaSlika #btnGenerisanjeDemo, #btnNoviUnosDemo, #btnEfekatOgledala, #btnIsecanje, #btnIsecanjeNoviUnos, #btnKompresijaUlazneSlike, #btnKompresijaUlazneSlikeNovo{
+#btnPodaciSlika, #btnNovaSlika #btnGenerisanjeDemo, #btnNoviUnosDemo, #btnIsecanje, #btnIsecanjeNoviUnos, #btnKompresijaUlazneSlike, #btnKompresijaUlazneSlikeNovo{
     width: 7em;
 }
 
