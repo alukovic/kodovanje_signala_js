@@ -161,41 +161,47 @@ window.addEventListener('load', function(){
 
      funkcijaProracun = () => {
 
-        podaciSaSlike = new Uint8ClampedArray();
+       podaciSaSlike = new Uint8ClampedArray();
         //test #1
         //podaciSaSlike = ctx.getImageData(0, 0, 180, 180); 
         
         //Cela slika - svi pikseli
         //test #2
 
-        
         testA = [1, 2, 3, 4, 5]; 
 
         podaciSaSlike = ctx.getImageData(0, 0, canvasSlike.width, canvasSlike.height); 
         nizPiksela = podaciSaSlike.data;
         //console.log('Uint8Clamped niz piksela: ', nizPiksela); 
-
         
         nizPikselaA = Array.prototype.slice.call(nizPiksela);
-        console.log('JavaScript array of pixels: ', nizPikselaA); 
+        //##### console.log('JavaScript niz piksela: ', nizPikselaA); 
 
         //nizPiksela4String = ''; 
         nizPiksela4elementa = new Array(); 
-        console.log('nizPikselaA.length: ' + nizPikselaA.length); 
-        console.log('nizPiksela.length: ' + nizPiksela.length); 
-        
+
+        //###### console.log('nizPikselaA.length: ' + nizPikselaA.length); 
+        //###### console.log('nizPiksela.length: ' + nizPiksela.length); 
         
         //Opciono formatiranje prikaza piksela: 
 
-        //for(i = 0; i < nizPikselaA.length; i++){
-        i = 0;
+        /*######################
+        Novo rešenje: 21.10.2021. 
+        ########################*/
+
+        for(i = 0; i < nizPikselaA.length; i++){
+        //i = 0;
     
-        while(nizPikselaA.length > 1){
+        //while(nizPikselaA.length > 1){
     
-            i++;
-            nizPiksela4elementa = nizPikselaA.splice(0, 4);
-            nizPiksela4String += i + '. pixel with RGBA components is: ' + nizPiksela4elementa + '\n';
+            //i++;
+            //nizPiksela4elementa = nizPikselaA.splice(0, 4);
+            // nizPiksela4String += i + '. pixel with RGBA components is: ' + nizPiksela4elementa + '\n';
+            nizPiksela4String += nizPikselaA[i] + ' ';
+
         }
+        
+        //console.log(nizPiksela4String);
         
     };
 
@@ -384,6 +390,7 @@ const prikazRGBA = () => {
     opcioniPodaciInfo.style.display = 'block';
     //opcioniPodaci.style.display = 'none';
     opcioniTekst.innerHTML = 'Optional display of the all RGBA values of the given image: '; 
+
 };
 
 const sakrivanjeRGBA = () => {
