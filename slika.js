@@ -158,7 +158,11 @@ Pro 2.3.b 20.10.2021. Sre.
     
 //Dan33
 Pro 2.3.b 21.10.2021. Čet. 
-    Dodatna unapređenja programa   
+    Dodatna unapređenja programa 
+    Program je okvirno završen
+    Uvedena je i verzija na engleskom jeziku
+    Optimizovan je prikaz opcionih RGBA vrednosti piksela
+    Poboljšan je korisnički interfejs programa...
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
