@@ -443,9 +443,10 @@ canvasDemoA = document.querySelector('#canvasDemoA');
 btnDemoDCT = document.querySelector('#btnDemoDCT'); 
 canvasDemoDCT = document.querySelector('#canvasDemoDCT'); 
 
-ctxDemoA = canvasDemoA.getContext('2d'); 
 ctxDemoDCT = canvasDemoDCT.getContext('2d'); 
 */
+
+ctxDemoA = canvasDemoA.getContext('2d'); 
 
 noviNizPikselaDemo = new Array();
 noviNizPikselaDemoPiksel = new Array();

@@ -151,7 +151,13 @@ Pro 2.3.9 31.8.2021. Uto.
     Proširenje prikaza rezultata kompresije 
     Prikaz memorijskog zauzeća ulazne slike
     Okvirni završetak izrade programa
-           
+
+//Dan32
+Pro 2.3.b 20.10.2021. Sre. 
+    image.js
+//Dan33
+Pro 2.3.b 21.10.2021. Čet. 
+    Dodatna unapređenja programa   
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
