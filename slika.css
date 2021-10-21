@@ -206,3 +206,16 @@ hr{
     margin-left: 0;
     border-radius: 0.2em;
 }
+
+#btnPodaciSlika{
+    margin-left: 1.3em;
+}
+
+.meniSlika{
+    align-items: center;
+}
+
+#btnPodaciSlika, #btnNovaSlika #btnGenerisanjeDemo, #btnNoviUnosDemo, #btnEfekatOgledala, #btnIsecanje, #btnIsecanjeNoviUnos, #btnKompresijaUlazneSlike, #btnKompresijaUlazneSlikeNovo{
+    width: 7em;
+}
+
