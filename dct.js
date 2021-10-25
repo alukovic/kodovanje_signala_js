@@ -152,14 +152,14 @@ const DCT = () => {
             }
 
             if(u === 0){
-                Cu = Number((1/Math.sqrt(2)).toFixed(2));
+                Cu = Number((1/Math.sqrt(2)).toFixed(3));
             } else
             {
                 Cu = 1; 
             }
 
             if(Cv === 0){
-                Cv = Number((1/Math.sqrt(2)).toFixed(2));
+                Cv = Number((1/Math.sqrt(2)).toFixed(3));
             } else {
                 Cv = 1;
             }
