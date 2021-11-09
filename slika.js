@@ -165,7 +165,8 @@ Pro 2.3.b 21.10.2021. Čet.
     Poboljšan je korisnički interfejs programa...
 
 //Dan34
-Pro 2.3.b 29.11.2021. Čet.     
+Pro 2.3.b 9.11.2021. Uto. 
+    Optimizacija rada programa
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
