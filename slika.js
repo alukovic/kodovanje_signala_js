@@ -437,14 +437,8 @@ window.addEventListener('load', function(){
             setInterval(funkcijaUcitavanje, 100);
 
         }, 0); 
-        
-        korak2 = await setTimeout(() => {
 
-            obradaSlike.style.display = 'block'; 
-            rezolucijaSlike.value = `${canvasSlike.width} x ${canvasSlike.height} piksela`; 
-            brojPiksela.value = Number(canvasSlike.width * canvasSlike.height); 
-            brojMPbr = Number((canvasSlike.width * canvasSlike.height) / Math.pow(10, 6)).toFixed(2);
-            brojMP.value = `${brojMPbr} MP`;
+        korak2 = await setTimeout(() => {
 
             urlSlikeVrednost = canvasSlike.toDataURL();
             urlSlike.value = urlSlikeVrednost; 
@@ -453,7 +447,20 @@ window.addEventListener('load', function(){
             tipSlike.value = `${urlSlikeVrednostF}`; 
             console.log(urlSlikeVrednostF); 
 
+        }, 300);
+        
+
+        korak3 = await setTimeout(() => {
+
+            obradaSlike.style.display = 'block'; 
+            rezolucijaSlike.value = `${canvasSlike.width} x ${canvasSlike.height} piksela`; 
+            brojPiksela.value = Number(canvasSlike.width * canvasSlike.height); 
+            brojMPbr = Number((canvasSlike.width * canvasSlike.height) / Math.pow(10, 6)).toFixed(2);
+            brojMP.value = `${brojMPbr} MP`;
+            
+
         }, 500);
+
 
         /*
         korak3 = await setTimeout(() => {
@@ -569,12 +576,14 @@ btnBrisanjeA.addEventListener('click', function(){
     window.location.reload(true);
 });
 
+/*
 opcioniTekst = document.querySelector('#opcioniTekst');
 opcioniTekstInfo = document.querySelector('#opcioniTekstInfo'); 
 opcioniPodaciInfo = document.querySelector('.opcioniPodaciInfo');
 opcioniPodaciSlika = document.querySelector('.opcioniPodaciSlika');
 opcioniPodaci = document.querySelector('.opcioniPodaci');
 btnPrikazRGBA = document.querySelector('#btnPrikazRGBA'); 
+*/
 
 /*
 const prikazRGBA = () => {
@@ -615,10 +624,11 @@ btnPrikazRGBA.addEventListener('click', () => {
 });
 */
 
+/*
 opcioniPodaciSakrivanje = document.querySelector('.opcioniPodaciSakrivanje');
 opcioniTekstSakrivanje = document.querySelector('#opcioniTekstSakrivanje');
 opcioniPodaciSlikaSakrivanje = document.querySelector('.opcioniPodaciSlikaSakrivanje'); 
-
+*/
 const OpcioniMeniSakrivanje = () => {
 
     opcioniPodaciSakrivanje.style.display = 'block';
@@ -1240,7 +1250,6 @@ btnBrisanjeZelenaBoja.addEventListener('click', () => {
     window.location.reload(true);
 });
 
-
 //Prikaz efekta plave boje
 btnPlavaBoja = document.querySelector('#btnPlavaBoja');
 btnBrisanjePlavaBoja = document.querySelector('#btnBrisanjePlavaBoja');
@@ -1301,7 +1310,6 @@ btnPlavaBoja.addEventListener('click', () => {
 btnBrisanjePlavaBoja.addEventListener('click', () => {
     window.location.reload(true);
 });
-
 
 //Rotacija slike: 
 meniRotacijaSlike = document.querySelector('.meniRotacijaSlike'); 
@@ -1406,7 +1414,6 @@ const prikazSlike = (img, canvas, ctx) => {
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 };
 
-
 canvasProizvoljniEfekat = document.querySelector('#canvasProizvoljniEfekat'); 
 ctxProizvoljniEfekat = canvasProizvoljniEfekat.getContext('2d');
 
@@ -1431,7 +1438,6 @@ const odabirR = () => {
     for(let i = 0; i < pikseliSlikeSaProizvoljnogEfekta.data.length; i+=4){
         pikseliSlikeSaProizvoljnogEfekta.data[i] = slajderR;
     }
-
 
     ctxProizvoljniEfekat.putImageData(pikseliSlikeSaProizvoljnogEfekta, 0, 0); 
 }

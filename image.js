@@ -263,14 +263,8 @@ window.addEventListener('load', function(){
             setInterval(funkcijaUcitavanje, 100);
 
         }, 0); 
-        
-        korak2 = await setTimeout(() => {
 
-            obradaSlike.style.display = 'block'; 
-            rezolucijaSlike.value = `${canvasSlike.width} x ${canvasSlike.height} pixels`; 
-            brojPiksela.value = Number(canvasSlike.width * canvasSlike.height); 
-            brojMPbr = Number((canvasSlike.width * canvasSlike.height) / Math.pow(10, 6)).toFixed(2);
-            brojMP.value = `${brojMPbr} MP`;
+        korak2 = await setTimeout(() => {
 
             urlSlikeVrednost = canvasSlike.toDataURL();
             urlSlike.value = urlSlikeVrednost; 
@@ -279,7 +273,20 @@ window.addEventListener('load', function(){
             tipSlike.value = `${urlSlikeVrednostF}`; 
             console.log(urlSlikeVrednostF); 
 
+        }, 300);
+        
+
+        korak3 = await setTimeout(() => {
+
+            obradaSlike.style.display = 'block'; 
+            rezolucijaSlike.value = `${canvasSlike.width} x ${canvasSlike.height} pixels`; 
+            brojPiksela.value = Number(canvasSlike.width * canvasSlike.height); 
+            brojMPbr = Number((canvasSlike.width * canvasSlike.height) / Math.pow(10, 6)).toFixed(2);
+            brojMP.value = `${brojMPbr} MP`;
+            
+
         }, 500);
+
 
         /*
         korak3 = await setTimeout(() => {
@@ -300,7 +307,7 @@ window.addEventListener('load', function(){
 
         }, 1600);
 
-        //funkcijaProracun(); 
+        //funkcijaProracun();
 
         /*
         korak5 = await setTimeout(() => {
