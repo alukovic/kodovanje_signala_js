@@ -331,7 +331,7 @@ window.addEventListener('load', function(){
        /* 
        
        --------------------------------
-       9.11.2021. Privremeno uklanjanje
+       9.11.2021. Uklanjanje...
        --------------------------------
 
      funkcijaProracun = () => {

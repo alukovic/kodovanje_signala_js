@@ -31,9 +31,9 @@ const optimizacijaPrikaza = () => {
     obradaSlike.style.display = 'none'; 
     //dodatna optimizacija prikaza
     noviMeni.style.display = 'none';
-    opcioniPodaci.style.display = 'none';
-    opcioniPodaciInfo.style.display = 'none';
-    opcioniPodaciSakrivanje.style.display = 'none';
+    //opcioniPodaci.style.display = 'none';
+    //opcioniPodaciInfo.style.display = 'none';
+    //opcioniPodaciSakrivanje.style.display = 'none';
     //txtDemoDCTinfo.style.display = 'none';
 
     //Novo
@@ -65,10 +65,10 @@ window.addEventListener('load', function(){
 
     meniSlika.style.display = 'none'; 
     obradaSlike.style.display = 'none'; 
-    opcioniPodaciSakrivanje.style.display = 'none';
+    //opcioniPodaciSakrivanje.style.display = 'none';
     noviMeni.style.display = 'none'; 
     //txtDemoDCTinfo.style.display = 'none';
-    sakrivanjeRGBA();
+    //sakrivanjeRGBA();
     
     //demoDCT.style.display = 'none';
     testCanvas.style.display = 'none';
@@ -158,6 +158,11 @@ window.addEventListener('load', function(){
     });
 
 });
+    /*
+
+       --------------------------------
+       9.11.2021. Uklanjanje...
+       --------------------------------
 
      funkcijaProracun = () => {
 
@@ -187,7 +192,7 @@ window.addEventListener('load', function(){
 
         /*######################
         Novo rešenje: 21.10.2021. 
-        ########################*/
+        ########################
 
         for(i = 0; i < nizPikselaA.length; i++){
         //i = 0;
@@ -211,6 +216,8 @@ window.addEventListener('load', function(){
         //txtRGBA.value = nizPiksela4String; 
 
     };
+
+    */
 
     let iA = 0; 
     let tekst = 'Loading...';
@@ -284,7 +291,7 @@ window.addEventListener('load', function(){
         }, 3600);
         */
 
-        korak3 = await setTimeout(() => prikazRGBA(), 2000);
+        //korak3 = await setTimeout(() => prikazRGBA(), 2000);
 
         korak4 = await setTimeout(() => {
 
@@ -295,10 +302,11 @@ window.addEventListener('load', function(){
 
         //funkcijaProracun(); 
 
+        /*
         korak5 = await setTimeout(() => {
             funkcijaProracun();
         }, 3500);
-
+        */
 
     });                
 
@@ -396,6 +404,7 @@ opcioniPodaciSlika = document.querySelector('.opcioniPodaciSlika');
 opcioniPodaci = document.querySelector('.opcioniPodaci');
 btnPrikazRGBA = document.querySelector('#btnPrikazRGBA'); 
 
+/*
 const prikazRGBA = () => {
 
     opcioniPodaciInfo.style.display = 'block';
@@ -418,6 +427,7 @@ opcioniPodaciSlika.addEventListener('click', () => {
     OpcioniMeniSakrivanje();
 
 });
+*/
 
 /*
 Uklonjeno*: 21.10.2021. 
@@ -431,6 +441,7 @@ btnPrikazRGBA.addEventListener('click', () => {
 });
 */
 
+/*
 opcioniPodaciSakrivanje = document.querySelector('.opcioniPodaciSakrivanje');
 opcioniTekstSakrivanje = document.querySelector('#opcioniTekstSakrivanje');
 opcioniPodaciSlikaSakrivanje = document.querySelector('.opcioniPodaciSlikaSakrivanje'); 
@@ -455,6 +466,7 @@ opcioniPodaciSlikaSakrivanje.addEventListener('click', () => {
 opcioniPodaciUcitavanje = document.querySelector('.opcioniPodaciUcitavanje');
 
 opcioniPodaciUcitavanjeInfo = document.querySelector('#opcioniPodaciUcitavanje'); 
+*/
 
 // Novo | Test | Demo | DCT 
 /*
