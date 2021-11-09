@@ -163,6 +163,9 @@ Pro 2.3.b 21.10.2021. Čet.
     Uvedena je i verzija na engleskom jeziku
     Optimizovan je prikaz opcionih RGBA vrednosti piksela
     Poboljšan je korisnički interfejs programa...
+
+//Dan34
+Pro 2.3.b 29.11.2021. Čet.     
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
@@ -197,9 +200,9 @@ const optimizacijaPrikaza = () => {
     obradaSlike.style.display = 'none'; 
     //dodatna optimizacija prikaza
     noviMeni.style.display = 'none';
-    opcioniPodaci.style.display = 'none';
-    opcioniPodaciInfo.style.display = 'none';
-    opcioniPodaciSakrivanje.style.display = 'none';
+    //opcioniPodaci.style.display = 'none';
+    //opcioniPodaciInfo.style.display = 'none';
+    //opcioniPodaciSakrivanje.style.display = 'none';
     txtDemoDCTinfo.style.display = 'none';
 
     //Novo
@@ -231,10 +234,10 @@ window.addEventListener('load', function(){
 
     meniSlika.style.display = 'none'; 
     obradaSlike.style.display = 'none'; 
-    opcioniPodaciSakrivanje.style.display = 'none';
+    //opcioniPodaciSakrivanje.style.display = 'none';
     noviMeni.style.display = 'none'; 
     txtDemoDCTinfo.style.display = 'none';
-    sakrivanjeRGBA();
+    //sakrivanjeRGBA();
     
     demoDCT.style.display = 'none';
     testCanvas.style.display = 'none';
@@ -324,6 +327,12 @@ window.addEventListener('load', function(){
     });
 
 });
+    
+       /* 
+       
+       --------------------------------
+       9.11.2021. Privremeno uklanjanje
+       --------------------------------
 
      funkcijaProracun = () => {
 
@@ -355,6 +364,9 @@ window.addEventListener('load', function(){
         Novo rešenje: 21.10.2021. 
         ########################*/
 
+        
+        
+        /*
         for(i = 0; i < nizPikselaA.length; i++){
         //i = 0;
     
@@ -378,6 +390,8 @@ window.addEventListener('load', function(){
         //txtRGBA.value = nizPiksela4String; 
 
     };
+
+    */
 
     let iA = 0; 
     let tekst = 'Učitavanje...';
@@ -451,7 +465,7 @@ window.addEventListener('load', function(){
         }, 3600);
         */
 
-        korak3 = await setTimeout(() => prikazRGBA(), 2000);
+        //korak3 = await setTimeout(() => prikazRGBA(), 2000);
 
         korak4 = await setTimeout(() => {
 
@@ -462,10 +476,11 @@ window.addEventListener('load', function(){
 
         //funkcijaProracun();
 
+        /*
         korak5 = await setTimeout(() => {
             funkcijaProracun();
         }, 3500);
-
+        */
     });                
 
 //btnPodaciSlika.addEventListener('loadstart', funkcijaProracun());
@@ -561,6 +576,7 @@ opcioniPodaciSlika = document.querySelector('.opcioniPodaciSlika');
 opcioniPodaci = document.querySelector('.opcioniPodaci');
 btnPrikazRGBA = document.querySelector('#btnPrikazRGBA'); 
 
+/*
 const prikazRGBA = () => {
 
     opcioniPodaciInfo.style.display = 'block';
@@ -575,7 +591,9 @@ const sakrivanjeRGBA = () => {
     opcioniPodaci.style.display = 'none';
 
 };
+*/
 
+/*
 opcioniPodaciSlika.addEventListener('click', () => {
 
     opcioniPodaciInfo.style.display = 'none'; 
@@ -583,6 +601,7 @@ opcioniPodaciSlika.addEventListener('click', () => {
     OpcioniMeniSakrivanje();
 
 });
+*/
 
 /*
 Uklonjeno*: 21.10.2021. 
@@ -608,6 +627,8 @@ const OpcioniMeniSakrivanje = () => {
 
 };
 
+
+/*
 opcioniPodaciSlikaSakrivanje.addEventListener('click', () => {
 
     opcioniPodaciInfo.style.display = 'block';
@@ -616,6 +637,7 @@ opcioniPodaciSlikaSakrivanje.addEventListener('click', () => {
     //window.location.reload(true);
 
 });
+*/
 
 opcioniPodaciUcitavanje = document.querySelector('.opcioniPodaciUcitavanje');
 
