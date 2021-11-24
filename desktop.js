@@ -1,4 +1,20 @@
 /*
+//15.11.2021. Pon. 
+//handle setupevents as quickly as possible
+ const setupEvents = require('./installers/setupEvents')
+ if (setupEvents.handleSquirrelEvent()) {
+    // squirrel event handled and app will exit in 1000ms, so don't do anything else
+    return;
+ }
+
+const electron = require('electron')
+// Module to control application life.
+const app = electron.app
+const {ipcMain} = require('electron')
+var path = require('path')
+*/
+
+/*
 30.6.2021. Sre.
 Kod za realizaciju Electron.js cross-platform desktop aplikacije... 
 Aužuriranje:
@@ -21,7 +37,7 @@ let mainWindow;
 app.on('ready', function(){
 //Kreiranje novog prozora
 
-mainWindow = new BrowserWindow({icon: __dirname + '/ico/ico1.png', width: 760, height: 720}); 
+mainWindow = new BrowserWindow({icon: __dirname + '/assets/icons/win/icon.ico', width: 760, height: 720}); 
 //Učitavanje html fajla u prozoru
 mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'slika.html'),

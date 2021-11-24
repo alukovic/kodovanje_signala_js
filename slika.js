@@ -167,6 +167,10 @@ Pro 2.3.b 21.10.2021. Čet.
 //Dan34
 Pro 2.3.b 9.11.2021. Uto. 
     Optimizacija rada programa
+
+//Dan35
+Pro 2.4.0 24.11.2021. Sre. 
+    Nova ažuriranja    
 */
 
 canvasSlike = document.querySelector('#canvasSlike');
